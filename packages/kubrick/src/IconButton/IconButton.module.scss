@@ -1,0 +1,31 @@
+:global(.wp-core-ui) {
+	.root {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: max-content;
+		aspect-ratio: 1/1;
+		padding: 6px;
+
+		svg {
+			max-width: 18px;
+			fill: currentcolor;
+		}
+
+		&:global(.button-small) {
+			padding: 4px;
+
+			svg {
+				max-width: 16px;
+			}
+		}
+
+		&:global(.button-large) {
+			padding: 8px;
+
+			svg {
+				max-width: 24px;
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+.root {
+	display: flex;
+	gap: 6px;
+	align-items: center;
+
+	.input[type="radio"] {
+		margin: 0;
+	}
+
+	&.disabled,
+	.input:disabled {
+		cursor: not-allowed;
+	}
+}

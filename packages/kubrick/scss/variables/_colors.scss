@@ -1,0 +1,86 @@
+// https://make.wordpress.org/design/2019/11/26/proposal-a-new-palette-for-wordpress/
+// https://codepen.io/tfirdaus/pen/abMVQGL
+
+// Base
+$white: #fff;
+$black: #000;
+
+// Gray.
+$gray-10: #f6f7f7;
+$gray-50: #dcdcde;
+$gray-100: #c3c4c7;
+$gray-200: #a7aaad;
+$gray-300: #8c8f94;
+$gray-400: #787c82;
+$gray-500: #646970;
+$gray-600: #50575e;
+$gray-700: #3c434a;
+$gray-800: #2c3338;
+$gray-900: #1d2327;
+$gray-950: #101517;
+
+// Blue.
+$blue-10: #f0f6fc;
+$blue-50: #c5d9ed;
+$blue-100: #9ec2e6;
+$blue-200: #72aee6;
+$blue-300: #4f94d4;
+$blue-400: #3582c4;
+$blue-500: #2271b1;
+$blue-600: #135e96;
+$blue-700: #0a4b78;
+$blue-800: #043959;
+$blue-900: #01263a;
+$blue-950: #00131c;
+
+// Red.
+$red-10: #fcf0f1;
+$red-50: #facfd2;
+$red-100: #ffabaf;
+$red-200: #ff8085;
+$red-300: #f86368;
+$red-400: #e65054;
+$red-500: #d63638;
+$red-600: #b32d2e;
+$red-700: #8a2424;
+$red-800: #691c1c;
+$red-900: #451313;
+$red-950: #240a0a;
+
+// Yellow.
+$yellow-10: #fcf9e8;
+$yellow-50: #f5e6ab;
+$yellow-100: #f2d675;
+$yellow-200: #f0c33c;
+$yellow-300: #dba617;
+$yellow-400: #bd8600;
+$yellow-500: #996b00;
+$yellow-600: #755100;
+$yellow-700: #614200;
+$yellow-800: #4a3200;
+$yellow-900: #362400;
+$yellow-950: #211600;
+
+// Green.
+$green-10: #edfaef;
+$green-50: #b8e6bf;
+$green-100: #68de7c;
+$green-200: #1ed14b;
+$green-300: #00ba37;
+$green-400: #00a32a;
+$green-500: #008a20;
+$green-600: #007017;
+$green-700: #005c12;
+$green-800: #00450c;
+$green-900: #003008;
+$green-950: #001c05;
+
+// UI Colors.
+$page-bg: #f0f0f1;
+$input-description: $gray-500;
+$input-invalid: $red-500;
+
+// Accents.
+$accent: $blue-500;
+$accent-low: $blue-50;
+$accent-high: $blue-700;

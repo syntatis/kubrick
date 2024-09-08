@@ -1,0 +1,93 @@
+---
+title: Select
+description: Learn how to use the Select component in your WordPress admin application.
+---
+
+The `Select` component works like the standard HTML `<select>` element, allowing you to create a dropdown menu with options for users to choose from. You can organize the options into groups, making it easier to manage and display related choices together, which is especially useful when you have a long list of options and want to group similar ones for a cleaner look.
+
+## Usage
+
+To use the component, import both `Select` and `SelectItem` from the package:
+
+```jsx
+import { Select, SelectItem } fro '@syntatis/kubrick';
+```
+
+You can use it in your application by adding the `Select` component with the `label` prop to provide a label for the select field, and the `name` prop to define the name of the select field when submitting the form. Then, you will also need to provide the options by adding the `SelectItem` components. Each `SelectItem` component should have a `value` prop to define the value of the option.
+
+```jsx
+<Select label="Site Language" name="site_language">
+	<SelectItem value="en_US">English (United State)</SelectItem>
+	<SelectItem value="id_ID">Indonesia</SelectItem>
+</Select>
+```
+
+### Disabled
+
+You can disable the select field by adding the `isDisabled` prop to the `Select` component. This will disable the entire select field, and users won't be able to interact with it or select any options:
+
+```jsx {3}
+<Select
+	label="Site Language"
+	isDisabled>
+	<SelectItem value="en_US">English (United State)</SelectItem>
+	<SelectItem value="id_ID">Indonesia</SelectItem>
+</Select>
+```
+
+### Selected
+
+You can set the selected option by passing the `selectedItem` prop to the `Select` component with the value of the selected option. This will make the selected option appear as the default value when the select field is rendered:
+
+```jsx {3}
+<Select
+	label="Site Language"
+	selected="id_ID">
+	<SelectItem value="en_US">English (United State)</SelectItem>
+	<SelectItem value="id_ID">Indonesia</SelectItem>
+</Select>
+```
+
+## Events
+
+The `Select` component will emit some events when the users interact with it, such as when they select an option or change an option, or when the component receives or loses focus. You can listen to these events to perform actions when they occur in your application with the following props:
+
+| Prop | Description |
+| --- | --- |
+| `onSelectionChange` | Called when the user selects an option. The callback function will receive the value of the selected option as an argument. |
+| `onFocusChange` | Called when the select field receives or loses focus. The callback function will receive a boolean value indicating whether the select field is focused or not. |
+
+Let's assume we have an app with a `Select` component, and we'd like to show an additional input when the user selects the **"Indonesia"** option. We can use the `onSelectionChange` prop to handle this event, for example:
+
+```jsx {10}
+import { useState } from 'react';
+
+const App = () => {
+	const [showInput, setShowInput] = useState(false);
+
+	return (
+		<>
+			<Select
+				label="Site Language"
+				onSelectionChange={(value) => setShowInput(value === 'id_ID')}>
+				<SelectItem value="en_US">English (United State)</SelectItem>
+				<SelectItem value="id_ID">Indonesia</SelectItem>
+			</Select>
+			{showInput && <input type="text" />}
+		</>
+	);
+};
+```
+
+## Styles
+
+The `Select` component has static selectors, prefixed with `.kubrick-Select-`. You can use these static classes to select and customize the component and its elements.
+
+<div className="table-classes">
+| Selector | Description |
+| --- | --- |
+| `root` | The root element of the `Select` component, an `div` |
+| `label` | The HTML `label` element that wraps the label content |
+| `input` | The HTML `select` input element |
+| `description` | The element that wraps the description content |
+</div>

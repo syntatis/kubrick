@@ -1,0 +1,9 @@
+@use '../../scss/mixins/input';
+
+.root {
+	@include input.styles;
+
+	select {
+		width: max-content;
+	}
+}

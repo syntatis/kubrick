@@ -1,0 +1,23 @@
+---
+import { Notice as UpstreamNotice } from "@syntatis/kubrick";
+import pkg from "../../../../package.json";
+---
+
+<UpstreamNotice level="warning" id="notice">
+	<p>
+		🚀 <strong>{pkg.version}</strong> is now available. <a
+			href="#"
+			target="_blank">View changelog</a
+		>.
+	</p>
+</UpstreamNotice>
+
+<style>
+:global(#notice-Notice-root) {
+	margin: 0 0 2rem;
+	max-width: max-content;
+}
+:global(#notice-Notice-root) p {
+	margin: 0;
+}
+</style>

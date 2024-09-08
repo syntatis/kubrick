@@ -1,0 +1,38 @@
+@use '../../scss/variables/colors';
+
+:global(.wp-core-ui) {
+	.root {
+		.track {
+			fill: colors.$gray-100;
+		}
+
+		.thumb {
+			fill: colors.$white;
+		}
+
+		.input {
+			display: flex;
+			gap: 4px;
+			align-items: center;
+			transform: translateX(-4px);
+		}
+
+		.focusRing {
+			stroke: var(--kubrick-accent-color);
+		}
+
+		&.isSelected {
+			.track {
+				fill: var(--kubrick-accent-color);
+			}
+		}
+
+		&.isDisabled {
+			cursor: not-allowed;
+
+			.track {
+				opacity: 0.7;
+			}
+		}
+	}
+}

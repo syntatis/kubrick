@@ -1,0 +1,107 @@
+---
+title: Checkbox
+description: Learn how to use the Checkbox component in your WordPress admin application.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+The `Checkbox` component represents the HTML `checkbox` input element. You can use it to allow users to select one or more options. You can use it as a standalone or as part of a group with the `CheckboxGroup` component.
+
+## Usage
+
+To use the component, import the `Checkbox` from the package:
+
+```jsx
+import { Checkbox } from '@syntatis/kubrick';
+```
+
+Then, add the component  in your WordPress admin application with the `label` and the `name` prop to define the input name when submitting the form:
+
+```jsx
+<Checkbox label="I agree to the terms and conditions" name="agree" />
+```
+
+### Disabled
+
+Similar to the native HTML `checkbox` input element, you can also make the `Checkbox` component disabled. This is useful when the checkbox should not be clickable, for example, when the user does not have the right permission to perform the action. You can do this by passing the `isDisabled` prop:
+
+```jsx {4}
+<Checkbox
+	label="I agree to the terms and conditions"
+	name="agree"
+	isDisabled
+	/>
+```
+
+<Aside>
+A **disabled** checkbox is one that users can't interact with. It looks "grayed out" and its value will be not be sent when the form is submitted.
+</Aside>
+
+### Read-only
+
+You can also set the input as read-only by passing the `isReadOnly` prop, which will prevent the user from changing the check state:
+
+```jsx {3}
+<Checkbox
+	label="I agree to the terms and conditions"
+	isReadOnly
+	/>
+```
+
+<Aside>
+A **readonly** checkbox, on the other hand, is not a standard HTML feature. In this case, it is a special `Checkbox`, component feature. It will remain interactive; It will still appear in the tab order, and users will will be able to interact with it using the keyboard. However, the user won't be able to change the check state.
+</Aside>
+
+### Description
+
+Aside of the label, you can add a description to add more context to the user. You can do this by passing the `description` prop:
+
+```jsx {3}
+<Checkbox
+	label="I agree to the terms and conditions"
+	description="Please read the terms and conditions before checking this box."
+	/>
+```
+
+## Events
+
+The `Checkbox` component will emit an event when the check state changes as well as when the user interacts with the input. You can listen to this event by passing function to the following props:
+
+| Prop | Description |
+| --- | --- |
+| `onChange` | Triggered when the check state changes. |
+| `onFocusChange` | Triggered when the input receives or loses focus. |
+
+Let's assume we have an app with a checkbox and a button. Initially, the button is disabled. When the user checks the checkbox, the button will be enabled. You can do this by listening to the `onChange` event:
+
+```jsx {10}
+import { useState } from 'react';
+
+function App() {
+	const [isChecked, setIsChecked] = useState(false);
+
+	return (
+		<>
+			<Checkbox
+				label="I agree to the terms and conditions"
+				onChange={setIsChecked}
+			/>
+			<Button isDisabled={!isChecked}>Submit</Button>
+		</>
+	);
+}
+```
+
+The `onChange` prop will directly pass the new check state to the function as a boolean, so you can directly use it to update the state as shown in the example above.
+
+## Styles
+
+The `Checkbox` component comes with a few static selectors, prefixed with `.kubrick-Checkbox-`, that you can use to select and customize the component and its elements.
+
+<div className="table-classes">
+| Selector | Description |
+| --- | --- |
+| `root` | The root element of the checkbox. |
+| `label-content` | The element wrapping the label content. |
+| `description` | The element wrapping the description. |
+</div>

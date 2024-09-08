@@ -1,0 +1,119 @@
+---
+title: TextField
+description: Learn how to use the TextField component in your WordPress admin application.
+---
+
+The `TextField` component works like a standard HTML `input` element. It allows users to enter and edit plain text. This component is useful for collecting user input in forms.
+
+## Usage
+
+To use the component, import the `TextField` component from the package:
+
+```jsx
+import { TextField } from '@syntatis/kubrick';
+```
+
+Then, you can use it in your application by adding the `TextField` component with the `label` prop to provide a label for the input field, additionally with the `name` prop to uniquely identify the input field when on form submission:
+
+```jsx
+<TextField label="Name" name="name" />
+```
+
+### Disabled
+
+You can disable the `TextField` component by adding the `isDisabled` prop. This will prevent users from interacting with the input field and the input value will not be carried over on form submission:
+
+```jsx {4}
+<TextField
+	label="Name"
+	name="name"
+	isDisabled
+	/>
+```
+
+### Read-only
+
+You can make the `TextField` component read-only by adding the `isReadOnly` prop. This will prevent users from editing the input field, but the input value will still be carried over on form submission:
+
+```jsx {4}
+<TextField
+	label="Name"
+	name="name"
+	isReadOnly
+	/>
+```
+
+### Type
+
+Similar to the HTML `input` element, you can customize the `TextField` component by using the `type` prop to define what kind of text input you need from users. By default, the `TextField` component uses the `text` type. You can change it to the other type such as the `password` and `email` type:
+
+```jsx {5,10}
+<TextField label="name" name="name" /> // Default type is "text".
+<TextField
+	label="Password"
+	type="password"
+	name="password"
+	/>
+<TextField
+	label="Email"
+	type="email"
+	name="email"
+	/>
+```
+
+### Placeholder
+
+You can add a placeholder text on the `TextField` component by using the `placeholder` prop to provide a hint to users on what to enter in the input field:
+
+```jsx {5}
+<TextField
+	label="Name"
+	name="name"
+	placeholder="Enter your name"
+	/>
+```
+
+### Description
+
+You can add a description text below the `TextField` component by using the `description` prop to provide additional information to users:
+
+```jsx {5}
+<TextField
+	label="Name"
+	name="name"
+	description="Enter your full name"
+	/>
+```
+
+By default, the description text will be displayed as a small text below the input field. You can change where the description text is displayed by using the `descriptionArea` prop. The `descriptionArea` prop accepts `before-input` and `after-input` (default) values. Set it to `before-input` to display the description text above the input field, right below the label:
+
+```jsx {5}
+<TextField
+	label="Name"
+	name="name"
+	description="Enter your full name"
+	descriptionArea="before-input"
+	/>
+```
+
+## Events
+
+The `TextField` component emits when the users interact with the component, such as when adding or editing the input value. You can add a function as a callback on to these props to perform actions when they occur in your application.
+
+| Prop | Description |
+| --- | --- |
+| `onChange` | Emitted when the input value changes. The event handler receives the new input value as an argument. |
+
+## Styles
+
+The `TextField` component has static classes, prefixed with `.kubrick-Tabs-`. You can use these static classes to select and customize the component and its elements.
+
+
+<div className="table-classes">
+| Selector | Description |
+| --- | --- |
+| `root` | The root element of the `TextField` component. |
+| `label` | The label element of the `TextField` component. |
+| `input` | The input element of the `TextField` component. |
+| `description` | The wrapper element of the description content. |
+</div>

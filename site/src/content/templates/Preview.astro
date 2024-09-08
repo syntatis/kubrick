@@ -1,0 +1,23 @@
+---
+export interface Props {
+	storybook?: string;
+	github?: string;
+	codesandbox?: string;
+}
+
+/**
+ * Imports.
+ */
+import Storybook from './Storybook.astro';
+
+/**
+ * Constants, and Variables.
+ */
+const { storybook } = Astro.props;
+---
+
+<div class="not-content">
+	<ul class="list-none p-0 mt-10">
+		{storybook && <li class="flex"><Storybook path={storybook} /></li>}
+	</ul>
+</div>

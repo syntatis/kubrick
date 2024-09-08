@@ -1,0 +1,149 @@
+---
+title: RadioGroup
+description: Learn how to use the RadioGroup component in your WordPress admin application.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+The `RadioGroup` component helps manage a group of `Radio` buttons. It handles the state for the group and provides the necessary accessibility features. This component is useful when you need to show multiple options, but the user should only pick one.
+
+## Usage
+
+To use the `RadioGroup` component in your WordPress admin application, you will need to import both the `RadioGroup` and `Radio` components from the package:
+
+```jsx
+import { RadioGroup, Radio } from '@syntatis/kubrick';
+```
+
+In your application, you can place multiple `Radio` components inside the `RadioGroup`. The `RadioGroup` should have the `label` prop to describe the group, and each `Radio` should have a unique `value` to identify the selected option.
+
+```jsx
+<RadioGroup label="Choose your favorite color">
+	<Radio value="red">Red</Radio>
+	<Radio value="blue">Blue</Radio>
+	<Radio value="other">Other</Radio>
+</RadioGroup>
+```
+
+### Disabled
+
+You can disable the options by passing the `isDisabled` prop on the `RadioGroup` component.
+
+```jsx {3} collapse={5-6}
+<RadioGroup
+	label="Choose your favorite color"
+	isDisabled>
+	<Radio value="red">Red</Radio>
+	<Radio value="blue">Blue</Radio>
+	<Radio value="other">Other</Radio>
+</RadioGroup>
+```
+
+Making it disabled will disable all the options within the group. User won't be able to interact or navigate the options, and selected value won't be passed over on submission.
+
+### Read-only
+
+You can make the options as a read-only using the `isReadOnly` prop.
+
+```jsx {3} collapse={5-6}
+<RadioGroup
+	label="Choose your favorite color"
+	isReadOnly>
+	<Radio value="red">Red</Radio>
+	<Radio value="blue">Blue</Radio>
+	<Radio value="other">Other</Radio>
+</RadioGroup>
+```
+
+When the group is set as read-only, the user can still interact or navigate the options, but they won't be able to change it. The selected value will still be passed over on submission.
+
+### Description
+
+If you want to give extra information about the group of options, you can use the `description` prop to add a description.
+
+```jsx {3} collapse={5-6}
+<RadioGroup
+	label="Choose your favorite color"
+	description="This will change the color of the button.">
+	<Radio value="red">Red</Radio>
+	<Radio value="blue">Blue</Radio>
+	<Radio value="other">Other</Radio>
+</RadioGroup>
+```
+
+By default, the description will appear as a small text below the list of options. You can change where it appears using the `descriptionArea` prop. This prop accepts two values: `after-input` (the default) and `before-input`. Setting it to `before-input` will show the description before the list of options, right after the label.
+
+```jsx {4} collapse={6-7}
+<RadioGroup
+	label="Choose your favorite color"
+	description="This will change the color of the button."
+	descriptionArea="before-input">
+	<Radio value="red">Red</Radio>
+	<Radio value="blue">Blue</Radio>
+	<Radio value="other">Other</Radio>
+</RadioGroup>
+```
+
+### Orientation
+
+By default the radio buttons will be stacked vertically. You can change the layout to be horizontal by setting the `orientation` prop to `horizontal`.
+
+```jsx {3}
+<RadioGroup
+	label="Choose your favorite color"
+	orientation="horizontal">
+	<Radio value="red">Red</Radio>
+	<Radio value="blue">Blue</Radio>
+	<Radio value="other">Other</Radio>
+</RadioGroup>
+```
+
+<Aside type="tip">
+Changing the layout to horizontal is useful when you have a small number of options. If you have a long list of options, it's better to keep the default vertical layout.
+</Aside>
+
+## Events
+
+The `RadioGroup` component emits an event when users select or change the option. To handle this event, you can pass a function as a callback on the following props:
+
+| Prop | Description |
+| --- | --- |
+| `onChange` | Triggered when the value changes. |
+
+Let's assume you have an app, and you'd like to show an input field when the user selects the **"Other"** option. You can use the `onChange` prop to handle this event, for example:
+
+```jsx {11} collapse={12-13}
+import { useState } from 'react';
+import { RadioGroup, Radio } from '@syntatis/kubrick';
+
+function App() {
+	const [showInput, setShowInput] = useState(false);
+
+	return (
+		<>
+			<RadioGroup
+				label="Choose your favorite color"
+				onChange={(value) => setShowInput(value === 'other')}>
+				<Radio value="red">Red</Radio>
+				<Radio value="blue">Blue</Radio>
+				<Radio value="green">Green</Radio>
+				<Radio value="other">Other</Radio>
+			</RadioGroup>
+			{showInput && <input type="text" />}
+		</>
+	);
+}
+```
+
+## Styles
+
+The `RadioGroup` component comes with some static selectors, prefixed with `.kubrick-RadioGroup-`. You can use these classes to select and customize the component and its elements.
+
+<div className="table-classes">
+| Selector | Description |
+| --- | --- |
+| `root` | The root element of `RadioGroup` component, a `div` |
+| `label` | The element that wraps the label content |
+| `items` | The element that wraps the list of options |
+| `description` | The element that wraps the description content |
+</div>

@@ -1,0 +1,96 @@
+---
+title: IconLinkButton
+description: Learn how to use the IconLinkButton component in your WordPress admin application.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+The `IconLinkButton` component is a special link that appears like the `IconButton` component. It's a mix of the `LinkButton` and `IconButton` components. It shares similar styles, sizes, and props as well as the link attributes like `href`, `target`, and `rel`. One thing that sets it apart, since it will display an icon is that it always keeps the 1:1 ratio.
+
+## Usage
+
+To use the `IconLinkButton` component, import it from the package package. You will also need an icon library for the icon. We recommend the official WordPress icon component [`@wordpress/icons`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-icons/) to add the icon.
+
+```jsx
+import { Icon, download } from '@wordpress/icons';
+import { IconLinkButton } from '@syntatis/kubrick';
+
+<IconLinkButton
+		href="/file.zip"
+		label="Download"
+	>
+	<Icon icon={download} />
+</IconLinkButton>
+```
+
+<Aside type="caution">
+Since the link would only show an icon, you will need to provide the `label` prop to the `IconLinkButton` component to make it accessible for the screen reader. The label will be added as the `aria-label` attribute for the button that will be read by screen readers.
+</Aside>
+
+### Variants
+
+The `IconLinkButton` component comes with different variations. The default variant is `primary`, but you can `secondary` to match the button function. To change the variation, use the `variant` prop.
+
+```jsx {4}
+<IconLinkButton
+		href="/file.zip"
+		label="Download"
+		variant="secondary"
+	>
+	<Icon icon={download} />
+</IconLinkButton>
+```
+
+### Sizes
+
+Aside of chaing the variations, you can also change the size. It comes with a couple of different size, the default, `small`, and `large`. To change the size, use the `size` prop.
+
+```jsx {4}
+<IconLinkButton
+		href="/file.zip"
+		label="Download"
+		size="small"
+	>
+	<Icon icon={download} />
+</IconLinkButton>
+```
+
+## Events
+
+The `IconLinkButton` component emits some events when the user interacts with it, such as when the user hovers, or focus on the button. You can handle these events by passing function to the following props:
+
+| Prop | Description |
+| --- | --- |
+| `onHoverChange` | Triggered when the link is hovered. |
+| `onFocusChange` | Triggered when the link receives or loses focus. |
+
+Let's assume you have an app with the `IconLinkButton`. You want to animate the icon when the button receives focus. To do this, you can use the `onFocusChange` event:
+
+```jsx {10}
+import { useState } from 'react';
+
+function App() {
+	const [isFocused, setIsFocused] = useState(false);
+
+	return (
+		<IconLinkButton
+			href="/file.zip"
+			label="Download"
+			onFocusChange={setIsFocused}
+			className={isFocused ? 'animate' : ''}
+		>
+		<Icon icon={download} />
+	</IconLinkButton>
+	)
+}
+```
+
+## Styles
+
+The `IconLinkButton` component comes with a static selector, prefixed with `.kubrick-IconLinkButton-`, that you can use to select and customize the component and its elements.
+
+<div className="table-classes">
+| Selector | Description |
+| --- | --- |
+| `root` | The root element of the link. |
+</div>

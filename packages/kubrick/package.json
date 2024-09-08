@@ -1,0 +1,51 @@
+{
+  "name": "@syntatis/kubrick",
+  "description": "Good ol'WordPress Admin Screen",
+  "version": "0.1.0-alpha.9",
+  "license": "GPL-2.0-or-later",
+  "type": "module",
+  "keywords": [
+    "admin-dashboard",
+    "css-modules",
+    "react",
+    "component-library",
+    "wordpress"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@react-aria/checkbox": "^3.13.0",
+    "@react-aria/utils": "^3.23.0",
+    "@react-stately/checkbox": "^3.6.1",
+    "@react-stately/collections": "^3.10.4",
+    "react-aria": "^3.31.1",
+    "react-stately": "^3.29.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+		"glob": "v10.4.5",
+    "react": "^18.0.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.1",
+    "vite-plugin-dts": "^4.0.0",
+    "vite-plugin-lib-inject-css": "^2.0.0",
+    "vite-tsconfig-paths": "^4.3.1"
+  },
+  "peerDependencies": {
+    "@wordpress/icons": "^10.4.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "scripts": {
+    "build": "vite build"
+  }
+}

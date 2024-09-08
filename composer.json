@@ -1,0 +1,36 @@
+{
+	"name": "syntatis/kubrick",
+	"license": "GPL-2.0-or-later",
+	"description": "Good ol' WordPress Admin Screen",
+	"keywords": [
+    "admin-dashboard",
+    "react-components",
+    "wordpress"
+  ],
+	"homepage": "https://github.com/syntatis/kubrick#README",
+	"authors": [
+		{
+			"name": "Thoriq Firdaus",
+			"homepage": "https://github.com/tfirdaus",
+			"role": "Developer"
+		}
+	],
+	"config": {
+		"allow-plugins": {
+			"roots/wordpress-core-installer": true,
+			"composer/installers": true
+		},
+		"preferred-install": "stable",
+		"process-timeout": 0,
+		"sort-packages": true
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require": {
+		"php": ">=7.4"
+	},
+	"require-dev": {
+		"composer/installers": "^2.2",
+		"roots/wordpress": "^6.4"
+	}
+}

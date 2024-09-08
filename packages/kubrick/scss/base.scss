@@ -1,0 +1,52 @@
+@use './variables/colors' as colors;
+
+/**
+ * Ideally these colors color schemes should be pulled inherited directly from the WordPress color scheme files.
+ * However, WordPress Sass files isn't designed for reusability due to the way it imports the entire `_admin`
+ * file.
+ */
+
+:root {
+	--kubrick-accent-color: #{colors.$accent};
+	--kubrick-invalid-color: #{colors.$input-invalid};
+	--kubrick-description-color: #{colors.$input-description};
+	--kubrick-outline-color: var(--kubrick-accent-color);
+	--kubrick-body-background-color: #{colors.$page-bg};
+}
+
+.admin-color-blue {
+	--kubrick-accent-color: #096484;
+}
+
+.admin-color-coffee {
+	--kubrick-accent-color: #c7a589;
+}
+
+.admin-color-ectoplasm {
+	--kubrick-accent-color: #a3b745;
+}
+
+.admin-color-midnight {
+	--kubrick-accent-color: #e14d43;
+}
+
+.admin-color-ocean {
+	--kubrick-accent-color: #9ebaa0;
+}
+
+.admin-color-sunrise {
+	--kubrick-accent-color: #dd823b;
+}
+
+.admin-color-modern {
+	--kubrick-accent-color: #3858e9;
+}
+
+.admin-color-light {
+	--kubrick-accent-color: #04a4cc;
+	--kubrick-body-background-color: #f5f5f5;
+
+	body {
+		background-color: var(--kubrick-body-background-color);
+	}
+}

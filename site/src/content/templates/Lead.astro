@@ -1,0 +1,15 @@
+---
+export interface Props {
+	storybook?: string;
+	github?: string;
+	codesandbox?: string;
+}
+
+/**
+ * Imports.
+ */
+import Preview from './Preview.astro';
+---
+
+<slot />
+<Preview {...Astro.props} />

@@ -1,0 +1,134 @@
+---
+title: SearchField
+description: Learn how to use the SearchField component in your WordPress admin application.
+---
+
+The `SearchField` component provides a simple way to add a search input field to your application. It works like a regular text input but is specifically designed for search functionality. The field includes an input area where users can type their search query, and it automatically adds a clear button so users can easily reset the search field with one click, making it quick and easy for users to clear out search terms and start a new search.
+
+## Usage
+
+To use the component, import `SearchField` from the package:
+
+```jsx
+import { SearchField } from '@syntatis/kubrick';
+```
+
+Then, you can use it in your application by adding the `SearchField` component with the `label` prop to provide a label for the search field:
+
+```jsx
+<SearchField label="Search" />
+```
+
+### Value
+
+The `SearchField` component works similar to similar to the `input` HTML element. Value will be empty, by default. You can set a value on to the input with the `value` or `defaultValue` prop.
+
+Generally, the `defaultValue` prop is the one you should use. It sets a default value, and allows users to change the value as they type in the input. The `value` prop should be used only when the value is controlled externally, such as on an external state.
+
+```jsx {3}
+<SearchField
+	label="Search"
+	defaultValue="WordPress"
+	/>
+```
+
+### Disabled
+
+Similarly, you can disable the search field by adding the `isDisabled` prop to the `SearchField` component. This will prevent users from typing in the search field or submitting a search query:
+
+```jsx
+<SearchField label="Search" isDisabled />
+```
+
+### Read-only
+
+You can also mark the search field as read-only by adding the `isReadOnly` prop. You don't particularly need to use this prop, but it can be useful if you want to display the search field without allowing users to change the query, for whatever reason:
+
+```jsx {3}
+<SearchField
+	label="Search"
+	isReadOnly
+	value="WordPress"
+	/>
+```
+
+### Placeholder
+
+You can add a placeholder text to the search field by adding the `placeholder` prop, similar to how you would with a regular text input This text will appear in the input field when it is empty:
+
+```jsx {3}
+<SearchField
+	label="Search"
+	placeholder="e.g. WordPress..."
+/>
+```
+
+### Description
+
+You can also additional context or instruction to the search field by providing a description with the `description` prop. The description will appear as a small text will appear below the search field:
+
+```jsx {3} collapse={2-3}
+<SearchField
+	label="Search"
+	placeholder="e.g. WordPress..."
+	description="Enter a keyword to search for posts, pages, or other content."
+/>
+```
+
+Use `descriptionArea` prop to change the description placement area. The prop accepts two valid values `before-input` and `after-input` (the default). You can set it to `before-input` to place the description above the search field, right below the text label:
+
+```jsx {5} collapse={2-3}
+<SearchField
+	label="Search"
+	placeholder="e.g. WordPress..."
+	description="Enter a keyword to search for posts, pages, or other content."
+	descriptionArea="before-input"
+/>
+```
+
+## Events
+
+The `SearchField` component emits an event when the users input or on submit. You can handle these events by passing a function as a callback to the following props:
+
+| Prop | Description |
+| --- | --- |
+| `onChange` | Handler that is called when the value changes. |
+| `onSubmit` | Handler that is called when the user submits the search query. |
+
+Let's assume we have a `SearchField` within our app. We'd like to capute the value of the search field when the user submits the search query, and send it to an external endpoint. We can use the `onSubmit` prop to handle this event, for example:
+
+```jsx {17}
+import { useEffect, useState } from 'react';
+import { SearchField } from '@syntatis/kubrick';
+
+function App() {
+	const [query, setQuery] = useState('');
+
+	useEffect(() => {
+		if (query) {
+			// Do the fetch fetch();
+		}
+	}, [query]);
+
+	return (
+		<SearchField
+			label="Search"
+			placeholder="e.g. WordPress..."
+			onSubmit={setQuery}
+		/>
+	);
+}
+```
+
+## Styles
+
+The `SearchField` component comes with some static selectors, prefixed with `.kubrick-SearchField-`. You can use these classes to select and customize the component and its elements.
+
+<div className="table-classes">
+| Selector | Description |
+| --- | --- |
+| `root` | The root element of `SearchField` component, an HTML `div` element. |
+| `label` | The wrapper element of the label, a `label` element. |
+| `input` | The wrapper element of the input element. |
+| `description` | The wrapper element of the description content. |
+</div>

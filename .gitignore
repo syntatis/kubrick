@@ -1,0 +1,52 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+.idea
+
+# compiled
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.zip
+*.tgz
+
+# dependencies
+node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# build
+storybook-static
+build-storybook*
+dist
+.parcel-*
+
+# misc
+.DS_Store
+*.pem
+tmp
+
+# debug
+*-debug.log*
+*-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# wp
+entrypoints.json
+
+# composer
+wordpress
+vendor
+
+# packages
+packages/kubrick/types.d.ts

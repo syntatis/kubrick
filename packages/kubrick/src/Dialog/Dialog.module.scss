@@ -1,0 +1,87 @@
+@use '../../scss/variables/colors';
+
+:global(.wp-core-ui) {
+	&.underlay {
+		position: fixed;
+		inset: 0;
+		z-index: 100;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: transparent;
+		background: rgb(0 0 0 / 70%);
+
+		.modal {
+			width: 100%;
+			max-width: var(--kubrick-dialog-max-width, 50vw);
+			height: 100%;
+			max-height: var(--kubrick-dialog-max-height, 300px);
+			overflow: auto;
+			background: colors.$white;
+			box-shadow: 0 5px 15px rgb(0 0 0 / 70%);
+
+			.root {
+				display: grid;
+				grid-template-rows: 50px auto max-content;
+				height: 100%;
+			}
+
+			.header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.title {
+				padding: 0 16px;
+				margin: 0;
+				font-size: 22px;
+				line-height: 2.27;
+			}
+
+			/**
+			 * ========================================================================
+			 * Tabs
+			 * ========================================================================
+			 */
+
+			:global(.kubrick-Tabs-list[aria-orientation="horizontal"]) {
+				gap: 0;
+				padding-right: 15px;
+				padding-left: 15px;
+			}
+
+			:global(.kubrick-Tabs-item) {
+				font-size: 12px;
+				font-weight: 400;
+
+				&:not([aria-selected="true"]) {
+					background: transparent;
+					border: 1px solid transparent;
+				}
+
+				&:hover:not([aria-selected="true"], [aria-disabled="true"]) {
+					color: colors.$blue-50;
+				}
+			}
+
+			:global(.kubrick-Tabs-item[aria-selected="true"]) {
+				background: colors.$white;
+				border-bottom-color: colors.$white;
+			}
+
+			:global(.kubrick-Tabs-panel) {
+				padding: 10px 12px;
+			}
+
+			:global(.kubrick-Tabs-root[data-orientation="vertical"]) {
+				display: flex;
+
+				:global(.kubrick-Tabs-panel) {
+					width: 100%;
+					padding: 12px 24px 24px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,114 @@
+---
+title: TextArea
+description: Learn how to use the TextArea component in your WordPress admin application.
+---
+
+The `TextArea` component works like a standard HTML `textarea` element. It allows users to enter and edit multiple lines of plain text. This component is useful for collecting user input that requires more than one line of text in forms.
+
+## Usage
+
+To use the component, import the `TextArea` component from the package:
+
+```jsx
+import { TextArea } from '@syntatis/kubrick';
+```
+
+Then, you can use it in your application by adding the `TextArea` component with the `label` prop to provide a label for the `textarea`, additionally with the `name` prop to uniquely identify the textarea when on form submission:
+
+```jsx
+<TextArea label="Description" name="description" />
+```
+
+### Placeholder
+
+You can add a placeholder text on the `TextArea` component by using the `placeholder` prop to provide a hint to users on what to enter in the `textarea`:
+
+```jsx {5}
+<TextArea
+	label="Description"
+	name="description"
+	placeholder="Enter your description"
+	/>
+```
+
+### Disabled
+
+You can disable the `TextArea` component by adding the `isDisabled` prop. This will prevent users from interacting with the `textarea` and the input value will not be carried over on form submission:
+
+```jsx {4}
+<TextArea
+	label="Description"
+	name="description"
+	isDisabled
+	/>
+```
+
+### Read-only
+
+You can make the `TextArea` component read-only by adding the `isReadOnly` prop. This will prevent users from editing the `textarea`, but the input value will still be carried over on form submission:
+
+```jsx {4}
+<TextArea
+	label="Description"
+	name="description"
+	isReadOnly
+	/>
+```
+
+### Rows
+
+Similar to the HTML `textarea` element, you can customize the `TextArea` component by using the `rows` prop to define the number of visible text lines in the `textarea`. By default, the `TextArea` component uses the `5` rows. You can change it to the other number, for example:
+
+```jsx {3}
+<TextArea
+	label="Description"
+	rows={10}
+	name="description"
+	/>
+```
+
+### Cols
+
+Similarly, you can also customize the `TextArea` component by using the `cols` prop to define the number of visible characters in a line in the `textarea`. By default, the `TextArea` component uses the `50` columns. You can change it to the other number, for example:
+
+```jsx {3}
+<TextArea
+	label="Description"
+	cols={30}
+	name="description"
+	/>
+```
+
+### Description
+
+You can add a description to the `TextArea` component by providing a valid JSX element as the `description` prop. This section can be particularly useful for providing additional information or instructions to users:
+
+```jsx {3}
+<TextArea
+	label="Description"
+	name="description"
+	description="Please provide a detailed description of the issue."
+	/>
+```
+
+## Events
+
+The `TextArea` component emits some events when users interact with the `textarea`. You can listen to these events by providing a function as callback on to the following props:
+
+| Prop | Description |
+| --- | --- |
+| `onChange` | Emitted when the value is changed. The event handler receives the new input value as an argument. |
+
+
+## Styles
+
+The `TextArea` component has static classes, prefixed with `.kubrick-TextArea-`, that you can use these classes to select and customize the component and its elements.
+
+<div className="table-classes">
+| Selector | Description |
+| --- | --- |
+| `root` | The root element of the `TextArea` component. |
+| `label` | The label element of the `TextArea` component. |
+| `textarea` | The `textarea` element of the `TextArea` component. |
+| `description` | The wrapper element of the description content. |
+</div>

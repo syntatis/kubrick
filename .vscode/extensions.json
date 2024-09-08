@@ -1,0 +1,14 @@
+{
+	"recommendations": [
+		"astro-build.astro-vscode",
+    "csstools.postcss",
+    "davidanson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "dotiful.dotfiles-syntax-highlighting",
+    "editorconfig.editorconfig",
+    "formulahendry.auto-rename-tag",
+    "jock.svg",
+    "meganrogge.template-string-converter",
+    "stylelint.vscode-stylelint",
+  ]
+}

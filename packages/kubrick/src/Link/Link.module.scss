@@ -1,0 +1,37 @@
+@use '../../scss/variables/colors';
+
+.root {
+	.prefix,
+	.suffix {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.prefix {
+		margin-inline-end: 4px;
+	}
+
+	.suffix {
+		margin-inline-start: 4px;
+	}
+
+	.affix {
+    svg {
+      max-width: var(--kubrick-link-affix-size, 18px);
+      height: auto;
+      fill: currentcolor;
+    }
+  }
+
+	&.hasAffix {
+		vertical-align: middle;
+	}
+
+	&.variantWarning {
+		color: colors.$yellow-50;
+	}
+
+	&.variantDanger {
+		color: colors.$red-50;
+	}
+}

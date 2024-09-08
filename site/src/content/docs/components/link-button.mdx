@@ -1,0 +1,115 @@
+---
+title: LinkButton
+description: Learn how to use the LinkButton component in your WordPress admin application.
+---
+
+The `LinkButton` component is similar to the `Link` component. It creates a `a` element, but it will appear like the `Button` component; it will have similar styles, variations, and sizes as the `Button` component.
+
+## Usage
+
+To use the component, you need to import `LinkButton` from the package:
+
+```jsx
+import { LinkButton } from '@syntatis/kubrick';
+```
+
+Then, use it as you would with a native HTML `a` element by passing the `href` prop and the label:
+
+```jsx
+<LinkButton href="/page">
+	Visit Page
+</LinkButton>
+```
+
+Similar to the `Link` component, the `LinkButton` also inherits several native `a` element attributes, such as the `target` and `rel` attribute. You can pass these attributes as props directly to the component:
+
+```jsx {3-4}
+<LinkButton
+	href="/page"
+	target="_blank"
+	rel="noopener noreferrer"
+	>
+	Visit Page
+</LinkButton>
+```
+
+### Variants
+
+The `LinkButton` component appearance comes with a couple of variations. The default variation, is `primary`. You can use the `variant` prop to change the appearance, for example, to the secondary `variation`:
+
+```jsx {3}
+<LinkButton
+	href="/page"
+	variant="secondary">
+	Visit Page
+</LinkButton>
+```
+
+### Sizes
+
+Similar to the `Button` component, the `LinkButton` component also comes with a couple of sizes. You can use the `size` prop to change the button size to the  `small`, `large`, and `hero` size, for example:
+
+```jsx {3}
+<LinkButton
+	href="/page"
+	size="large">
+	Visit Page
+</LinkButton>
+```
+
+### Affix
+
+To add any valid elements before and after the label, you can pass the `prefix` and `suffix` props to the `LinkButton` component . This may be useful if you need to show an icon or context for the link.
+
+Let's assume you'd like to show an icon after the label to show that the link will open in a new tab. You can use the `suffix` prop, as follows:
+
+```jsx {5}
+<LinkButton
+	href="/page"
+	target="_blank"
+	rel="noopener noreferrer"
+	suffix={<Icon name={external} />}>
+	Visit Page
+</LinkButton>
+```
+
+## Events
+
+The `LinkButton` component emits some events when the user interacts with it, such as when the user clicks, hover, or focus on the button. You can handle these events by passing function to the following props:
+
+| Prop | Description |
+| --- | --- |
+| `onHoverChange` | Triggered when the link is hovered. |
+| `onFocusChange` | Triggered when the link receives or loses focus. |
+
+Let's assume you have an app with the `LinkButton`. You want to animate the icon when the button receives focus. To do this, you can use the `onFocusChange` prop to listen when the component receives or loses focus state.
+
+```jsx {10}
+import { useState } from 'react';
+
+function App() {
+	const [isFocused, setIsFocused] = useState(false);
+
+	return (
+		<LinkButton
+			href="/file.zip"
+			onFocusChange={setIsFocused}
+			className={isFocused ? 'animate' : ''}
+			suffix={<Icon icon={download} />}>
+			Download
+	</LinkButton>
+	)
+}
+```
+## Styles
+
+The `LinkButton` component comes with a few static selectors, prefixed with `.kubrick-LinkButton-`, that you can use to select and customize the component and its elements.
+
+<div className="table-classes">
+| Selector | Description |
+| --- | --- |
+| `root` | The root element of the link. |
+| `prefix` | The element that wraps the prefix content. |
+| `suffix` | The element that wraps the suffix content. |
+| `infix` | The element that wraps the link label when the prefix or suffix is present. |
+</div>

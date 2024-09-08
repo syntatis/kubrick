@@ -1,0 +1,41 @@
+{
+  "$schema": "./node_modules/lerna/schemas/lerna-schema.json",
+	"version": "independent",
+	"packages": [
+    "packages/*"
+  ],
+  "command": {
+    "version": {
+      "message": "Version bump",
+			"allowBranch": ["main"],
+      "changelog": false,
+      "private": false,
+      "push": true,
+      "exact": true,
+      "ignoreChanges": [
+        "**/*.md",
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+        "**/*.stories.ts",
+        "**/*.stories.tsx",
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.yml",
+        "**/test/**",
+        ".*",
+        ".**/**",
+        ".config.*",
+        "Dockerfile",
+        "tsconfig.*"
+      ]
+    },
+    "publish": {
+			"preDistTag": "next",
+      "private": false,
+			"ignoreChanges": [
+        "ignored-file",
+        "*.md"
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@use '../../scss/variables/colors';
+
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	width: max-content;
+	max-width: 100%;
+
+	.label {
+		display: flex;
+		gap: 8px;
+	}
+
+	.input[type="checkbox"] {
+		margin: 0;
+	}
+
+	.description {
+		color: colors.$input-description;
+	}
+
+	&.readOnly,
+	.input:read-only {
+		cursor: default;
+	}
+
+	&.disabled,
+	.input:disabled {
+		cursor: not-allowed;
+	}
+
+	.labelContent {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+}

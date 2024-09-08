@@ -1,0 +1,26 @@
+@use '../../scss/mixins/input';
+
+.root {
+	@include input.styles;
+
+	.items {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		margin-block: 2px;
+	}
+
+	&[aria-readonly="true"] {
+		:global(.kubrick-Radio-root),
+		:global(.kubrick-Radio-input) {
+			cursor: default;
+		}
+	}
+
+	&[aria-orientation='horizontal'] {
+		.items {
+			flex-direction: row;
+			gap: 12px;
+		}
+	}
+}

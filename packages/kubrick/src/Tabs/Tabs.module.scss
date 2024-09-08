@@ -1,0 +1,50 @@
+@use '../../scss/variables/colors';
+
+:global(.wp-core-ui) {
+	.root {
+		.tabItems {
+			display: flex;
+			gap: 0.5rem;
+			border-bottom: 1px solid colors.$gray-100;
+		}
+
+		.tabItem {
+			position: relative;
+			top: 1px;
+			padding: 5px 10px;
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 1.71;
+			color: colors.$gray-600;
+			background-color: colors.$gray-50;
+			border: 1px solid colors.$gray-100;
+
+			&:hover:not([data-disabled="true"], [data-selected="true"]) {
+				color: colors.$gray-700;
+				cursor: pointer;
+			}
+
+			&[data-selected="true"] {
+				color: colors.$black;
+				background: var(--kubrick-body-background-color);
+				border-bottom: 1px solid var(--kubrick-body-background-color);
+			}
+
+			&[data-disabled="true"] {
+				color: colors.$gray-200;
+				cursor: not-allowed;
+			}
+
+			&[data-focus-visible="true"] {
+				outline: 2px solid var(--kubrick-outline-color);
+				outline-offset: 1px;
+			}
+		}
+
+		.tabItems,
+		.tabPanel {
+			padding-top: 5px;
+		}
+	}
+
+}

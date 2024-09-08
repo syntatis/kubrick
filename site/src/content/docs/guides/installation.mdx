@@ -1,0 +1,102 @@
+---
+title: Installation
+description: Learn how to install Kubrick UI in your WordPress project.
+---
+
+import { Code, Tabs, TabItem } from '@astrojs/starlight/components';
+
+You can install in your WordPress project using npm, yarn or pnpm.
+
+<Tabs syncKey="package-manager">
+	<TabItem label="npm" icon="seti:npm">
+	```bash
+	npm i @syntatis/kubrick
+	```
+	</TabItem>
+	<TabItem label="yarn" icon="seti:yarn">
+	```bash
+	yarn add @syntatis/kubrick
+	```
+	</TabItem>
+	<TabItem label="pnpm" icon="pnpm">
+	```bash
+	pnpm add @syntatis/kubrick
+	```
+	</TabItem>
+</Tabs>
+
+Keep in mind that `react` and `react-dom` is set as peer dependencies, requires version 18 or the later. So make sure that you have them installed and set them as the depenendencies in your project.
+
+
+## Usage
+
+Once installed, you should be able to import and use all available components from the package.
+
+```jsx
+// src/index.js
+import domReady from '@wordpress/dom-ready';
+import { Button } from '@syntatis/kubrick';
+import { createRoot } from 'react-dom/client';
+
+function App() {
+	return <Button>Save Changes</Button>;
+}
+
+domReady( () => {
+	const root = document.querySelector('#root');
+	if ( root ) {
+		createRoot( root ).render(<App />);
+	}
+} );
+```
+
+## Compiling the Source Files
+
+Before you can enqueue the script file in your WordPress project, you'll need to compile the source files so that browser would be able to render the application. We recommend using the `@wordpress/scripts` package for this, as it comes with WordPress-specific configurations out of the box.
+
+`@wordpress/scripts` is an official package from the WordPress project. It contains a set of scripts to help you build, test, lint your code, and requires minimal configuration to get you started.
+
+First, you will need to install it as the project development dependency:
+
+<Tabs syncKey="package-manager">
+	<TabItem label="npm" icon="seti:npm">
+		```bash
+		npm i @wordpress/scripts --save-dev
+		```
+	</TabItem>
+	<TabItem label="yarn" icon="seti:yarn">
+		```bash
+		yarn add @wordpress/scripts --dev
+		```
+	</TabItem>
+	<TabItem label="pnpm" icon="pnpm">
+	```bash
+	pnpm add @wordpress/scripts --save-dev
+	```
+	</TabItem>
+</Tabs>
+
+Add the following scripts to your `package.json` file:
+
+```json
+{
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start"
+	}
+}
+```
+
+Now you can run the following command to compile the source files:
+
+```bash
+npm run build
+```
+
+By default, the script will read the entry file from `src/index.js` and output the compiled files to `build` directory. You can also specify the output path by passing the `--output-path` flag:
+
+```bash
+npm run build -- --output-path=dist
+```
+
+To customize it more, please refer to the [official documentation](https://developer.wordpress.org/block-editor/packages/packages-scripts/).

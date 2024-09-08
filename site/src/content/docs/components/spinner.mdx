@@ -1,0 +1,46 @@
+---
+title: Spinner
+description: Learn how to use the Spinner component in your WordPress admin application.
+---
+
+The `Spinner` component is a loading indicator that you can use to show users that a process is in progress; the application is working on something, and they should wait for the process to complete.
+
+## Usage
+
+To use the component, import the `Spinner` from the package:
+
+```jsx
+import { Spinner } from '@wordpress/components';
+```
+
+Then, use it component in your application, as follows.
+
+```jsx
+<Spinner />
+```
+
+### Label
+
+By default, the `Spinner` component will have the label **"loading"** provided for the screen readers. You can customize the label by passing the `label` prop with a new value.
+
+```jsx
+<Spinner label="Fetching posts" />
+```
+
+### Size
+
+The `Spinner` component size is customizable. By default, it will be `24px` square. You can change the size by passing a number to the `size` prop.
+
+```jsx
+<Spinner size={48} />
+```
+
+## Styles
+
+The `Spinner` component has static classes, prefixed with `.kubrick-Spinner-`. You can use these static classes to select and customize the component and its elements.
+
+<div className="table-classes">
+| Selector | Description |
+| --- | --- |
+| `root` | The root element of the `Spinner` component, an HTML `span` element. |
+</div>

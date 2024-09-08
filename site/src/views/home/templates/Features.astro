@@ -1,0 +1,30 @@
+---
+import { Box } from '@syntatis/kubrick';
+---
+
+<div id="features" class="flex gap-6">
+	<Box title="Seamless" className="w-1/3">
+		<p>
+			Components are inheriting WordPress admin styles, ensuring a
+			seamless blend with the WordPress admin interface.
+		</p>
+	</Box>
+	<Box title="Accessible" className="w-1/3">
+		<p>
+			Accessibility is built-in, thanks to its foundation on <a
+				href="https://react-spectrum.adobe.com/react-aria/index.html"
+				target="_blank"
+				rel="noopener noreferrer">react-aria</a
+			>, ensuring that all users have equal access to the components.
+		</p>
+	</Box>
+	<Box title="TypeScript" className="w-1/3">
+		<p>TypeScript based components. All components export types, ensuring type safety and code consistency.</p>
+	</Box>
+</div>
+
+<style>
+#features p:last-of-type {
+	margin-bottom: 0;
+}
+</style>

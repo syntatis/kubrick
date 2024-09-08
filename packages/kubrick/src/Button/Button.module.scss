@@ -1,0 +1,59 @@
+@use '../../scss/variables/colors';
+
+:global(.wp-core-ui) {
+	.root {
+		width: max-content;
+
+		.affix {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img,
+			svg {
+				max-width: var(--kubrick-button-affix-size, 18px);
+				height: auto;
+				fill: currentcolor;
+			}
+		}
+
+		&.hasAffix {
+			display: flex;
+			gap: 4px;
+			align-items: center;
+		}
+
+		&:global(.button-small) {
+			.affix {
+				img,
+				svg {
+					max-width: var(--kubrick-button-affix-size, 16px);
+				}
+			}
+		}
+
+		&:global(.button-large) {
+			.affix {
+				img,
+				svg {
+					max-width: var(--kubrick-button-affix-size, 20px);
+				}
+			}
+		}
+
+		&:global(.button-hero) {
+			.affix {
+				img,
+				svg {
+					max-width: var(--kubrick-button-affix-size, 24px);
+				}
+			}
+		}
+
+		:global(.kubrick-Spinner-root) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}

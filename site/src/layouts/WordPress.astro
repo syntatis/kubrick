@@ -1,0 +1,41 @@
+---
+/**
+ * Imports.
+ */
+import "wordpress/wp-admin/css/common.css";
+import "wordpress/wp-admin/css/edit.css";
+import "wordpress/wp-admin/css/forms.css";
+import "wordpress/wp-includes/css/buttons.css";
+import "wordpress/wp-includes/css/dashicons.css";
+
+// Import base styles.
+import "modern-normalize/modern-normalize.css";
+import "@syntatis/kubrick/scss/base.scss";
+import "../styles/styles.scss";
+
+// Import components.
+import Header from "./templates/Header.astro";
+import Footer from "./templates/Footer.astro";
+
+/**
+ * Types and interfaces.
+ */
+interface Props {
+	class?: string;
+	title: string;
+}
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{Astro.props.title}</title>
+	</head>
+	<body id="wp" class:list={["grid h-full grid-rows-layout-1 text-gray-900", Astro.props.class ?? '']}>
+		<Header class="wp-core-ui h-max" />
+		<slot />
+		<Footer />
+	</body>
+</html>

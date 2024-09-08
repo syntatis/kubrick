@@ -1,0 +1,139 @@
+---
+title: Button
+description: Learn how to use the Button component in your WordPress admin application.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+The `Button` component represents the HTML `button` element to trigger an action or event with mouse, touch, or keyboard. It comes in different styles and sizes that you can choose from. You can also add icons or other type of content before or after the button label.
+
+## Usage
+
+Import the `Button` component from the package:
+
+```jsx
+import { Button } from '@syntatis/kubrick';
+```
+
+To use it in your application, you can add it the same as you would with a native HTML `button` element:
+
+```jsx
+<Button>Save Changes</Button>
+```
+
+Similar to the native HTML `button` element, the `Button` component will be rendered as the `button` type by default. You can change the type with the `type` prop, for example, to render it as a `submit` button:
+
+```jsx
+<Button type="submit">Save Changes</Button>
+```
+
+You can also make the button disabled by passing the `isDisabled` prop. This is useful when the button should not be clickable, for example, when the form is not valid or when the user does not have the right permission to perform the action.
+
+```jsx
+<Button isDisabled>Save Changes</Button>
+```
+
+### Variants
+
+The `Button` component comes with different variants that you can choose from. The default variant is `primary`, but you can change it to `link`, `link-danger`, and `secondary` to match the button appearance with its function.
+
+```jsx
+<Button variant="secondary">Create new</Button>
+```
+
+### Sizes
+
+Aside of the variants, the `Button` component also comes with different sizes that you can choose from. You can change it to `small`, `large`, and `hero` to match the appareance with its significance or with the surrounding sizes.
+
+```jsx
+<Button size="small">View</Button>
+```
+
+### Affix
+
+The `Button` components comes with `prefix` and `suffix` props to to allow you to add content before or after the button label. You can add any type of content, but typically you would use these props to add icons.
+
+Kubrick UI does not come with its own icon library. You can use any icon library you prefer, though we recommend using the [`@wordpress/icons`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-icons/) or [Dashicons](https://developer.wordpress.org/resource/dashicons/) to make your WordPress admin application remains consistent with the WordPress admin interface.
+
+```jsx
+import { Icon } from '@wordpress/icons';
+
+<Button suffix={<Icon name="save" />}>
+	Save Settings
+</Button>
+```
+
+#### Using Dashicons
+
+The Dashicons icons are integrated into the WordPress admin interface. You can use them in your WordPress admin application by adding the Dashicons class to the `span` element, for example:
+
+```jsx
+<Button suffix={<span class="dashicons dashicons-admin-settings" />}>
+	Save Settings
+</Button>
+```
+
+<Aside type="caution">
+The Dashicons project is no longer actively maintained. The icon collection is pretty limited and there won't be new icons added into the library. We always recommend using the `@wordpress/icons` package whenever it is possible.
+</Aside>
+
+### Loading
+
+You can add `loading` prop to show the button on the loading state. This is useful when the button triggers an action that requires some time to process.
+
+```jsx
+<Button loading>Please wait...</Button>
+```
+
+When the button is on the loading state, it will show a spinner and the button will also be disabled to prevent multiple clicks.
+
+## Events
+
+The `Button` component will emit an event when user interacts with it, such as when the button is clicked, hover, or on focus. You can handle these events by passing function to the following props:
+
+| Prop | Description |
+| --- | --- |
+| `onPress` | Triggered when the button is clicked. |
+| `onHoverChange` | Triggered when the button is hovered. |
+| `onFocusChange` | Triggered when the button receives or loses focus. |
+
+Let's assume we have an app. When the user click the button to save their updates, we want to show the loading state and disable the button to prevent multiple clicks. We can handle this by using the `onPress` event:
+
+```jsx {18} collapse={8-12}
+import { useState } from 'react';
+
+function SaveButton() {
+	const [isLoading, setIsLoading] = useState(false);
+
+	function handleSave() {
+		setIsLoading(true);
+
+		// Simulate the saving process...
+		setTimeout(() => {
+			setIsLoading(false);
+		}, 3000);
+	}
+
+	return (
+		<Button
+			loading={isLoading}
+			onPress={handleSave}
+			>
+			Save Changes
+		</Button>
+	);
+}
+```
+
+## Styles
+
+The `Button` component comes with a few static selectors, prefixed with `.kubrick-Button-`, that you can use to select and customize the component and its elements.
+
+<div className="table-classes">
+| Selector | Description |
+| --- | --- |
+| `root` | The root element of the button. |
+| `prefix` | The element that wraps the prefix content. |
+| `suffix` | The element that wraps the suffix content. |
+| `infix` | The element that wraps the button label when the prefix or suffix is present. |
+</div>

@@ -1,0 +1,23 @@
+@use '../../scss/mixins/input';
+
+.root {
+	@include input.styles;
+
+	.label {
+		cursor: default;
+	}
+
+	.items {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		margin-block: 2px;
+	}
+
+	&.horizontal {
+		.items {
+			flex-direction: row;
+			gap: 12px;
+		}
+	}
+}
