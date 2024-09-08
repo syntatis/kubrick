@@ -7,7 +7,7 @@
   "command": {
     "version": {
       "message": "Version bump",
-			"allowBranch": ["main"],
+			"allowBranch": ["main", "dev"],
       "changelog": false,
       "private": false,
       "push": true,
