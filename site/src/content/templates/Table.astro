@@ -1,0 +1,59 @@
+---
+/**
+ * Types.
+ */
+export interface Props {
+	variant?: "classes" | "events";
+	component: string;
+	items: Array<string>[];
+	prefix: string;
+}
+
+/**
+ * Constants, and Variables.
+ */
+const { component, items, prefix, variant = "classes" } = Astro.props;
+const headers = {
+	classes: ["Selector", "Description"],
+	events: ["Event", "Description"],
+};
+---
+
+<p>
+	The <code>{component}</code> component has static classes, prefixed with <code
+		>.{prefix}</code
+	>. You can use these static classes to select and customize the component and
+	its elements.
+</p>
+
+<table class={`table-${variant}`}>
+	<thead>
+		<tr>
+			{headers[variant]?.map((header) => <th>{header}</th>)}
+		</tr>
+	</thead>
+	<tbody>
+		{
+			items.map((item) => (
+				<tr>
+					<td>
+						<code>{item[0]}</code>
+					</td>
+					<td>{item[1]}</td>
+				</tr>
+			))
+		}
+	</tbody>
+</table>
+<style>
+	.table-classes th:first-child,
+	.table-events th:first-child {
+		width: 25%;
+	}
+
+	.table-classes td code,
+	.table-events td code {
+		color: rgb(34, 113, 136);
+		background-color: rgba(34, 113, 136, 0.05);
+	}
+</style>

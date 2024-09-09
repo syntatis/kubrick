@@ -13,7 +13,6 @@ export default defineConfig({
 			customCss: ['./src/styles/tailwind.css', './src/styles/starlight.scss'],
 			expressiveCode: {
 				plugins: [pluginCollapsibleSections()],
-
 				styleOverrides: {
 					borderRadius: 'var(--border-radius-sm)',
 					frames: {

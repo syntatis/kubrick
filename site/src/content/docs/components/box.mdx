@@ -3,11 +3,15 @@ title: Box
 description: Learn how to use the Box component in your WordPress admin application.
 ---
 
-import Lead from '../../templates/Lead.astro';
-import ClassesTable from '../../templates/ClassesTable.astro';
+import Lead from "../../templates/Lead.astro";
+import Table from "../../templates/Table.astro";
 
 <Lead storybook="/?path=/docs/components-box--docs">
-The `Box` component is a container commonly used in WordPress for metaboxes or widgets on the Dashboard. It comes with a title and content section and can also be collapsible, allowing you to hide or show the content. You can add various types of content to the box, such as text, forms, charts, or any valid React components and HTML elements.
+	The `Box` component is a container commonly used in WordPress for metaboxes or
+	widgets on the Dashboard. It comes with a title and content section and can
+	also be collapsible, allowing you to hide or show the content. You can add
+	various types of content to the box, such as text, forms, charts, or any valid
+	React components and HTML elements.
 </Lead>
 
 ## Usage
@@ -15,7 +19,7 @@ The `Box` component is a container commonly used in WordPress for metaboxes or w
 First, you need to import the `Box` from the package:
 
 ```jsx
-import { Box } from '@syntatis/kubrick';
+import { Box } from "@syntatis/kubrick";
 ```
 
 Then, to use it in your application, you'll need to provide a `title` for the box and the content as its `children`. The content can be a string, any valid HTML elements, or React components.
@@ -23,9 +27,8 @@ Then, to use it in your application, you'll need to provide a `title` for the bo
 ```jsx
 <Box title="Site Health Status">
 	<p>
-		Your site has a critical issue that should be addressed
-		as soon as possible to improve its performance and
-		security.
+		Your site has a critical issue that should be addressed as soon as possible
+		to improve its performance and security.
 	</p>
 </Box>
 ```
@@ -35,45 +38,41 @@ Then, to use it in your application, you'll need to provide a `title` for the bo
 As mentioned, you can make the `Box` component collapsible. You can do this by adding the `collapsible` prop. This will add a toggle button to the header section that you can click to hide or show the content.
 
 ```jsx {3}
-<Box
-	title="Site Health Status"
-	collapsible
-	>
+<Box title="Site Health Status" collapsible>
 	<p>
-		Your site has a critical issue that should be addressed
-		as soon as possible to improve its performance and
-		security.
+		Your site has a critical issue that should be addressed as soon as possible
+		to improve its performance and security.
 	</p>
 </Box>
 ```
 
 ### Footer
 
-You can also add a footer to the box by using the `footer` prop. Though you can add any valid element or content on the footer section, it is particularly useful for adding buttons or other related type of actions.
+You can also add a footer section to the box by adding the `footer` prop. Though you can add any valid element or content on the footer section, the `footer` section is particularly useful for adding buttons or other related type of actions.
 
 ```jsx {3}
 <Box
 	title="Site Health Status"
 	footer={<Button variant="secondary">Refresh</Button>}
-	>
+>
 	<p>
-		Your site has a critical issue that should be addressed
-		as soon as possible to improve its performance and
-		security.
+		Your site has a critical issue that should be addressed as soon as possible
+		to improve its performance and security.
 	</p>
 </Box>
 ```
 
 ## Styles
 
-<ClassesTable
-	component='Box'
-	prefix='kubrick-Box-'
+<Table
+	variant="classes"
+	component="Box"
+	prefix="kubrick-Box-"
 	items={[
-		{ selector: 'root', description: 'The root element of the box.' },
-		{ selector: 'header', description: 'The header containing the title and toggle.' },
-		{ selector: 'title', description: 'The title of the box.' },
-		{ selector: 'content', description: 'The main content area of the box.' },
-		{ selector: 'footer', description: 'The footer section of the box.' },
+		[ 'root', 'The root element of the box.' ],
+		[ 'header', 'The header section containing the title and toggle button.' ],
+		[ 'title', 'The element that wraps the title of the box.' ],
+		[ 'content', 'The content section of the box.' ],
+		[ 'footer', 'The footer section of the box.' ],
 	]}
 />

@@ -40,7 +40,10 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
 		const state = useToggleState(props);
 		const { clsx, componentProps, rootProps } = useProps('Switch', props);
 		const { inputProps, isDisabled, labelProps } = useSwitch(
-			componentProps,
+			{
+				...componentProps,
+				children: label,
+			},
 			state,
 			ref
 		);

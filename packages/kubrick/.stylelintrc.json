@@ -1,0 +1,6 @@
+{
+	"extends": "../../.stylelintrc.json",
+	"rules": {
+    "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$|^([a-z][a-z0-9]*)(-[a-z0-9]+)*$|^kubrick-[a-zA-Z0-9-]+"
+	}
+}

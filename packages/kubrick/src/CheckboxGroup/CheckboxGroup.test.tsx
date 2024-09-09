@@ -49,10 +49,7 @@ it('should have custom class', () => {
 
 	const root = screen.getByRole('group', { name: 'Hide on screen' });
 
-	expect(root).toHaveClass(
-		'kubrick-CheckboxGroup-root',
-		'post-type-setting'
-	);
+	expect(root).toHaveClass('kubrick-CheckboxGroup-root', 'post-type-setting');
 });
 
 it('should have inline style', () => {

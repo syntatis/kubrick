@@ -65,4 +65,15 @@ export default defineConfig({
 		react(),
 		dts({ include: ['src/**/!(*.spec|*.stories|*.test|*.d).{ts,tsx}'] }),
 	],
+	test: {
+		coverage: {
+			exclude: ['**/*.stories.{ts,tsx}'],
+			provider: 'istanbul',
+			reporter: ['html'],
+		},
+		environment: 'jsdom',
+		globals: true,
+		include: ['**/*.test.{ts,tsx}'],
+		setupFiles: './tests/setup.ts',
+	},
 });

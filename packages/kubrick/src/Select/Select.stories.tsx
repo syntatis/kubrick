@@ -49,7 +49,7 @@ export const Default: Story = {
 				<SelectItem value="">— Select —</SelectItem>
 				<SelectGroup label="Installed">
 					<SelectItem value="en_US">English (United State)</SelectItem>
-					<SelectItem value="id_ID">Bahasa Indonesia</SelectItem>
+					<SelectItem>Bahasa Indonesia</SelectItem>
 				</SelectGroup>
 				<SelectGroup label="Available">
 					<SelectItem value="af">Afrikaans</SelectItem>

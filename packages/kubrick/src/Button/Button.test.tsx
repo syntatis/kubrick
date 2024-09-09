@@ -53,11 +53,7 @@ it('should have static class', () => {
 
 	const button = screen.getByRole('button', { name: 'Save changes' });
 
-	expect(button).toHaveClass(
-		'kubrick-Button-root',
-		'button',
-		'button-primary'
-	);
+	expect(button).toHaveClass('kubrick-Button-root', 'button', 'button-primary');
 });
 
 it('should have custom class name', () => {

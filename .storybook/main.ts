@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { StorybookConfig } from '@storybook/react-vite';
 import { dirname, join } from 'path';
 import tsConfigPaths from 'vite-tsconfig-paths';

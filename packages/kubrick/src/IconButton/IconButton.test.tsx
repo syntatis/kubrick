@@ -97,7 +97,7 @@ it('should have type "reset"', () => {
 });
 
 it('should have "aria-*" label', () => {
-	render(<IconButton aria-label="Download changes" />);
+	render(<IconButton label="Download changes" />);
 
 	const button = screen.getByRole('button', { name: 'Download changes' });
 

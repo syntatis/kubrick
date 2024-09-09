@@ -1,6 +1,5 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
 import { Decorator, Preview } from '@storybook/react';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useEffect } from 'react';
 import './preview.scss';
 

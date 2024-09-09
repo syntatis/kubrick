@@ -158,9 +158,9 @@ it('should call "onSelectionChange" callback when selecting an option', async ()
 
 	await user.selectOptions(select, 'Afrikaans');
 
-	expect(select).toHaveValue('Afrikaans');
+	expect(select).toHaveValue('af');
 	expect(fn).toHaveBeenCalledOnce();
-	expect(fn).toHaveBeenCalledWith('Afrikaans');
+	expect(fn).toHaveBeenCalledWith('af');
 });
 
 it('should be marked as invalid based on value evaluation', async () => {

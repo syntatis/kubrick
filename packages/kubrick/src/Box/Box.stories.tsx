@@ -56,8 +56,8 @@ export const WithAdvancedTitle: Story = {
 			<>
 				<h2>Site Health</h2> &mdash;{' '}
 				<Select name="site">
-					<SelectItem>Blog</SelectItem>
-					<SelectItem>Shop</SelectItem>
+					<SelectItem value="blog">Blog</SelectItem>
+					<SelectItem value="shop">Shop</SelectItem>
 				</Select>
 			</>
 		),

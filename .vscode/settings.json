@@ -17,12 +17,16 @@
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
   },
-	"eslint.format.enable": true,
-	"stylelint.enable": true,
-  "editor.formatOnSave": false,
-  "stylelint.validate": ["scss"],
-	"testing.automaticallyOpenPeekView": "never",
 	"[astro]": {
 		"editor.defaultFormatter": "astro-build.astro-vscode"
 	},
+	"[mdx]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"eslint.format.enable": true,
+  "editor.formatOnSave": false,
+	"stylelint.enable": true,
+  "stylelint.validate": ["scss"],
+	"testing.automaticallyOpenPeekView": "never",
 }

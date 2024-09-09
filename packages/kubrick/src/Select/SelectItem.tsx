@@ -3,7 +3,7 @@ import { useObjectRef } from 'react-aria';
 
 export interface SelectItemProps {
 	children: string;
-	value: string;
+	value?: string;
 }
 
 export const SelectItem = forwardRef<HTMLOptionElement, SelectItemProps>(

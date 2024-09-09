@@ -46,10 +46,7 @@ it('should have footer', () => {
 it('should have static class', () => {
 	render(<Box data-testid="box" />);
 
-	expect(screen.getByTestId('box')).toHaveClass(
-		'kubrick-Box-root',
-		'postbox'
-	);
+	expect(screen.getByTestId('box')).toHaveClass('kubrick-Box-root', 'postbox');
 });
 
 it('should have custom class name', () => {

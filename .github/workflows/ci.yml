@@ -24,7 +24,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  NODE_VERSION: 18
+  NODE_VERSION: 20
 
 jobs:
   lint-scripts:
@@ -57,11 +57,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci --no-audit --ignore-scripts
+          npm ci --workspaces --no-audit --ignore-scripts
           composer install
+          npm run build
 
       - name: Run lint
-        run: npm run lint:scripts
+        run: npm run lint:scripts --workspaces --if-present
 
   lint-styles:
     runs-on: ubuntu-latest
@@ -93,11 +94,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci --no-audit --ignore-scripts
+          npm ci --workspaces --workspaces --no-audit --ignore-scripts
           composer install
 
+      - name: Run build
+        run: npm run build
+
       - name: Run lint
-        run: npm run lint:styles
+        run: npm run lint:styles --workspaces --if-present
 
   lint-types:
     runs-on: ubuntu-latest
@@ -129,11 +133,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci --no-audit --ignore-scripts
+          npm ci --workspaces --no-audit --ignore-scripts
           composer install
 
+      - name: Run build
+        run: npm run build
+
       - name: Run lint
-        run: npm run lint:types
+        run: npm run lint:types --workspaces --if-present
 
   test:
     runs-on: ubuntu-latest
@@ -165,8 +172,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-         npm ci --no-audit --ignore-scripts
+         npm ci --workspaces --no-audit --ignore-scripts
          composer install
+
+      - name: Run build
+        run: npm run build
 
       - name: Run test
         run: npm run test

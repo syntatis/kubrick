@@ -47,6 +47,7 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
 				useCheckboxGroupItem(
 					{
 						...componentProps,
+						children: props.label,
 						// Value is optional for standalone checkboxes, but required for CheckboxGroup items.
 						// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 						// @ts-expect-error
@@ -56,7 +57,15 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
 					inputRef
 				)
 				// eslint-disable-next-line react-hooks/rules-of-hooks
-			:	useCheckbox(componentProps, useToggleState(componentProps), inputRef);
+			:	useCheckbox(
+					{
+						...componentProps,
+						children: props.label,
+					},
+					// eslint-disable-next-line react-hooks/rules-of-hooks
+					useToggleState(componentProps),
+					inputRef
+				);
 		const label = (
 			<span
 				{...labelProps}

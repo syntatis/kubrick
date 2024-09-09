@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, Dialog, DialogTrigger, Tab, Tabs } from 'packages/kubrick/src';
+import { Button } from '../Button';
+import { Tabs } from '../Tabs';
+import { Tab } from '../Tabs/Tab';
+import { Dialog } from './Dialog';
+import { DialogTrigger } from './DialogTrigger';
 
 const meta: Meta<typeof Dialog> = {
 	args: {

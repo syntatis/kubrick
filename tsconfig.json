@@ -18,9 +18,6 @@
 		"jsx": "react-jsx",
 		"incremental": true,
 		"baseUrl": ".",
-		"types": [
-			"vite/client"
-		],
 	},
 	"exclude": [
 		"node_modules",
