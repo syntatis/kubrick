@@ -1,7 +1,7 @@
 {
   "name": "@syntatis/kubrick",
   "description": "Good ol'WordPress Admin Screen",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "license": "GPL-2.0-or-later",
   "type": "module",
   "keywords": [
@@ -70,7 +70,7 @@
     "lint:scripts": "eslint .",
     "lint:styles": "stylelint '**/*.{css,scss,sass}'",
     "lint:types": "tsc --noEmit",
-		"test": "vitest run",
+    "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest"
   }
