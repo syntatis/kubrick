@@ -1,4 +1,4 @@
-# 🧱 kubrick
+# 🧊 kubrick
 
 [![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=flat&logo=storybook&logoColor=white)](https://main--65b4a01170cfc35b99f6ce97.chromatic.com/)
 
