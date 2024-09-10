@@ -1,7 +1,4 @@
 ---
-/**
- * Types.
- */
 export interface Props {
 	variant?: "classes" | "events";
 	component: string;
@@ -19,12 +16,27 @@ const headers = {
 };
 ---
 
-<p>
-	The <code>{component}</code> component has static classes, prefixed with <code
-		>.{prefix}</code
-	>. You can use these static classes to select and customize the component and
-	its elements.
-</p>
+{
+	variant === "classes" && (
+		<p>
+			The <code>{component}</code> component has static classes, prefixed with{" "}
+			<code>.{prefix}</code>. You can use these static classes to select and
+			customize the component and its elements. Please refer to the{" "}
+			<a href="/guides/styles">Styles Guides</a> to learn more about using
+			static classes.
+		</p>
+	)
+}
+
+{
+	variant === "events" && (
+		<p>
+			The <code>{component}</code> component will emit some events on user
+			interactions. You can handle these events by passing a function as a
+			callback to the following props:
+		</p>
+	)
+}
 
 <table class={`table-${variant}`}>
 	<thead>

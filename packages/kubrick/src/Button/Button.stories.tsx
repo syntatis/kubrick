@@ -104,6 +104,14 @@ export const Disabled: Story = {
 	},
 };
 
+export const Loading: Story = {
+	args: {
+		children: 'Loading...',
+		isDisabled: true,
+		prefix: <Spinner />,
+	},
+};
+
 export const WithPrefix: Story = {
 	args: {
 		children: 'Upload',
@@ -115,14 +123,6 @@ export const WithSuffix: Story = {
 	args: {
 		children: 'Download',
 		suffix: <Icon icon={download} />,
-	},
-};
-
-export const WithSpinner: Story = {
-	args: {
-		children: 'Loading...',
-		isDisabled: true,
-		prefix: <Spinner />,
 	},
 };
 

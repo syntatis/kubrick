@@ -4,26 +4,33 @@ description: Learn how to use the Checkbox component in your WordPress admin app
 ---
 
 import { Aside } from '@astrojs/starlight/components';
+import Lead from "../../templates/Lead.astro";
+import Table from "../../templates/Table.astro";
 
-The `Checkbox` component represents the HTML `checkbox` input element. You can use it to allow users to select one or more options. You can use it as a standalone or as part of a group with the `CheckboxGroup` component.
+<Lead storybook="/?path=/docs/components-checkbox--docs">
+The `Checkbox` component represents the HTML `checkbox` input element. You can use it to allow users to select an option. You can either use it as a standalone or as part of a group with [the `CheckboxGroup` component](/components/checkbox-group).
+</Lead>
 
 ## Usage
 
-To use the component, import the `Checkbox` from the package:
+To use the component, first import the `Checkbox` from the package:
 
 ```jsx
 import { Checkbox } from '@syntatis/kubrick';
 ```
 
-Then, add the component  in your WordPress admin application with the `label` and the `name` prop to define the input name when submitting the form:
+You can then add it to your app by passing the `label` prop to provide a label for the `checkbox` input, additionally with the `name` prop to uniquely identify it on form submission:
 
 ```jsx
-<Checkbox label="I agree to the terms and conditions" name="agree" />
+<Checkbox
+	label="I agree to the terms and conditions"
+	name="agree"
+	/>
 ```
 
 ### Disabled
 
-Similar to the native HTML `checkbox` input element, you can also make the `Checkbox` component disabled. This is useful when the checkbox should not be clickable, for example, when the user does not have the right permission to perform the action. You can do this by passing the `isDisabled` prop:
+Similar to the standard HTML `checkbox` input element, you can also make the `Checkbox` component disabled by passing the `isDisabled` prop.
 
 ```jsx {4}
 <Checkbox
@@ -34,7 +41,7 @@ Similar to the native HTML `checkbox` input element, you can also make the `Chec
 ```
 
 <Aside>
-A **disabled** checkbox is one that users can't interact with. It looks "grayed out" and its value will be not be sent when the form is submitted.
+A **disabled** checkbox is non-interactive. It will disappear from the tab order, and users won't be able to interact with it using the keyboard. It looks **"grayed out"** and its value will be not be sent when the form is submitted.
 </Aside>
 
 ### Read-only
@@ -49,7 +56,9 @@ You can also set the input as read-only by passing the `isReadOnly` prop, which 
 ```
 
 <Aside>
-A **readonly** checkbox, on the other hand, is not a standard HTML feature. In this case, it is a special `Checkbox`, component feature. It will remain interactive; It will still appear in the tab order, and users will will be able to interact with it using the keyboard. However, the user won't be able to change the check state.
+A **readonly** checkbox will prevent users to change the check state. The component however will remain interactive. It will still appear in the tab order that users will be able to interact with it using the keyboard, and its value will be sent when the form is submitted.
+
+This is useful when you want to show the user the current state of the checkbox but don't want them to change it, such as when they don't have the right permission.
 </Aside>
 
 ### Description
@@ -65,14 +74,18 @@ Aside of the label, you can add a description to add more context to the user. Y
 
 ## Events
 
-The `Checkbox` component will emit an event when the check state changes as well as when the user interacts with the input. You can listen to this event by passing function to the following props:
+<Table
+	variant="events"
+	component="Checkbox"
+	items={[
+		[ 'onChange', 'Triggered when the check state changes. It will receive the new check state as a boolean.' ],
+		[ 'onFocusChange', 'Triggered when the input receives or loses focus. It will receive a boolean indicating if the input is focused.' ],
+	]}
+	/>
 
-| Prop | Description |
-| --- | --- |
-| `onChange` | Triggered when the check state changes. |
-| `onFocusChange` | Triggered when the input receives or loses focus. |
+Let's assume you have a `Checkbox` component and a button within your app. You want to disable the button until the user check the checkbox.
 
-Let's assume we have an app with a checkbox and a button. Initially, the button is disabled. When the user checks the checkbox, the button will be enabled. You can do this by listening to the `onChange` event:
+You can achieve that by using the `onChange` prop to handle the check state change event and update the button state accordingly. The `onChange` prop will directly pass the new check state to the function as a boolean, so you can directly use it to update the state as shown in the example above, for example:
 
 ```jsx {10}
 import { useState } from 'react';
@@ -92,16 +105,15 @@ function App() {
 }
 ```
 
-The `onChange` prop will directly pass the new check state to the function as a boolean, so you can directly use it to update the state as shown in the example above.
-
 ## Styles
 
-The `Checkbox` component comes with a few static selectors, prefixed with `.kubrick-Checkbox-`, that you can use to select and customize the component and its elements.
-
-<div className="table-classes">
-| Selector | Description |
-| --- | --- |
-| `root` | The root element of the checkbox. |
-| `label-content` | The element wrapping the label content. |
-| `description` | The element wrapping the description. |
-</div>
+<Table
+	variant="classes"
+	component="Checkbox"
+	prefix="kubrick-Checkbox-"
+	items={[
+		[ 'root', 'The root element of the checkbox.' ],
+		[ 'label-content', 'The wrapper element of the label content.' ],
+		[ 'description', 'The wrapper element of the description.' ],
+	]}
+	/>

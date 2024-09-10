@@ -10,6 +10,7 @@ export * from './IconLinkButton';
 export * from './Link';
 export * from './LinkButton';
 export * from './Notice';
+export * from './Providers';
 export * from './RadioGroup';
 export * from './SearchField';
 export * from './Select';
