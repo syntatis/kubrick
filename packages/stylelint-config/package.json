@@ -1,7 +1,7 @@
 {
   "name": "@syntatis/stylelint-config",
   "description": "Curated CSS and SCSS linter configs",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "license": "MIT",
   "keywords": [
     "config",
