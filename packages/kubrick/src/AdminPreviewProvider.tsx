@@ -1,16 +1,16 @@
 import '../scss/preview.scss';
 import { useClasses } from './useClasses';
 
-interface PreviewProviderProps {
+interface AdminPreviewProviderProps {
 	children: React.ReactNode;
 	className?: string;
 }
 
-export const PreviewProvider = ({
+export const AdminPreviewProvider = ({
 	children,
 	className,
-}: PreviewProviderProps) => {
-	const { clsx } = useClasses('PreviewProvider');
+}: AdminPreviewProviderProps) => {
+	const { clsx } = useClasses('AdminPreviewProvider');
 
 	return (
 		<div className={clsx({ classNames: ['__wp-core-body__', className] })}>
