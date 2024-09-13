@@ -6,6 +6,11 @@ export default {
 	plugins: [starlight()],
 	theme: {
 		extend: {
+			borderRadius: {
+				'sm': 'var(--border-radius-sm)',
+				'md': 'var(--border-radius-md)',
+				'lg': 'var(--border-radius-lg)',
+			},
 			// See: packages/kubrick/scss/variables/_colors.scss
 			colors: {
 				black: '#000000',

@@ -57,10 +57,10 @@ export interface DialogProps
  * import { Dialog } from '@syntatis/kubrick';
  * ```
  *
- * The `Dialog` component is used to display a modal dialog box. In WordPress,
- * it is commonly found when uploading media plugin, or theme. But it can be
- * used to display any type of content that should appears on top of the
- * main page content.
+ * The `Dialog` component is used to show a dialog window above the page. In
+ * WordPress, you may see a modal window used on the Media Manager to upload
+ * images. But, technically, you can use it to display any content that
+ * should appear above of the main page content.
  */
 export const Dialog = forwardRef<HTMLDivElement, DialogProps>(
 	(props, forwardedRef) => {

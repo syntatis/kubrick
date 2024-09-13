@@ -62,7 +62,7 @@
 		 * ========================================================================
 		 */
 
-		:global(.kubrick-Tabs-list[aria-orientation="horizontal"]) {
+		:global(.kubrick-Tabs-items[aria-orientation="horizontal"]) {
 			gap: 0;
 			padding-right: 5px;
 			padding-left: 5px;
@@ -78,7 +78,7 @@
 			}
 
 			&:hover:not([aria-selected="true"], [aria-disabled="true"]) {
-				color: colors.$blue-50;
+				color: colors.$blue-500;
 			}
 		}
 
@@ -106,7 +106,7 @@
 			}
 		}
 
-		:global(.kubrick-Tabs-list[aria-orientation="vertical"]) {
+		:global(.kubrick-Tabs-items[aria-orientation="vertical"]) {
 			flex-direction: column;
 			gap: 0;
 			width: 30%;

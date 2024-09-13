@@ -1,0 +1,30 @@
+---
+export interface Props {
+	stackblitz?: string;
+	github?: string;
+	storybook?: string;
+}
+
+import StackBlitz from './StackBlitz.astro';
+/**
+ * Imports.
+ */
+import Storybook from './Storybook.astro';
+
+/**
+ * Constants, and Variables.
+ */
+const { storybook, stackblitz } = Astro.props;
+---
+
+<div class="not-content" id="preview">
+	<ul class="list-none p-0 flex gap-2">
+		{storybook && <li class="flex"><Storybook path={`/?path=${storybook}`} /></li>}
+		{stackblitz && <li class="flex"><StackBlitz path={stackblitz} /></li>}
+	</ul>
+</div>
+<style>
+.not-content#preview {
+	margin-top: 0;
+}
+</style>

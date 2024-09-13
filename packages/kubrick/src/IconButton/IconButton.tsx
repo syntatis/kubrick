@@ -45,11 +45,11 @@ interface IconButtonProps
  * import { IconButton } from '@syntatis/kubrick';
  * ```
  *
- * The `IconButton` component is used to render a button with an icon as the content.
- * It works like to the `Button` component. It has the variations and sizes, except
- * the size will always has a 1:1 ratio. It is typically used space is or may be
- * limited such as in a toolbar, a dialog, or a navigation. For the icon, we
- * recommend the official WordPress icon component [@wordpress/icons](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-icons/).
+ * The `IconButton` component is used to render a button with an icon as the
+ * content. It works like to the `Button` component. It has the variations
+ * and the sizes, except the size will always has a 1:1 ratio. It is
+ * typically used when space is or may be limited such as in
+ * a toolbar, a dialog, or a navigation.
  */
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
 	(props, forwardedRef) => {

@@ -67,7 +67,7 @@ export const WithAdvancedTitle: Story = {
 
 export const WithFooter: Story = {
 	args: {
-		footer: <Button>Save changes</Button>,
+		footer: <Button variant="secondary">Check again</Button>,
 	},
 };
 

@@ -3,12 +3,24 @@ title: Button
 description: Learn how to use the Button component in your WordPress admin application.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Image } from "astro:assets";
+import { Aside } from "@astrojs/starlight/components";
+import cover from "../../assets/button-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead storybook="/?path=/docs/components-button--docs">
-The `Button` component is similar to the HTML `button` element, but with some additional features and flexibilities. You can use this component to allow users to trigger actions or events through clicks, touch, or keyboard input.
+<Lead
+	storybook="/docs/components-button--docs"
+	stackblitz="/edit/syntatis-kubrick-button?file=src/App.jsx">
+	The `Button` component is similar to the HTML `button` element, but with some
+	additional features and flexibilities. You can use this component to allow
+	users to trigger actions or events through clicks, touch, or keyboard input.
+
+	<Image
+		src={cover}
+		alt="Kubrick UI Button component in two variants, primary and secondary, in the default blue colors"
+		slot="cover"
+	/>
 </Lead>
 
 ## Usage
@@ -16,7 +28,7 @@ The `Button` component is similar to the HTML `button` element, but with some ad
 To use the component, import `Button` from the package:
 
 ```jsx
-import { Button } from '@syntatis/kubrick';
+import { Button } from "@syntatis/kubrick";
 ```
 
 You can then add it to your app just like a regular HTML `button` element:
@@ -35,14 +47,16 @@ By default, the `Button` component behaves like a standard HTML `button`. You ca
 
 ### Disabled
 
-To disable the button, use the `isDisabled` prop. This is helpful when the button shouldn't be clickable, such as when a form is incomplete or the user lacks permission to perform an action.
+To disable the button, use the `isDisabled` prop. This is useful when the button shouldn't be clickable, such as when a form is incomplete or the user lacks permission to perform an action.
 
 ```jsx
 <Button isDisabled>Save Changes</Button>
 ```
 
 <Aside>
-A **disabled** button is non-interactive. It will disappear from the tab order that users won't be able to interact with it using keyboard, and it won't emit any events.
+	A **disabled** button is non-interactive. It will disappear from the tab order
+	that users won't be able to interact with it using keyboard, and it won't emit
+	any events.
 </Aside>
 
 ### Variants
@@ -80,7 +94,10 @@ import { Icon, edit } from '@wordpress/icons';
 ```
 
 <Aside type="tip">
-The `@wordpress/icons` package is recommended for use in WordPress admin applications. You can also use Dashicons, which is already included in the WordPress admin interface. See the [Icons guide](/docs/guides/icons) for more information.
+	The `@wordpress/icons` package is recommended for use in WordPress admin
+	applications. You can also use Dashicons, which is already included in the
+	WordPress admin interface. See the [Icons guide](/docs/guides/icons) for more
+	information.
 </Aside>
 
 ### Loading
@@ -93,15 +110,40 @@ You can add `loading` prop to show the button on the loading state. This is usef
 
 When the button is on the loading state, it will show a spinner and the button will also be disabled to prevent multiple clicks.
 
+## Styles
+
+<Table
+	variant="classes"
+	component="Button"
+	items={[
+		["root", "The root element of the button."],
+		["prefix", "The wrapper element of the prefix content."],
+		["suffix", "The wrapper element of the suffix content."],
+		[
+			"infix",
+			"The wrapper element of the button label, when the prefix or suffix is present.",
+		],
+	]}
+/>
+
 ## Events
 
 <Table
 	variant="events"
 	component="Button"
 	items={[
-		[ 'onPress', 'Triggered when the button is clicked. It receives the click event as an argument.' ],
-		[ 'onHoverChange', 'Triggered when the button is hovered. It will receive a boolean indicating if the button is hovered.' ],
-		[ 'onFocusChange', 'Triggered when the button receives or loses focus. It will receive a boolean indicating if the button is focused.' ],
+		[
+			"onPress",
+			"Triggered when the button is clicked. It will receive the click event as an argument.",
+		],
+		[
+			"onHoverChange",
+			"Triggered when the button is hovered. It will receive a boolean indicating if the button is hovered.",
+		],
+		[
+			"onFocusChange",
+			"Triggered when the button receives or loses focus. It will receive a boolean indicating if the button is focused.",
+		],
 	]}
 />
 
@@ -110,7 +152,7 @@ Let's assume you have an app with the `Button` component to save or updates sett
 You can achieve that by using the `onPress` prop to handle the click event and add the `loading` prop to show the loading state.
 
 ```jsx {18} collapse={8-12}
-import { useState } from 'react';
+import { useState } from "react";
 
 function SaveButton() {
 	const [isLoading, setIsLoading] = useState(false);
@@ -127,24 +169,9 @@ function SaveButton() {
 	return (
 		<Button
 			loading={isLoading}
-			onPress={handleSave}
-			>
+			onPress={handleSave}>
 			Save Changes
 		</Button>
 	);
 }
 ```
-
-## Styles
-
-<Table
-	variant="classes"
-	component="Button"
-	prefix="kubrick-Button-"
-	items={[
-		[ 'root', 'The root element of the button.' ],
-		[ 'prefix', 'The wrapper element of the prefix content.' ],
-		[ 'suffix', 'The wrapper element of the suffix content.' ],
-		[ 'infix', 'The wrapper element of the button label, when the prefix or suffix is present.' ],
-	]}
-/>

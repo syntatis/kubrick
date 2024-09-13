@@ -1,0 +1,24 @@
+---
+export interface Props {
+	stackblitz?: string;
+	github?: string;
+	storybook?: string;
+}
+
+/**
+ * Imports.
+ */
+import Preview from "./Preview.astro";
+---
+
+<div class="flex flex-col gap-2">
+	<slot />
+	<div class="flex flex-col gap-4">
+		{Astro.slots.has("cover") && (
+			<figure class="border-gray-50 border border-solid shadow-sm rounded-md overflow-hidden">
+				<slot name="cover" />
+			</figure>
+		)}
+		<Preview {...Astro.props} />
+	</div>
+</div>

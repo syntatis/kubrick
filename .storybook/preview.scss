@@ -1,5 +1,10 @@
 @use "../packages/kubrick/scss/preview";
 
+/* stylelint-disable-next-line selector-class-pattern */
+.__wp-core-body__ {
+	min-width: 600px;
+}
+
 // TODO: Remove this once there's a more reliable way to not affect the Storybook styles.
 .docblock-argstable-body {
 	input[type="checkbox"]:checked::before {

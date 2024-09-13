@@ -1,11 +1,11 @@
 /* stylelint-disable no-invalid-position-at-import-rule */
 /* stylelint-disable selector-class-pattern */
-@use './base';
 @use '../../../wordpress/wp-includes/css/dashicons.css';
 @use '../../../wordpress/wp-includes/css/buttons.css';
 @use '../../../wordpress/wp-admin/css/common.css';
 @use '../../../wordpress/wp-admin/css/edit.css';
 @use "../../../wordpress/wp-admin/css/forms.css";
+@use './base';
 
 // Default.
 .admin-color-modern {
@@ -41,7 +41,6 @@
 }
 
 .__wp-core-body__ {
-	min-width: 600px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	line-height: 1.4em;
 	color: #3c434a;

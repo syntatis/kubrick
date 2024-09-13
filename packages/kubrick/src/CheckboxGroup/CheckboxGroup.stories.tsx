@@ -32,6 +32,7 @@ const meta: Meta<typeof CheckboxGroup> = {
 				'isDisabled',
 				'isReadOnly',
 				'onChange',
+				'onFocusChange',
 			],
 		},
 	},

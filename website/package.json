@@ -1,5 +1,5 @@
 {
-  "name": "@syntatis/site",
+  "name": "@syntatis/website",
   "type": "module",
   "private": true,
   "version": "0.0.0",
@@ -9,9 +9,9 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-		"format": "npm run format:scripts && npm run format:styles",
+    "format": "npm run format:scripts && npm run format:styles",
     "format:scripts": "eslint . --fix",
-    "format:styles": "stylelint '**/*.scss' --fix",
+    "format:styles": "stylelint '**/*.{css,scss,sass}' --fix",
     "lint:scripts": "eslint .",
     "lint:styles": "stylelint '**/*.{css,scss,sass}'",
     "lint:types": "tsc --noEmit"
@@ -32,7 +32,6 @@
     "typescript": "^5.5.4"
   },
   "devDependencies": {
-		"@babel/eslint-parser": "^7.25.1",
     "@syntatis/eslint-config": "file:../packages/eslint-config",
     "@syntatis/stylelint-config": "file:../packages/stylelint-config",
     "eslint": "^8.55.0",

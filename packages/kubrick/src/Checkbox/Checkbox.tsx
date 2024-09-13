@@ -24,9 +24,11 @@ export interface CheckboxProps
  * import { Checkbox } from '@syntatis/kubrick';
  * ```
  *
- * The `Checkbox` component represents the HTML `checkbox` input element. You can
- * use it to allow users to select one or more options. You can use it as a
- * standalone or as part of a group with the `CheckboxGroup` component.
+ * The `CheckboxGroup` component is a special component, designed to group a set
+ * of `Checkbox` components together. It is a useful component for grouping
+ * related checkboxes and allowing users to select multiple options. You
+ * can also choose whether to arrange these checkboxes horizontally or
+ * vertically.
  */
 export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
 	(props, forwardedRef) => {

@@ -10,6 +10,10 @@
 	.label {
 		display: flex;
 		gap: 8px;
+
+		input {
+			flex-shrink: 0;
+		}
 	}
 
 	.input[type="checkbox"] {
@@ -34,5 +38,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
+
+		@media screen and (width <= 782px) {
+			padding-top: 3px;
+		}
 	}
 }

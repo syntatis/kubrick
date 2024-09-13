@@ -39,6 +39,10 @@
 				padding: 0.85rem;
 			}
 
+			&:not(:where(.not-content *)) {
+				overflow: hidden;
+			}
+
 			:is(th, td):not(:where(.not-content *)) {
 				border-bottom: 1px solid var(--sl-color-gray-2);
 			}
@@ -194,7 +198,7 @@
 	// Aside
 	// See: https://starlight.astro.build/guides/components/#asides
 	.starlight-aside {
-		padding: 2rem;
+		padding: 1.5rem;
 		color: var(--sl-color-text);
 		background-color: var(--sl-color-bg);
 		border-block: 1px solid var(--sl-color-gray-3);

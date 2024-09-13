@@ -15,6 +15,10 @@ export default defineConfig({
 				plugins: [pluginCollapsibleSections()],
 				styleOverrides: {
 					borderRadius: 'var(--border-radius-sm)',
+					borderColor: 'var(--sl-color-gray-2)',
+					collapsibleSections: {
+						closedBackgroundColor: 'var(--sl-color-accent-low)',
+					},
 					frames: {
 						editorTabBarBackground: 'var(--sl-color-gray-1)',
 						frameBoxShadowCssValue: '0 1px 1px rgba(0, 0, 0, 0.04)',
@@ -22,6 +26,7 @@ export default defineConfig({
 						terminalTitlebarBackground: 'var(--sl-color-gray-2)',
 					},
 					textMarkers: {
+						lineMarkerAccentWidth: '0.25rem',
 						markBackground: 'var(--sl-color-yellow-low)',
 						markBorderColor: 'var(--sl-color-yellow)',
 					},

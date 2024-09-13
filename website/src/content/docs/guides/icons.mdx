@@ -37,9 +37,11 @@ import { Button } from '@syntatis/kubrick';
 import { Icon, download } from '@wordpress/icons';
 
 function App () {
-	<Button suffix={<Icon icon={download} />}>
-		Download
-	</Button>
+	return (
+		<Button suffix={<Icon icon={download} />}>
+			Download
+		</Button>
+	);
 }
 ```
 

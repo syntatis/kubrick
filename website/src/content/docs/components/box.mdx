@@ -3,15 +3,25 @@ title: Box
 description: Learn how to use the Box component in your WordPress admin application.
 ---
 
+import { Image } from "astro:assets";
+import cover from "../../assets/box-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead storybook="/?path=/docs/components-box--docs">
+<Lead
+	storybook="/docs/components-box--docs"
+	stackblitz="/edit/syntatis-kubrick-box?file=src%2FApp.jsx">
 	The `Box` component is a container commonly used in WordPress for metaboxes or
 	widgets on the Dashboard. It comes with a title and content section and can
-	also be collapsible, allowing you to hide or show the content. You can add
+	be set to be collapsible, allowing you to hide or show the content. You can add
 	various types of content to the box, such as text, forms, charts, or any valid
 	React components and HTML elements.
+
+  <Image
+		src={cover}
+		alt="Kubrick UI Box component with the toggle on the header and a button on the footer section"
+		slot="cover"
+	/>
 </Lead>
 
 ## Usage
@@ -25,7 +35,7 @@ import { Box } from "@syntatis/kubrick";
 Then, to use it in your application, you'll need to provide a `title` for the box and the content as its `children`. The content can be a string, any valid HTML elements, or React components.
 
 ```jsx
-<Box title="Site Health Status">
+<Box title="Site Health">
 	<p>
 		Your site has a critical issue that should be addressed as soon as possible
 		to improve its performance and security.
@@ -38,7 +48,10 @@ Then, to use it in your application, you'll need to provide a `title` for the bo
 As mentioned, you can make the `Box` component collapsible. You can do this by adding the `collapsible` prop. This will add a toggle button to the header section that you can click to hide or show the content.
 
 ```jsx {3}
-<Box title="Site Health Status" collapsible>
+<Box
+	title="Site Health"
+	collapsible
+>
 	<p>
 		Your site has a critical issue that should be addressed as soon as possible
 		to improve its performance and security.
@@ -52,8 +65,8 @@ You can also add a footer section to the box by adding the `footer` prop. Though
 
 ```jsx {3}
 <Box
-	title="Site Health Status"
-	footer={<Button variant="secondary">Refresh</Button>}
+	title="Site Health"
+	footer={<Button variant="secondary">Check again</Button>}
 >
 	<p>
 		Your site has a critical issue that should be addressed as soon as possible
@@ -67,11 +80,10 @@ You can also add a footer section to the box by adding the `footer` prop. Though
 <Table
 	variant="classes"
 	component="Box"
-	prefix="kubrick-Box-"
 	items={[
 		["root", "The root element of the box."],
 		["header", "The header section containing the title and toggle button."],
-		["title", "The element that wraps the title of the box."],
+		["title", "The wrapper element of the title."],
 		["content", "The content section of the box."],
 		["footer", "The footer section of the box."],
 	]}

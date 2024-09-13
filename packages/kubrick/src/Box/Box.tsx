@@ -43,11 +43,11 @@ interface BoxProps extends GlobalProps {
  * import { Box } from '@syntatis/kubrick';
  * ```
  *
- * The `Box` component is a container commonly used in WordPress for metaboxes
- * or widgets on the Dashboard. It comes with a title and content section and
- * can also be collapsible, allowing you to hide or show the content. You can
- * add various types of content to the box, such as text, forms, charts, or
- * any valid React components and HTML elements.
+ * The `Box` component is a container commonly used in WordPress for metaboxes or
+ * widgets on the Dashboard. It comes with a title and content section and can
+ * also be collapsible, allowing you to hide or show the content. You can add
+ * various types of content to the box, such as text, forms, charts, or any
+ * valid React components and HTML elements.
  */
 export const Box = forwardRef<HTMLDivElement, BoxProps>(
 	(props, forwardedRef) => {

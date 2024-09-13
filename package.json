@@ -10,7 +10,7 @@
   },
   "workspaces": [
     "packages/*",
-    "site"
+    "website"
   ],
   "devDependencies": {
     "@storybook/addon-a11y": "^8.0.0",
@@ -52,12 +52,12 @@
     "lint:scripts": "eslint .",
     "lint:styles": "stylelint '**/*.scss'",
     "lint:types": "tsc --noEmit",
-    "site:dev": "npm run dev -w @syntatis/site",
-    "site:preview": "npm run preview -w @syntatis/site",
     "storybook": "storybook dev -p 6007",
     "storybook:build": "storybook build",
     "test": "npm run test -w @syntatis/kubrick",
     "test:coverage": "npm run test --coverage",
-    "test:watch": "npm run test"
+    "test:watch": "npm run test",
+    "website:dev": "npm run dev -w @syntatis/website",
+    "website:preview": "npm run preview -w @syntatis/website"
   }
 }
