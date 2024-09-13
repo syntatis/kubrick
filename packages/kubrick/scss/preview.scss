@@ -7,6 +7,13 @@
 @use "../../../wordpress/wp-admin/css/forms.css";
 @use './base';
 
+.__wp-core-body__ {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	line-height: 1.4em;
+	color: #3c434a;
+	background: var(--kubrick-body-background-color);
+}
+
 // Default.
 .admin-color-modern {
 	@import "../../../wordpress/wp-admin/css/colors/modern/colors";
@@ -38,11 +45,4 @@
 
 .admin-color-sunrise {
 	@import "../../../wordpress/wp-admin/css/colors/sunrise/colors";
-}
-
-.__wp-core-body__ {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	line-height: 1.4em;
-	color: #3c434a;
-	background: var(--kubrick-body-background-color);
 }
