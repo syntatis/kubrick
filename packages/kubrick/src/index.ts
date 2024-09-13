@@ -1,5 +1,6 @@
 import '../scss/base.scss';
 
+export * from './AdminPreviewProvider';
 export * from './Box';
 export * from './Button';
 export * from './Checkbox';
@@ -10,7 +11,6 @@ export * from './IconLinkButton';
 export * from './Link';
 export * from './LinkButton';
 export * from './Notice';
-export * from './Providers';
 export * from './RadioGroup';
 export * from './SearchField';
 export * from './Select';

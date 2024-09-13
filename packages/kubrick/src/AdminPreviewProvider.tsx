@@ -1,5 +1,5 @@
-import '../../scss/preview.scss';
-import { useClasses } from '../useClasses';
+import '../scss/preview.scss';
+import { useClasses } from './useClasses';
 
 interface PreviewProviderProps {
 	children: React.ReactNode;
