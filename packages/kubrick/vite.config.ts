@@ -38,7 +38,13 @@ export default defineConfig({
 					})
 			),
 			output: {
-				assetFileNames: '[name][extname]',
+				assetFileNames: ({ name }) => {
+					if (name === 'PreviewProvider.css') {
+						return '_PreviewProvider.css';
+					}
+
+					return `${name}.[ext]`;
+				},
 				entryFileNames: '[name].js',
 			},
 		},
