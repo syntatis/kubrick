@@ -4,7 +4,7 @@ description: Learn how to use the Select component in your WordPress admin appli
 ---
 
 import { Image } from "astro:assets";
-import cover from "../../assets/dialog-component.png";
+import cover from "../../assets/select-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
@@ -16,6 +16,12 @@ import Table from "../../templates/Table.astro";
 	organize the options into groups, making it easier to manage and display
 	related choices together, which is especially useful when you have a long list
 	of options and want to group similar ones for a cleaner look.
+
+	<Image
+		src={cover}
+		alt="Kubrick UI Select component"
+		slot="cover"
+	/>
 </Lead>
 
 ## Usage
@@ -23,7 +29,7 @@ import Table from "../../templates/Table.astro";
 To use it in your app, import both `Select` and `Option` from the package:
 
 ```jsx
-import { Select, Option } fro '@syntatis/kubrick';
+import { Select, Option } from '@syntatis/kubrick';
 ```
 
 Then, add the `Select` component with the `label` prop to provide a label for the select field, and the `name` prop to define the name of the select field when submitting the form.
