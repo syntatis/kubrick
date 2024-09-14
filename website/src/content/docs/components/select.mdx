@@ -8,7 +8,9 @@ import cover from "../../assets/dialog-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead storybook="/docs/components-select--docs">
+<Lead
+	storybook="/docs/components-select--docs"
+	stackblitz="/edit/syntatis-kubrick-select?file=src/App.jsx">
 	The `Select` component works like the standard HTML `select` element, allowing
 	you to create a dropdown menu with options for users to choose from. You can
 	organize the options into groups, making it easier to manage and display
@@ -108,7 +110,7 @@ const App = () => {
 	items={[
 		["root", "The root element of the component."],
 		["label", "The wrapper element of the label."],
-		["input", "The HTML <code>select</code> element."],
+		["input", "The HTML select element."],
 		["description", "The wrapper element of the description content."],
 	]}
 />
