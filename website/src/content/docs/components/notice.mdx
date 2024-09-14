@@ -3,19 +3,35 @@ title: Notice
 description: Learn how to use the Notice component in your WordPress admin application.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Image } from "astro:assets";
+import { Aside } from "@astrojs/starlight/components";
+import cover from "../../assets/notice-component.png";
+import Lead from "../../templates/Lead.astro";
+import Table from "../../templates/Table.astro";
 
-The `Notice` component is used to display a message to the user. It can be used to provide feedback, warnings, errors, or success message in your WordPress admin application.
+<Lead
+	storybook="/docs/components-notice--docs"
+	stackblitz="/edit/syntatis-kubrick-notice?file=src/App.jsx">
+	The `Notice` component is used to display a message to the user. It can be
+	used to provide feedback, warnings, errors, or success message in your
+	WordPress admin application.
+
+	<Image
+		src={cover}
+		alt="Kubrick UI Notice component"
+		slot="cover"
+	/>
+</Lead>
 
 ## Usage
 
-To use the component, import `Notice` from the package:
+To use it in your app, import `Notice` from the package:
 
 ```jsx
-import { Notice } from '@syntatis/kubrick';
+import { Notice } from "@syntatis/kubrick";
 ```
 
-To use it in your application, add the `Notice` component with the content, for example:
+Then, you can add it in your app with the content, for example:
 
 ```jsx
 <Notice>Settings saved.</Notice>
@@ -28,9 +44,7 @@ You can use the `level` prop to change the color of the notice bar. This is help
 The default value for the `level` prop is `info`, which means the notice is a general message. You can change it to `success`, `error`, or `warning` to reflect the appropriate message type, for example:
 
 ```jsx
-<Notice level="success">
-	Settings saved.
-</Notice>
+<Notice level="success">Settings saved.</Notice>
 ```
 
 ### Dismissable
@@ -41,24 +55,24 @@ Pass the `isDismissable` prop to the `Notice` component to make it dismissable. 
 Keep in mind that the `isDismissable` prop doesn't save the state. So, when the user reloads the page, the notice will reappear.
 
 You'll need to decide how your app should handle this—whether the notice should stay hidden or show up again after being dismissed. If you want it to stay hidden, you can save the user's choice using the [WordPress options](https://developer.wordpress.org/plugins/settings/options-api/) or [WordPress transients](https://developer.wordpress.org/apis/transients/) API. You can then use the `isDismissed` prop to control the dismissed state. When set to `true`, the notice will remain hidden.
+
 </Aside>
-
-## Events
-
-When the notice is dismissed, the component will emit an event. You can handle this event by passing a function as a callback to the following props:
-
-| Prop | Description |
-| --- | --- |
-| `onDismiss` | Triggered when the notice is dimissed. |
 
 ## Styles
 
-The `Notice` component comes with a few static selectors, prefixed with `.kubrick-Notice-`, that you can use to select and customize the component and its elements.
+<Table
+	component="Notice"
+	items={[
+		["root", "The root element of `Notice` component, `div`"],
+		["content", "The element that wraps the notice message"],
+		["dismiss-button", "The button to dismiss the notice"],
+	]}
+/>
 
-<div className="table-classes">
-| Selector | Description |
-| --- | --- |
-| `root` | The root element of `Notice` component, `div` |
-| `content` | The element that wraps the notice message |
-| `dismiss-button` | The button to dismiss the notice |
-</div>
+## Events
+
+<Table
+	variant="events"
+	component="Notice"
+	items={[["onDismiss", "Triggered when the notice is dimissed."]]}
+/>

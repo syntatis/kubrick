@@ -3,22 +3,35 @@ title: Select
 description: Learn how to use the Select component in your WordPress admin application.
 ---
 
-The `Select` component works like the standard HTML `<select>` element, allowing you to create a dropdown menu with options for users to choose from. You can organize the options into groups, making it easier to manage and display related choices together, which is especially useful when you have a long list of options and want to group similar ones for a cleaner look.
+import { Image } from "astro:assets";
+import cover from "../../assets/dialog-component.png";
+import Lead from "../../templates/Lead.astro";
+import Table from "../../templates/Table.astro";
+
+<Lead storybook="/docs/components-select--docs">
+	The `Select` component works like the standard HTML `select` element, allowing
+	you to create a dropdown menu with options for users to choose from. You can
+	organize the options into groups, making it easier to manage and display
+	related choices together, which is especially useful when you have a long list
+	of options and want to group similar ones for a cleaner look.
+</Lead>
 
 ## Usage
 
-To use the component, import both `Select` and `SelectItem` from the package:
+To use it in your app, import both `Select` and `Option` from the package:
 
 ```jsx
-import { Select, SelectItem } fro '@syntatis/kubrick';
+import { Select, Option } fro '@syntatis/kubrick';
 ```
 
-You can use it in your application by adding the `Select` component with the `label` prop to provide a label for the select field, and the `name` prop to define the name of the select field when submitting the form. Then, you will also need to provide the options by adding the `SelectItem` components. Each `SelectItem` component should have a `value` prop to define the value of the option.
+Then, add the `Select` component with the `label` prop to provide a label for the select field, and the `name` prop to define the name of the select field when submitting the form.
+
+You will also need to provide the options by adding the `Option` components. Each `Option` component should have a `value` prop to define the value of the option.
 
 ```jsx
 <Select label="Site Language" name="site_language">
-	<SelectItem value="en_US">English (United State)</SelectItem>
-	<SelectItem value="id_ID">Indonesia</SelectItem>
+	<Option value="en_US">English (United State)</Option>
+	<Option value="id_ID">Indonesia</Option>
 </Select>
 ```
 
@@ -30,8 +43,8 @@ You can disable the select field by adding the `isDisabled` prop to the `Select`
 <Select
 	label="Site Language"
 	isDisabled>
-	<SelectItem value="en_US">English (United State)</SelectItem>
-	<SelectItem value="id_ID">Indonesia</SelectItem>
+	<Option value="en_US">English (United State)</Option>
+	<Option value="id_ID">Indonesia</Option>
 </Select>
 ```
 
@@ -43,24 +56,32 @@ You can set the selected option by passing the `selectedItem` prop to the `Selec
 <Select
 	label="Site Language"
 	selected="id_ID">
-	<SelectItem value="en_US">English (United State)</SelectItem>
-	<SelectItem value="id_ID">Indonesia</SelectItem>
+	<Option value="en_US">English (United State)</Option>
+	<Option value="id_ID">Indonesia</Option>
 </Select>
 ```
 
 ## Events
 
-The `Select` component will emit some events when the users interact with it, such as when they select an option or change an option, or when the component receives or loses focus. You can listen to these events to perform actions when they occur in your application with the following props:
-
-| Prop | Description |
-| --- | --- |
-| `onSelectionChange` | Called when the user selects an option. The callback function will receive the value of the selected option as an argument. |
-| `onFocusChange` | Called when the select field receives or loses focus. The callback function will receive a boolean value indicating whether the select field is focused or not. |
+<Table
+	variant="events"
+	component="Select"
+	items={[
+		[
+			"onSelectionChange",
+			"Trigger when the user selects an option, or when the selection is changed. The callback function will receive the value of the selected option.",
+		],
+		[
+			"onFocusChange",
+			"Triggered when the select field receives or loses focus. The callback function will receive a boolean value indicating whether the select field is focused or not.",
+		],
+	]}
+/>
 
 Let's assume we have an app with a `Select` component, and we'd like to show an additional input when the user selects the **"Indonesia"** option. We can use the `onSelectionChange` prop to handle this event, for example:
 
 ```jsx {10}
-import { useState } from 'react';
+import { useState } from "react";
 
 const App = () => {
 	const [showInput, setShowInput] = useState(false);
@@ -69,9 +90,10 @@ const App = () => {
 		<>
 			<Select
 				label="Site Language"
-				onSelectionChange={(value) => setShowInput(value === 'id_ID')}>
-				<SelectItem value="en_US">English (United State)</SelectItem>
-				<SelectItem value="id_ID">Indonesia</SelectItem>
+				onSelectionChange={(value) => setShowInput(value === "id_ID")}
+			>
+				<Option value="en_US">English (United State)</Option>
+				<Option value="id_ID">Indonesia</Option>
 			</Select>
 			{showInput && <input type="text" />}
 		</>
@@ -81,13 +103,12 @@ const App = () => {
 
 ## Styles
 
-The `Select` component has static selectors, prefixed with `.kubrick-Select-`. You can use these static classes to select and customize the component and its elements.
-
-<div className="table-classes">
-| Selector | Description |
-| --- | --- |
-| `root` | The root element of the `Select` component, an `div` |
-| `label` | The HTML `label` element that wraps the label content |
-| `input` | The HTML `select` input element |
-| `description` | The element that wraps the description content |
-</div>
+<Table
+	component="Select"
+	items={[
+		["root", "The root element of the component."],
+		["label", "The wrapper element of the label."],
+		["input", "The HTML <code>select</code> element."],
+		["description", "The wrapper element of the description content."],
+	]}
+/>

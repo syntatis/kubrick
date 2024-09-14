@@ -3,28 +3,51 @@ title: IconLinkButton
 description: Learn how to use the IconLinkButton component in your WordPress admin application.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Image } from "astro:assets";
+import { Aside } from "@astrojs/starlight/components";
+import cover from "../../assets/icon-link-button-component.png";
+import Lead from "../../templates/Lead.astro";
+import Table from "../../templates/Table.astro";
 
-The `IconLinkButton` component is a special link that appears like the `IconButton` component. It's a mix of the `LinkButton` and `IconButton` components. It shares similar styles, sizes, and props as well as the link attributes like `href`, `target`, and `rel`. One thing that sets it apart, since it will display an icon is that it always keeps the 1:1 ratio.
+<Lead
+	storybook="/docs/components-iconlinkbutton--docs"
+	stackblitz="/edit/syntatis-kubrick-checkbox-group-vmhgpq?file=src/App.jsx">
+	The `IconLinkButton` component is a special link that appears like the
+	`IconButton` component. It's a mix of the `LinkButton` and `IconButton`
+	components. It shares similar styles, sizes, and props as well as the link
+	attributes like `href`, `target`, and `rel`. However, since it will display an
+	icon, it will always keep the 1:1 ratio.
+
+	<Image
+		src={cover}
+		alt="Kubrick UI IconLinkButton component"
+		slot="cover"
+	/>
+</Lead>
 
 ## Usage
 
-To use the `IconLinkButton` component, import it from the package package. You will also need an icon library for the icon. We recommend the official WordPress icon component [`@wordpress/icons`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-icons/) to add the icon.
+To use it in your app, import `IconLinkButton` from the package. You will also need an icon library for the icon. We recommend the official WordPress icon component [`@wordpress/icons`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-icons/) to add the icon.
 
 ```jsx
-import { Icon, download } from '@wordpress/icons';
-import { IconLinkButton } from '@syntatis/kubrick';
+import { Icon, download } from "@wordpress/icons";
+import { IconLinkButton } from "@syntatis/kubrick";
 
-<IconLinkButton
-		href="/file.zip"
-		label="Download"
-	>
+<IconLinkButton href="/file.zip" label="Download">
 	<Icon icon={download} />
-</IconLinkButton>
+</IconLinkButton>;
 ```
 
 <Aside type="caution">
-Since the link would only show an icon, you will need to provide the `label` prop to the `IconLinkButton` component to make it accessible for the screen reader. The label will be added as the `aria-label` attribute for the button that will be read by screen readers.
+	Since the link would only show an icon, you will need to provide the `label`
+	prop to the `IconLinkButton` component to make it accessible for the screen
+	reader. The label will be added as the `aria-label` attribute for the button
+	that will be read by screen readers.
+</Aside>
+
+<Aside type="tip">
+	Please refer to our guide on [Icons](/docs/components/icon) for more
+	information on how to use icons with the component in your app.
 </Aside>
 
 ### Variants
@@ -33,64 +56,64 @@ The `IconLinkButton` component comes with different variations. The default vari
 
 ```jsx {4}
 <IconLinkButton
-		href="/file.zip"
-		label="Download"
-		variant="secondary"
-	>
-	<Icon icon={download} />
+	href="https://wordpress.org"
+	label="WordPress"
+	variant="secondary"
+>
+	<Icon icon={wordpress} />
 </IconLinkButton>
 ```
 
 ### Sizes
 
-Aside of chaing the variations, you can also change the size. It comes with a couple of different size, the default, `small`, and `large`. To change the size, use the `size` prop.
+Aside of changing the component variants, you can also change the size to match the size of the surrounding elements or its significance. It comes with a couple of sizes, `small` (default) and `large`. To change the size, use the `size` prop.
 
 ```jsx {4}
 <IconLinkButton
-		href="/file.zip"
-		label="Download"
-		size="small"
-	>
-	<Icon icon={download} />
+	href="https://wordpress.org"
+	label="Download"
+	size="small">
+	<Icon icon={wordpress} />
 </IconLinkButton>
 ```
 
+## Styles
+
+<Table
+	component="IconLinkButton"
+	items={[["root", "The root element of the link."]]}
+/>
+
 ## Events
 
-The `IconLinkButton` component emits some events when the user interacts with it, such as when the user hovers, or focus on the button. You can handle these events by passing function to the following props:
-
-| Prop | Description |
-| --- | --- |
-| `onHoverChange` | Triggered when the link is hovered. |
-| `onFocusChange` | Triggered when the link receives or loses focus. |
+<Table
+	variant="events"
+	component="IconLinkButton"
+	items={[
+		["onHoverChange", "Triggered when the link is hovered."],
+		["onFocusChange", "Triggered when the link receives or loses focus."],
+	]}
+	/>
 
 Let's assume you have an app with the `IconLinkButton`. You want to animate the icon when the button receives focus. To do this, you can use the `onFocusChange` event:
 
-```jsx {10}
-import { useState } from 'react';
+```jsx {12}
+import { useState } from "react";
+import { IconLinkButton } from "@syntatis/kubrick";
+import { Icon, wordpress } from "@wordpress/icons";
 
 function App() {
 	const [isFocused, setIsFocused] = useState(false);
 
 	return (
 		<IconLinkButton
-			href="/file.zip"
-			label="Download"
+			href="https://wordpress.org"
+			label="WordPress"
 			onFocusChange={setIsFocused}
-			className={isFocused ? 'animate' : ''}
+			className={isFocused ? "animate" : ""}
 		>
-		<Icon icon={download} />
-	</IconLinkButton>
-	)
+			<Icon icon={wordpress} />
+		</IconLinkButton>
+	);
 }
 ```
-
-## Styles
-
-The `IconLinkButton` component comes with a static selector, prefixed with `.kubrick-IconLinkButton-`, that you can use to select and customize the component and its elements.
-
-<div className="table-classes">
-| Selector | Description |
-| --- | --- |
-| `root` | The root element of the link. |
-</div>

@@ -24,9 +24,13 @@ interface SearchFieldProps
  * import { SearchField } from '@syntatis/kubrick';
  * ```
  *
- * The `SearchField` component is used to render a text input field for performing
- * search. It includes an input component with the type set to search and a clear
- * button to reset the search field.
+ * The `SearchField` component provides a simple way to add a search input field
+ * to your application. It works like a regular text input but is specifically
+ * designed for search functionality. The field includes an input area where
+ * users can type their search query, and it automatically adds a clear
+ * button so users can easily reset the search field with one click,
+ * making it quick and easy for users to clear out search terms
+ * and start a new search.
  */
 export const SearchField = forwardRef<HTMLInputElement, SearchFieldProps>(
 	(props, forwardedRef) => {

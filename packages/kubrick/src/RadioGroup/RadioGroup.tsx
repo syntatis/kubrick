@@ -30,9 +30,10 @@ interface RadioGroupProps extends GlobalProps, AriaRadioGroupProps {
  * import { RadioGroup } from '@syntatis/kubrick';
  * ```
  *
- * The `RadioGroup` component is a wrapper for a group of `Radio` component. It manages
- * the state as well as provides the name for the group that will be used to associate
- * several `Radio` components together.
+ * The `RadioGroup` component helps manage a group of `Radio` buttons. It handles
+ * the state for the group and provides the necessary accessibility features.
+ * This component is useful when you need to show multiple options, but
+ * the user should only pick one.
  */
 export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
 	(props, forwardedRef) => {

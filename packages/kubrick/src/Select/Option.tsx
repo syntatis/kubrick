@@ -1,12 +1,12 @@
 import { forwardRef } from 'react';
 import { useObjectRef } from 'react-aria';
 
-export interface SelectItemProps {
+export interface OptionProps {
 	children: string;
 	value?: string;
 }
 
-export const SelectItem = forwardRef<HTMLOptionElement, SelectItemProps>(
+export const Option = forwardRef<HTMLOptionElement, OptionProps>(
 	(props, forwardedRef) => {
 		const ref = useObjectRef(forwardedRef);
 		const { children } = props;
@@ -19,4 +19,4 @@ export const SelectItem = forwardRef<HTMLOptionElement, SelectItemProps>(
 	}
 );
 
-SelectItem.displayName = 'SelectItem';
+Option.displayName = 'Option';

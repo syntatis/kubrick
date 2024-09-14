@@ -3,30 +3,49 @@ title: Link
 description: Learn how to use the Link component in your WordPress admin application.
 ---
 
-The `Link` component represents the HTML `a` element. It is used to create an anchor element that links to another resource or page. It comes with a couple of variants. It can also be extended with a prefix and suffix to provide additional context, such as an icon or a badge.
+import { Image } from "astro:assets";
+import { Aside } from "@astrojs/starlight/components";
+import cover from "../../assets/link-component.png";
+import Lead from "../../templates/Lead.astro";
+import Table from "../../templates/Table.astro";
+
+<Lead
+	storybook="/docs/components-link--docs"
+	stackblitz="/edit/syntatis-kubrick-link?file=src/App.jsx">
+	The `Link` component represents the HTML `a` element. It is used to create an
+	anchor element that links to another resource or page. It comes with a couple
+	of variants. It can also be extended with a prefix and suffix to provide
+	additional context, such as an icon or a badge.
+
+	<Image
+		src={cover}
+		alt="Kubrick UI Link component"
+		slot="cover"
+	/>
+</Lead>
 
 ## Usage
 
-To use the component, import `Link` from the package:
+To use it in you app, import `Link` from the package:
 
 ```jsx
-import { Link } from '@syntatis/kubrick';
+import { Link } from "@syntatis/kubrick";
 ```
 
 Then, use it as you would with a native HTML `a` element:
 
 ```jsx
-<Link href="/page">Go to page</Link>
+<Link href="https://wordpress.org">Go to WordPress</Link>
 ```
 
 The `Link` component inherits several native `a` element attributes, such as the `target` and `rel` attribute. You can pass these attributes as props directly to the component:
 
 ```jsx {3-4}
 <Link
-	href="/page"
+	href="https://wordpress.org"
 	target="_blank"
 	rel="noopener noreferrer">
-	Go to page
+	WordPress
 </Link>
 ```
 
@@ -39,29 +58,35 @@ You can use the `prefix` and `suffix` props to add element before and after the 
 	href="/page"
 	target="_blank"
 	rel="noopener noreferrer"
-	suffix={<Icon name={external} />}>
-	Go to page
+	suffix={<Icon name={wordpress} />}
+>
+	WordPress
 </Link>
 ```
 
-## Events
-
-The `Link` component emits some events when the user interacts with it, such as when it is on hover, or when it receives focus. To handle these events, you can pass function as a callback on to these props:
-
-| Prop | Description |
-| --- | --- |
-| `onHoverChange` | Triggered when the link is hovered. |
-| `onFocusChange` | Triggered when the link receives or loses focus. |
-
 ## Classes
 
-The `Link` component comes with a static selector, prefixed with `.kubrick-Link-`, that you can use to select and customize the component and its elements.
+<Table
+	variant="classes"
+	component="Link"
+	items={[
+		["root", "The root element of the link."],
+		["prefix", "The wrapper element of the prefix content."],
+		["suffix", "The wrapper element of the suffix content."],
+		[
+			"infix",
+			"The wrapper element of the link label when the prefix or suffix is present.",
+		],
+	]}
+/>
 
-<div className="table-classes">
-| Selector | Description |
-| --- | --- |
-| `root` | The root element of the link. |
-| `prefix` | The element that wraps the prefix content. |
-| `suffix` | The element that wraps the suffix content. |
-| `infix` | The element that wraps the link label when the prefix or suffix is present. |
-</div>
+## Events
+
+<Table
+	variant="events"
+	component="Link"
+	items={[
+		["onHoverChange", "Triggered when the link is hovered."],
+		["onFocusChange", "Triggered when the link receives or loses focus."],
+	]}
+/>

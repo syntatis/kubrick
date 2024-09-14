@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../Button';
 import { Select } from '../Select';
-import { SelectItem } from '../Select/SelectItem';
+import { Option } from '../Select/Option';
 import { Tabs } from '../Tabs';
 import { Tab } from '../Tabs/Tab';
 import { Box } from './Box';
@@ -56,8 +56,8 @@ export const WithAdvancedTitle: Story = {
 			<>
 				<h2>Site Health</h2> &mdash;{' '}
 				<Select name="site">
-					<SelectItem value="blog">Blog</SelectItem>
-					<SelectItem value="shop">Shop</SelectItem>
+					<Option value="blog">Blog</Option>
+					<Option value="shop">Shop</Option>
 				</Select>
 			</>
 		),

@@ -5,10 +5,10 @@ import { Item, useSelectState } from 'react-stately';
 import { GlobalProps } from '../types';
 import { useErrorMessage } from '../useErrorMessage';
 import { useProps } from '../useProps';
+import { Option, OptionProps } from './Option';
 import classes from './Select.module.scss';
-import { SelectItem, SelectItemProps } from './SelectItem';
 
-type ChildItem = ReactElement<SelectItemProps, typeof SelectItem>;
+type ChildItem = ReactElement<OptionProps, typeof Option>;
 
 interface SelectProps
 	extends GlobalProps,
@@ -36,7 +36,7 @@ interface SelectProps
 	selectedItem?: string;
 }
 
-function determineKey(props: SelectItemProps) {
+function determineKey(props: OptionProps) {
 	const { children, value } = props;
 
 	return typeof value === 'string' ? value : children;
@@ -66,9 +66,12 @@ function mapChildren(children: Array<ChildItem> | ChildItem) {
  * import { Select } from '@syntatis/kubrick';
  * ```
  *
- * The `Select` component represents the HTML select element. It allows you to create
- * a dropdown of options that users can select from. You can also group the options
- * if needed.
+ * The `Select` component works like the standard HTML `select` element, allowing
+ * you to create a dropdown menu with options for users to choose from. You can
+ * organize the options into groups, making it easier to manage and display
+ * related choices together, which is especially useful when you have
+ * a long list of options and want to group similar ones for
+ * a cleaner look.
  */
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
 	(props, forwardedRef) => {

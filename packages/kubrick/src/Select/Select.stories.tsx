@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Option } from './Option';
 import { Select } from './Select';
 import { SelectGroup } from './SelectGroup';
-import { SelectItem } from './SelectItem';
 
 const meta: Meta<typeof Select> = {
 	argTypes: {
@@ -46,14 +46,14 @@ export const Default: Story = {
 	render(props) {
 		return (
 			<Select {...props}>
-				<SelectItem value="">— Select —</SelectItem>
+				<Option value="">— Select —</Option>
 				<SelectGroup label="Installed">
-					<SelectItem value="en_US">English (United State)</SelectItem>
-					<SelectItem>Bahasa Indonesia</SelectItem>
+					<Option value="en_US">English (United State)</Option>
+					<Option>Bahasa Indonesia</Option>
 				</SelectGroup>
 				<SelectGroup label="Available">
-					<SelectItem value="af">Afrikaans</SelectItem>
-					<SelectItem value="an">Aragonés</SelectItem>
+					<Option value="af">Afrikaans</Option>
+					<Option value="an">Aragonés</Option>
 				</SelectGroup>
 			</Select>
 		);
@@ -79,7 +79,7 @@ export const Required: Story = {
 
 /**
  * Use the `selectedItem` prop to set the selected option. The `selectedItem` prop may be the value as passed
- * in the `value` prop of the `SelectItem` component, or the label if the `value` prop is not set.
+ * in the `value` prop of the `Option` component, or the label if the `value` prop is not set.
  */
 export const Selected: Story = {
 	args: {
