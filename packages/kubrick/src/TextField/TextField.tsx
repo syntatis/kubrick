@@ -53,9 +53,9 @@ interface TextFieldProps extends GlobalProps, AriaTextFieldProps, Styleable {
  * import { TextField } from '@syntatis/kubrick';
  * ```
  *
- * The `TextField` component is like the HTML `input` element. It lets users enter
- * and edit text. Similarly, you can use the `type` prop to set the type of input
- * field.
+ * The `TextField` component works like a standard HTML `input` element. It
+ * allows users to enter and edit plain text. This component is useful for
+ * collecting user input in forms.
  */
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 	(props, forwardedRef) => {

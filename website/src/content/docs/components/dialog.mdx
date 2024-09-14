@@ -8,9 +8,7 @@ import cover from "../../assets/dialog-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead
-	storybook="/docs/components-dialog--docs"
-	stackblitz="/edit/syntatis-kubrick-dialog?file=src%2FApp.jsx">
+<Lead storybook="/docs/components-dialog--docs" stackblitz="/edit/syntatis-kubrick-dialog?file=src%2FApp.jsx">
 	The `Dialog` component is used to show a dialog window above the page. In
 	WordPress, you may see a modal window used on the Media Manager to upload,
 	manage, and edit uploaded images. But, technically, you can use it to display
@@ -20,6 +18,7 @@ import Table from "../../templates/Table.astro";
 		src={cover}
 		alt="Kubrick UI Dialog component"
 		slot="cover"
+		quality="max"
 	/>
 </Lead>
 
@@ -59,7 +58,7 @@ You can add a footer to the dialog by passing a `footer` prop to the `Dialog` co
 
 The `footer` prop accepts a function as a callback and will receive a function as the argument, which you can use to close the dialog window. Here's an example of how to add a footer to the dialog:
 
-```jsx {6-17} collapse={25-28}
+```jsx {6-19} collapse={25-28}
 <DialogTrigger
 	render={() => {
 		return (

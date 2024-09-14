@@ -3,17 +3,28 @@ title: Tabs
 description: Learn how to use the Tabs component in your WordPress admin application.
 ---
 
-The `Tabs` component helps organize content into sections, with each section represented by a tab. When a user clicks or selects a tab, the related content is shown, while the other tabs content is hidden allowing them to focus on the selected section. The `Tabs` component is especially useful when you need to present multiple categories of information or features.
+import { Image } from "astro:assets";
+import cover from "../../assets/switch-component.png";
+import Lead from "../../templates/Lead.astro";
+import Table from "../../templates/Table.astro";
+
+<Lead storybook="/docs/components-tabs--docs" stackblitz="/edit/syntatis-kubrick-tabs?file=src/App.jsx">
+	The `Tabs` component helps organize content into sections, with each section
+	represented by a tab. When a user clicks or selects a tab, the related content
+	is shown, while the other tabs content is hidden allowing them to focus on the
+	selected section. The `Tabs` component is especially useful when you need to
+	present multiple categories of information or features.
+</Lead>
 
 ## Usage
 
-To use the component, import the `Tabs` and `Tab` components from the package:
+To use it in your app, import both the `Tabs` and `Tab` components from the package:
 
 ```jsx
-import { Tabs, Tab } from '@syntatis/kubrick';
+import { Tabs, Tab } from "@syntatis/kubrick";
 ```
 
-Then, you can use them in your application by adding the `Tabs` component with the `Tab` components as its `children`. Each `Tab` component should have the `title` prop to provide the tab title and the `key` prop to uniquely identify the tab:
+Then, you can add `Tabs` component with the `Tab` components as its `children` in your app as follows. Each `Tab` component should have the `title` prop to provide the tab title and the `key` prop to uniquely identify the tab:
 
 ```jsx
 <Tabs>
@@ -70,7 +81,7 @@ You can add the `isDisabled` prop to the `Tabs` component to disable the tabs th
 Alternatively, you can add `disabledKeys` prop to the `Tabs` component to disable only specific tabs by providing an array of keys.
 
 ```jsx {1}
-<Tabs disabledKeys={['advanced', 'help']}>
+<Tabs disabledKeys={["advanced", "help"]}>
 	<Tab key="general" title="General">
 		<p>General settings</p>
 	</Tab>
@@ -83,23 +94,23 @@ Alternatively, you can add `disabledKeys` prop to the `Tabs` component to disabl
 </Tabs>
 ```
 
-## Events
-
-The `Tabs` component will emit an event when user switch between tabs. You can listen to these events to perform actions when they occur in your application with the following props:
-
-| Prop | Description |
-| --- | --- |
-| `onSelectionChange` | Triggered when the user switches between tabs. The callback function will receive the key of the selected tab as an argument. |
-
 ## Styles
 
-The `Tabs` component has static classes, prefixed with `.kubrick-Tabs-`. You can use these static classes to select and customize the component and its elements.
+<Table
+	component="Tabs"
+	items={[
+		["root", "The component root element."],
+		["items", "The wrapper element containing the tab items."],
+		["item", "The wrapper element that represents a tab item."],
+		["panel", "The wrapper elements that represents the content panel of the tab."],
+	]}
+	/>
 
-<div className="table-classes">
-| Selector | Description |
-| --- | --- |
-| `root` | The root element of the `Tabs` component. |
-| `items` | The container element that wraps the tab items. |
-| `item` | The element that represents a tab item. |
-| `panel` | The element that represents the content panel of the tab. |
-</div>
+## Events
+
+<Table
+	component="Tabs"
+	items={[
+		[ "onSelectionChange", "Triggered when the user switches between tabs. The callback function will receive the key of the selected tab as an argument." ]
+	]}
+	/>

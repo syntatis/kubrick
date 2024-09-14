@@ -9,9 +9,7 @@ import cover from "../../assets/link-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead
-	storybook="/docs/components-link--docs"
-	stackblitz="/edit/syntatis-kubrick-link?file=src/App.jsx">
+<Lead storybook="/docs/components-link--docs" stackblitz="/edit/syntatis-kubrick-link?file=src/App.jsx">
 	The `Link` component represents the HTML `a` element. It is used to create an
 	anchor element that links to another resource or page. It comes with a couple
 	of variants. It can also be extended with a prefix and suffix to provide
@@ -21,6 +19,7 @@ import Table from "../../templates/Table.astro";
 		src={cover}
 		alt="Kubrick UI Link component"
 		slot="cover"
+		quality="max"
 	/>
 </Lead>
 
@@ -32,7 +31,7 @@ To use it in you app, import `Link` from the package:
 import { Link } from "@syntatis/kubrick";
 ```
 
-Then, use it as you would with a native HTML `a` element:
+Then, add it in your app as you would with a native HTML `a` element:
 
 ```jsx
 <Link href="https://wordpress.org">Go to WordPress</Link>
@@ -58,7 +57,7 @@ You can use the `prefix` and `suffix` props to add element before and after the 
 	href="/page"
 	target="_blank"
 	rel="noopener noreferrer"
-	suffix={<Icon name={wordpress} />}
+	prefix={<Icon name={wordpress} />}
 >
 	WordPress
 </Link>
@@ -86,7 +85,7 @@ You can use the `prefix` and `suffix` props to add element before and after the 
 	variant="events"
 	component="Link"
 	items={[
-		["onHoverChange", "Triggered when the link is hovered."],
-		["onFocusChange", "Triggered when the link receives or loses focus."],
+		["onHoverChange", "Triggered when the link is hovered. The function callback will receive a boolean value indicating if the link is hovered."],
+		["onFocusChange", "Triggered when the link receives or loses focus. The function callback will receive a boolean value indicating if the link is focused."],
 	]}
 />

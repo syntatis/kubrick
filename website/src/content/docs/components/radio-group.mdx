@@ -9,10 +9,7 @@ import cover from "../../assets/radio-group-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead
-	storybook="/docs/components-radiogroup--docs"
-	stackblitz="/edit/syntatis-kubrick-radio-group?file=src/App.jsx"
->
+<Lead storybook="/docs/components-radiogroup--docs" stackblitz="/edit/syntatis-kubrick-radio-group?file=src/App.jsx">
 	The `RadioGroup` component helps manage a group of `Radio` buttons. It handles
 	the state for the group and provides the necessary accessibility features.
 	This component is useful when you need to show multiple options, but the user
@@ -22,6 +19,7 @@ import Table from "../../templates/Table.astro";
 		src={cover}
 		alt="Kubrick UI RadioGroup component"
 		slot="cover"
+		quality="max"
 	/>
 </Lead>
 
@@ -82,8 +80,7 @@ If you want to give extra information about the group of options, you can use th
 ```jsx {3} collapse={5-6}
 <RadioGroup
 	label="Choose your favorite color"
-	description="This will change the color of the button."
->
+	description="This will change the color of the button.">
 	<Radio value="red">Red</Radio>
 	<Radio value="blue">Blue</Radio>
 	<Radio value="other">Other</Radio>
@@ -128,10 +125,10 @@ By default the radio buttons will be stacked vertically. You can change the layo
 <Table
 	component="RadioGroup"
 	items={[
-		["root", "The root element of `RadioGroup` component, a `div`"],
-		["label", "The element that wraps the label content"],
-		["items", "The element that wraps the list of options"],
-		["description", "The element that wraps the description content"],
+		["root", "The component root element."],
+		["label", "The element that wraps the label content."],
+		["items", "The element that wraps the list of options."],
+		["description", "The element that wraps the description content."],
 	]}
 />
 
@@ -140,7 +137,7 @@ By default the radio buttons will be stacked vertically. You can change the layo
 <Table
 	variant="events"
 	component="RadioGroup"
-	items={[["onChange", "Triggered when the value changes"]]}
+	items={[["onChange", "Triggered when the value changes. The function callback will receive the new value."]]}
 />
 
 Let's assume you have an app, and you'd like to show an input field when the user selects the **"Other"** option. You can use the `onChange` prop to handle this event, for example:

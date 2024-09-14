@@ -9,9 +9,7 @@ import cover from "../../assets/notice-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead
-	storybook="/docs/components-notice--docs"
-	stackblitz="/edit/syntatis-kubrick-notice?file=src/App.jsx">
+<Lead storybook="/docs/components-notice--docs" stackblitz="/edit/syntatis-kubrick-notice?file=src/App.jsx">
 	The `Notice` component is used to display a message to the user. It can be
 	used to provide feedback, warnings, errors, or success message in your
 	WordPress admin application.
@@ -20,6 +18,7 @@ import Table from "../../templates/Table.astro";
 		src={cover}
 		alt="Kubrick UI Notice component"
 		slot="cover"
+		quality="max"
 	/>
 </Lead>
 
@@ -63,9 +62,9 @@ You'll need to decide how your app should handle this—whether the notice shoul
 <Table
 	component="Notice"
 	items={[
-		["root", "The root element of `Notice` component, `div`"],
-		["content", "The element that wraps the notice message"],
-		["dismiss-button", "The button to dismiss the notice"],
+		["root", "The component root element."],
+		["content", "The wrapper element the notice message."],
+		["dismiss-button", "The button to dismiss the notice."],
 	]}
 />
 
@@ -74,5 +73,5 @@ You'll need to decide how your app should handle this—whether the notice shoul
 <Table
 	variant="events"
 	component="Notice"
-	items={[["onDismiss", "Triggered when the notice is dimissed."]]}
+	items={[["onDismiss", "Triggered when the notice is dimissed. The function callback will not receive any argument."]]}
 />

@@ -9,9 +9,7 @@ import cover from "../../assets/checkbox-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead
-	storybook="/docs/components-checkbox--docs"
-	stackblitz="/edit/syntatis-kubrick-checkbox?file=src/App.jsx">
+<Lead storybook="/docs/components-checkbox--docs" stackblitz="/edit/syntatis-kubrick-checkbox?file=src/App.jsx">
 	The `Checkbox` component represents the HTML `checkbox` input element. You can
 	use it to allow users to select an option. You can either use it as a
 	standalone or as part of a group with [the `CheckboxGroup`
@@ -21,6 +19,7 @@ import Table from "../../templates/Table.astro";
 		src={cover}
 		alt="Kubrick UI Checkbox component"
 		slot="cover"
+		quality="max"
 	/>
 </Lead>
 
@@ -120,11 +119,11 @@ The `Checkbox` component is not selected by default. This means that when the co
 	items={[
 		[
 			"onChange",
-			"Triggered when the check state changes. It will receive the new check state as a boolean.",
+			"Triggered when the check state changes. The callback function will receive the new check state as a boolean.",
 		],
 		[
 			"onFocusChange",
-			"Triggered when the input receives or loses focus. It will receive a boolean indicating if the input is focused.",
+			"Triggered when the input receives or loses focus. The callback function will receive a boolean indicating if the input is focused.",
 		],
 	]}
 />

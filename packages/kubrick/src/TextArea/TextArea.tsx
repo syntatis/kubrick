@@ -40,9 +40,10 @@ interface TextAreaProps extends GlobalProps, Omit<AriaTextFieldProps, 'type'> {
  * import { TextArea } from '@syntatis/kubrick';
  * ```
  *
- * The `TextArea` component is like the HTML `textarea` element. It lets users enter
- * and edit text across multiple lines. You can use the `cols` and `rows` props
- * to set the width and height of the textarea.
+ * The `TextArea` component works like a standard HTML `textarea` element. It
+ * allows users to enter and edit multiple lines of plain text. This
+ * component is useful for collecting user input that requires
+ * more than one line of text in forms.
  */
 export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 	(props, forwardedRef) => {

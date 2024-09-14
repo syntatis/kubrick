@@ -9,9 +9,7 @@ import cover from "../../assets/checkbox-group-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead
-	storybook="/story/components-checkboxgroup--default"
-	stackblitz="/edit/syntatis-kubrick-checkbox-group?file=src/App.jsx">
+<Lead storybook="/story/components-checkboxgroup--default" stackblitz="/edit/syntatis-kubrick-checkbox-group?file=src/App.jsx">
 	The `CheckboxGroup` component is a special component, designed to group a set
 	of `Checkbox` components together. It is a useful component for grouping
 	related checkboxes and allowing users to select multiple options. You can also
@@ -21,6 +19,7 @@ import Table from "../../templates/Table.astro";
 		src={cover}
 		alt="Kubrick UI CheckboxGroup component, containing 3 checkboxes"
 		slot="cover"
+		quality="max"
 	/>
 </Lead>
 
@@ -138,8 +137,8 @@ You can also add a description to the `CheckboxGroup` component to provide addit
 	variant="events"
 	component="CheckboxGroup"
 	items={[
-		["onChange", "Triggered when the check state changes. The function will receive an array of values representing the checked checkboxes."],
-		["onFocusChange", "Triggered when the input receives or loses focus. It will receive a boolean indicating if the input is focused."],
+		["onChange", "Triggered when the check state changes. The callback function will receive an array of values representing the checked checkboxes."],
+		["onFocusChange", "Triggered when the input receives or loses focus. The callback function will receive a boolean indicating if the input is focused."],
 	]}
 	/>
 

@@ -9,9 +9,7 @@ import cover from "../../assets/search-field-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead
-	storybook="/docs/components-searchfield--docs"
-	stackblitz="/edit/syntatis-kubrick-search-field?file=src/App.jsx">
+<Lead storybook="/docs/components-searchfield--docs" stackblitz="/edit/syntatis-kubrick-search-field?file=src/App.jsx">
 	The `SearchField` component provides a simple way to add a search input field
 	to your application. It works like a regular text input but is specifically
 	designed for search functionality. The field includes an input area where
@@ -23,6 +21,7 @@ import Table from "../../templates/Table.astro";
 		src={cover}
 		alt="Kubrick UI SearchField component"
 		slot="cover"
+		quality="max"
 	/>
 </Lead>
 
@@ -115,9 +114,9 @@ Use `descriptionArea` prop to change the description placement area. The prop ac
 	variant="events"
 	component="SearchField"
 	items={[
-		["onChange", "Triggered when the input value changes. The event handler receives the new input value as an argument."],
-		["onSubmit", "Triggered when the user submits the search query. The event handler receives the search query as an argument."],
-		["onClear", "Triggered when the user clears the search field. The event handler receives the search query as an argument."],
+		["onChange", "Triggered when the input value changes. The function callback will receive the new input value as an argument."],
+		["onSubmit", "Triggered when the user submits the search query. The function callback will receive the search query as an argument."],
+		["onClear", "Triggered when the user clears the search field. The function callback will not receive any argument."]
 	]}
 	/>
 

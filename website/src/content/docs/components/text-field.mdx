@@ -5,14 +5,21 @@ description: Learn how to use the TextField component in your WordPress admin ap
 
 import { Image } from "astro:assets";
 import { Aside } from "@astrojs/starlight/components";
-import cover from "../../assets/notice-component.png";
+import cover from "../../assets/text-field-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead>
+<Lead storybook="/docs/components-textfield--docs" stackblitz="/edit/syntatis-kubrick-tabs-zegi1m?file=src/App.jsx">
 	The `TextField` component works like a standard HTML `input` element. It
 	allows users to enter and edit plain text. This component is useful for
 	collecting user input in forms.
+
+	<Image
+		src={cover}
+		alt="Kubrick UI TextField component"
+		slot="cover"
+		quality="max"
+	/>
 </Lead>
 
 ## Usage
@@ -23,7 +30,7 @@ To use the component, import the `TextField` component from the package:
 import { TextField } from "@syntatis/kubrick";
 ```
 
-Then, you can use it in your application by adding the `TextField` component with the `label` prop to provide a label for the input field, additionally with the `name` prop to uniquely identify the input field when on form submission:
+Then, you can use it in your app by adding the `TextField` component with the `label` prop to provide a label for the input field, additionally with the `name` prop to uniquely identify the input field when on form submission:
 
 ```jsx
 <TextField label="Name" name="name" />
@@ -33,8 +40,6 @@ Then, you can use it in your application by adding the `TextField` component wit
 
 The `TextField` component works similar to the `input` HTML element. Value will be empty, by default. You can set a value on to the input with the `value` or `defaultValue` prop.
 
-Generally, the `defaultValue` prop is the one you should use. It sets a default value, and allows users to change the value as they type in the input. The `value` prop should be used only when the value is controlled externally, such as on an external state.
-
 ```jsx {4}
 <SearchField
 	label="Name"
@@ -42,6 +47,26 @@ Generally, the `defaultValue` prop is the one you should use. It sets a default 
 	defaultValue="John Doe"
 	/>
 ```
+<Aside type="tip">
+Generally, the `defaultValue` prop is the one you should use. It sets a value to the input, and allows users to change it as they type in it. The `value` prop should be used only when the value is controlled externally, such as on an external state.
+
+```jsx {10}
+import { useState } from "react";
+
+function App() {
+	const [name, setName] = useState("John Doe");
+
+	return (
+		<SearchField
+			label="Name"
+			name="name"
+			value={name}
+			onChange={setName}
+			/>
+	);
+}
+```
+</Aside>
 
 ### Disabled
 
@@ -51,7 +76,8 @@ You can disable the `TextField` component by adding the `isDisabled` prop. This 
 <TextField
 	label="Name"
 	name="name"
-	isDisabled />
+	isDisabled
+	/>
 ```
 
 ### Read-only
@@ -59,14 +85,18 @@ You can disable the `TextField` component by adding the `isDisabled` prop. This 
 You can make the `TextField` component read-only by adding the `isReadOnly` prop. This will prevent users from editing the input field, but the input value will still be carried over on form submission:
 
 ```jsx {4}
-<TextField label="Name" name="name" isReadOnly />
+<TextField
+	label="Name"
+	name="name"
+	isReadOnly
+	/>
 ```
 
 ### Type
 
 Similar to the HTML `input` element, you can customize the `TextField` component by using the `type` prop to define what kind of text input you need from users. By default, the `TextField` component uses the `text` type. You can change it to the other type such as the `password` and `email` type:
 
-```jsx {5,10}
+```jsx {4,9}
 <TextField label="name" name="name" /> // Default type is "text".
 <TextField
 	label="Password"
@@ -84,16 +114,24 @@ Similar to the HTML `input` element, you can customize the `TextField` component
 
 You can add a placeholder text on the `TextField` component by using the `placeholder` prop to provide a hint to users on what to enter in the input field:
 
-```jsx {5}
-<TextField label="Name" name="name" placeholder="Enter your name" />
+```jsx {4}
+<TextField
+	label="Name"
+	name="name"
+	placeholder="Enter your name"
+	/>
 ```
 
 ### Description
 
 You can add a description text below the `TextField` component by using the `description` prop to provide additional information to users:
 
-```jsx {5}
-<TextField label="Name" name="name" description="Enter your full name" />
+```jsx {4}
+<TextField
+	label="Name"
+	name="name"
+	description="Enter your full name"
+	/>
 ```
 
 By default, the description text will be displayed as a small text below the input field. You can change where the description text is displayed by using the `descriptionArea` prop. The `descriptionArea` prop accepts `before-input` and `after-input` (default) values. Set it to `before-input` to display the description text above the input field, right below the label:
@@ -104,24 +142,49 @@ By default, the description text will be displayed as a small text below the inp
 	name="name"
 	description="Enter your full name"
 	descriptionArea="before-input"
-/>
+	/>
 ```
-
-## Events
-
-The `TextField` component emits when the users interact with the component, such as when adding or editing the input value. You can add a function as a callback on to these props to perform actions when they occur in your application.
-
-| Prop       | Description                                                                                          |
-| ---------- | ---------------------------------------------------------------------------------------------------- |
-| `onChange` | Emitted when the input value changes. The event handler receives the new input value as an argument. |
 
 ## Styles
 
-The `TextField` component has static classes, prefixed with `.kubrick-Tabs-`. You can use these static classes to select and customize the component and its elements.
+<Table
+	component="TextField"
+	items={[
+		["root", "The component root element."],
+		["label", "The wrapper element of the input label."],
+		["input", "The input element."],
+		["description", "The wrapper element of the description content."],
+	]}
+	/>
 
-<div className="table-classes">
-	| Selector | Description | | --- | --- | | `root` | The root element of the
-	`TextField` component. | | `label` | The label element of the `TextField`
-	component. | | `input` | The input element of the `TextField` component. | |
-	`description` | The wrapper element of the description content. |
-</div>
+## Events
+
+<Table
+	variant="events"
+	component="TextField"
+	items={[
+		["onChange", "Trigger when the input value changes. The callback function receives the new value as the argument."],
+	]}
+	/>
+
+Let's assume you have TextField component in your app. You want to update the name on the heading when the user types in the input field. You can use the `onChange` prop to handle this event, for example:
+
+```jsx {12}
+import { useState } from "react";
+
+function App() {
+	const [name, setName] = useState("John Doe");
+
+	return (
+		<>
+			<h1>Hi, {name}</h1>
+			<SearchField
+				label="Name"
+				name="name"
+				value={name}
+				onChange={setName}
+				/>
+		</>
+	);
+}
+```

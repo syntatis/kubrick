@@ -3,17 +3,34 @@ title: Spinner
 description: Learn how to use the Spinner component in your WordPress admin application.
 ---
 
-The `Spinner` component is a loading indicator that you can use to show users that a process is in progress; the application is working on something, and they should wait for the process to complete.
+import { Image } from "astro:assets";
+import { Aside } from "@astrojs/starlight/components";
+import cover from "../../assets/spinner-component.png";
+import Lead from "../../templates/Lead.astro";
+import Table from "../../templates/Table.astro";
+
+<Lead storybook="/docs/components-spinner--docs" stackblitz="/edit/syntatis-kubrick-spinner?file=src/App.jsx">
+	The `Spinner` component is a loading indicator that you can use to show users
+	that a process is in progress; the application is working on something, and
+	they should wait for the process to complete.
+
+	<Image
+		src={cover}
+		alt="Kubrick UI Spinner component"
+		slot="cover"
+		quality="max"
+	/>
+</Lead>
 
 ## Usage
 
-To use the component, import the `Spinner` from the package:
+To use it in your app, import the `Spinner` from the package:
 
 ```jsx
-import { Spinner } from '@wordpress/components';
+import { Spinner } from "@wordpress/components";
 ```
 
-Then, use it component in your application, as follows.
+Then, simply add it in your app, as follows.
 
 ```jsx
 <Spinner />
@@ -21,7 +38,7 @@ Then, use it component in your application, as follows.
 
 ### Label
 
-By default, the `Spinner` component will have the label **"loading"** provided for the screen readers. You can customize the label by passing the `label` prop with a new value.
+The default label provided for the screen readers will **"loading"**. You can customize the label by passing the `label` prop with a new value, for example to indicate what is being fetched:
 
 ```jsx
 <Spinner label="Fetching posts" />
@@ -35,12 +52,18 @@ The `Spinner` component size is customizable. By default, it will be `24px` squa
 <Spinner size={48} />
 ```
 
+<Aside type="caution">
+The image source spinner is a gif. When upsizing the spinner, the image may appear pixelated.
+</Aside>
+
 ## Styles
 
-The `Spinner` component has static classes, prefixed with `.kubrick-Spinner-`. You can use these static classes to select and customize the component and its elements.
-
-<div className="table-classes">
-| Selector | Description |
-| --- | --- |
-| `root` | The root element of the `Spinner` component, an HTML `span` element. |
-</div>
+<Table
+	component="Spinner"
+	items={[
+		[
+			"root",
+			"The component root element.",
+		],
+	]}
+/>

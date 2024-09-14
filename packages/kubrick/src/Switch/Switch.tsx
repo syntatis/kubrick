@@ -28,10 +28,10 @@ interface SwitchProps extends GlobalProps, Omit<AriaSwitchProps, 'children'> {
  * import { Switch } from '@syntatis/kubrick';
  * ```
  *
- * The `Switch` component is a visual representation of a switch that can be toggled
- * on or off. It is similar to a checkbox but represents on/off values instead
- * of selection. Users can interact with the switch using either the mouse
- * or keyboard.
+ * The `Switch` component is a toggle switch that you can use to enable or
+ * disable a setting or feature in your application. It's especially
+ * useful to let users turn something on or off or when you have
+ * any binary option that users need to switch between.
  */
 export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
 	(props, forwardedRef) => {

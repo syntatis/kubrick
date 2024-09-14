@@ -9,9 +9,7 @@ import cover from "../../assets/icon-link-button-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead
-	storybook="/docs/components-iconlinkbutton--docs"
-	stackblitz="/edit/syntatis-kubrick-checkbox-group-vmhgpq?file=src/App.jsx">
+<Lead storybook="/docs/components-iconlinkbutton--docs" stackblitz="/edit/syntatis-kubrick-checkbox-group-vmhgpq?file=src/App.jsx">
 	The `IconLinkButton` component is a special link that appears like the
 	`IconButton` component. It's a mix of the `LinkButton` and `IconButton`
 	components. It shares similar styles, sizes, and props as well as the link
@@ -22,6 +20,7 @@ import Table from "../../templates/Table.astro";
 		src={cover}
 		alt="Kubrick UI IconLinkButton component"
 		slot="cover"
+		quality="max"
 	/>
 </Lead>
 
@@ -90,8 +89,8 @@ Aside of changing the component variants, you can also change the size to match 
 	variant="events"
 	component="IconLinkButton"
 	items={[
-		["onHoverChange", "Triggered when the link is hovered."],
-		["onFocusChange", "Triggered when the link receives or loses focus."],
+		["onHoverChange", "Triggered when the link is hovered. The function callback will receive a boolean value indicating if the link is hovered."],
+		["onFocusChange", "Triggered when the link receives or loses focus. The callback function will receive a boolean value indicating if the link is focused."],
 	]}
 	/>
 

@@ -9,9 +9,7 @@ import cover from "../../assets/icon-button-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
-<Lead
-	storybook="/docs/components-iconbutton--docs"
-	stackblitz="/edit/syntatis-kubrick-icon-button?file=src/App.jsx">
+<Lead storybook="/docs/components-iconbutton--docs" stackblitz="/edit/syntatis-kubrick-icon-button?file=src/App.jsx">
 	The `IconButton` component is used to render a button with an icon as the
 	content. It works like to the `Button` component. It has the variations and
 	the sizes, except the size will always has a 1:1 ratio. It is typically used
@@ -22,6 +20,7 @@ import Table from "../../templates/Table.astro";
 		src={cover}
 		alt="Kubrick UI IconButton component"
 		slot="cover"
+		quality="max"
 	/>
 </Lead>
 
@@ -108,9 +107,9 @@ Aside of the variants, the `IconButton` component also comes with different size
 	variant="events"
 	component="IconButton"
 	items={[
-		["onPress", "Triggered when the button is clicked. It receives the click event as an argument."],
-		["onHoverChange", "Triggered when the button is hovered. It will receive a boolean indicating if the button is hovered."],
-		["onFocusChange", "Triggered when the button receives or loses focus. It will receive a boolean indicating if the button is focused."],
+		["onPress", "Triggered when the button is clicked. The callback function will receive the click event as an argument."],
+		["onHoverChange", "Triggered when the button is hovered. The callback function will receive a boolean indicating if the button is hovered."],
+		["onFocusChange", "Triggered when the button receives or loses focus. The callback function will receive a boolean indicating if the button is focused."],
 	]}
 	/>
 

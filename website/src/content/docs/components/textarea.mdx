@@ -3,32 +3,50 @@ title: TextArea
 description: Learn how to use the TextArea component in your WordPress admin application.
 ---
 
-The `TextArea` component works like a standard HTML `textarea` element. It allows users to enter and edit multiple lines of plain text. This component is useful for collecting user input that requires more than one line of text in forms.
+import { Image } from "astro:assets";
+import { Aside } from "@astrojs/starlight/components";
+import cover from "../../assets/textarea-component.png";
+import Lead from "../../templates/Lead.astro";
+import Table from "../../templates/Table.astro";
+
+<Lead storybook="/docs/components-textarea--docs" stackblitz="/edit/syntatis-kubrick-textarea?file=src/App.jsx">
+	The `TextArea` component works like a standard HTML `textarea` element. It
+	allows users to enter and edit multiple lines of plain text. This component is
+	useful for collecting user input that requires more than one line of text in
+	forms.
+
+	<Image
+		src={cover}
+		alt="Kubrick UI TextArea component"
+		slot="cover"
+		quality="max"
+	/>
+</Lead>
 
 ## Usage
 
 To use the component, import the `TextArea` component from the package:
 
 ```jsx
-import { TextArea } from '@syntatis/kubrick';
+import { TextArea } from "@syntatis/kubrick";
 ```
 
 Then, you can use it in your application by adding the `TextArea` component with the `label` prop to provide a label for the `textarea`, additionally with the `name` prop to uniquely identify the textarea when on form submission:
 
 ```jsx
-<TextArea label="Description" name="description" />
+<TextArea label="Tagline" name="tagline" />
 ```
 
 ### Placeholder
 
 You can add a placeholder text on the `TextArea` component by using the `placeholder` prop to provide a hint to users on what to enter in the `textarea`:
 
-```jsx {5}
+```jsx {4}
 <TextArea
-	label="Description"
-	name="description"
-	placeholder="Enter your description"
-	/>
+	label="Tagline"
+	name="tagline"
+	placeholder="Enter tagline for your site or blog"
+/>
 ```
 
 ### Disabled
@@ -36,11 +54,7 @@ You can add a placeholder text on the `TextArea` component by using the `placeho
 You can disable the `TextArea` component by adding the `isDisabled` prop. This will prevent users from interacting with the `textarea` and the input value will not be carried over on form submission:
 
 ```jsx {4}
-<TextArea
-	label="Description"
-	name="description"
-	isDisabled
-	/>
+<TextArea label="Tagline" name="tagline" isDisabled />
 ```
 
 ### Read-only
@@ -48,11 +62,7 @@ You can disable the `TextArea` component by adding the `isDisabled` prop. This w
 You can make the `TextArea` component read-only by adding the `isReadOnly` prop. This will prevent users from editing the `textarea`, but the input value will still be carried over on form submission:
 
 ```jsx {4}
-<TextArea
-	label="Description"
-	name="description"
-	isReadOnly
-	/>
+<TextArea label="Tagline" name="tagline" isReadOnly />
 ```
 
 ### Rows
@@ -61,9 +71,9 @@ Similar to the HTML `textarea` element, you can customize the `TextArea` compone
 
 ```jsx {3}
 <TextArea
-	label="Description"
+	label="Tagline"
 	rows={10}
-	name="description"
+	name="tagline"
 	/>
 ```
 
@@ -73,9 +83,9 @@ Similarly, you can also customize the `TextArea` component by using the `cols` p
 
 ```jsx {3}
 <TextArea
-	label="Description"
+	label="Tagline"
 	cols={30}
-	name="description"
+	name="tagline"
 	/>
 ```
 
@@ -85,30 +95,30 @@ You can add a description to the `TextArea` component by providing a valid JSX e
 
 ```jsx {3}
 <TextArea
-	label="Description"
-	name="description"
+	label="Tagline"
+	name="tagline"
 	description="Please provide a detailed description of the issue."
-	/>
+/>
 ```
-
-## Events
-
-The `TextArea` component emits some events when users interact with the `textarea`. You can listen to these events by providing a function as callback on to the following props:
-
-| Prop | Description |
-| --- | --- |
-| `onChange` | Emitted when the value is changed. The event handler receives the new input value as an argument. |
-
 
 ## Styles
 
 The `TextArea` component has static classes, prefixed with `.kubrick-TextArea-`, that you can use these classes to select and customize the component and its elements.
 
 <div className="table-classes">
-| Selector | Description |
-| --- | --- |
-| `root` | The root element of the `TextArea` component. |
-| `label` | The label element of the `TextArea` component. |
-| `textarea` | The `textarea` element of the `TextArea` component. |
-| `description` | The wrapper element of the description content. |
+	| Selector | Description | | --- | --- | | `root` | The root element of the
+	`TextArea` component. | | `label` | The label element of the `TextArea`
+	component. | | `textarea` | The `textarea` element of the `TextArea`
+	component. | | `description` | The wrapper element of the description content.
+	|
 </div>
+
+## Events
+
+<Table
+	variant="events"
+	component="TextArea"
+	items={[
+		["onChange", "Triggered when the value is changed. The function callback will receive the new input value as an argument."],
+	]}
+	/>

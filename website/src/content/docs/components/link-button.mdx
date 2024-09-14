@@ -18,18 +18,19 @@ import Table from "../../templates/Table.astro";
 		src={cover}
 		alt="Kubrick UI LinkButton component"
 		slot="cover"
+		quality="max"
 	/>
 </Lead>
 
 ## Usage
 
-To use the component in your app, import `LinkButton` from the package:
+To use it in your app, import `LinkButton` from the package:
 
 ```jsx
 import { LinkButton } from "@syntatis/kubrick";
 ```
 
-Then, use it as you would with a native HTML `a` element by passing the `href` prop and the label:
+Then, add it in your app as you would with a native HTML `a` element by passing the `href` prop and the label:
 
 ```jsx
 <LinkButton href="https://wordpress.org">WordPress</LinkButton>
@@ -105,8 +106,8 @@ Let's assume you'd like to show an icon after the label to show that the link wi
 	variant="events"
 	component="LinkButton"
 	items={[
-		["onHoverChange", "Triggered when the link is hovered."],
-		["onFocusChange", "Triggered when the link receives or loses focus."],
+		["onHoverChange", "Triggered when the link is hovered. The function callback will receive a boolean value indicating if the link is hovered."],
+		["onFocusChange", "Triggered when the link receives or loses focus. The function callback will receive a boolean value indicating if the link is focused."],
 	]}
 	/>
 

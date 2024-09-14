@@ -3,14 +3,31 @@ title: Switch
 description: Learn how to use the Switch component in your WordPress admin application.
 ---
 
-The `Switch` component is a toggle switch that you can use to enable or disable a setting or feature in your application. It's especially useful to let users turn something on or off or when you have any binary option that users need to switch between.
+import { Image } from "astro:assets";
+import cover from "../../assets/switch-component.png";
+import Lead from "../../templates/Lead.astro";
+import Table from "../../templates/Table.astro";
+
+<Lead storybook="/docs/components-switch--docs" stackblitz="/edit/syntatis-kubrick-switch?file=src/App.jsx">
+	The `Switch` component is a toggle switch that you can use to enable or
+	disable a setting or feature in your application. It's especially useful to
+	let users turn something on or off or when you have any binary option that
+	users need to switch between.
+
+	<Image
+		src={cover}
+		alt="Kubrick UI Switch component"
+		slot="cover"
+		quality="max"
+	/>
+</Lead>
 
 ## Usage
 
 To use the component, import the `Switch` from the package:
 
 ```jsx
-import { Switch } from '@syntatis/kubrick';
+import { Switch } from "@syntatis/kubrick";
 ```
 
 Then, you can use it in your application by adding the `Switch` component with the `label` prop to provide the label for the switch input:
@@ -34,11 +51,11 @@ You can set the switch input to be selected by default by adding the `defaultSel
 	/>
 ```
 
-If you control the selected state through an external state or store, you can use the `isSelected` prop instead to set the selected state of the switch input:
+If you control the selected state through an external state, you can use the `isSelected` prop instead to set the selected state of the switch input:
 
-```jsx {10}
-import { useState } from 'react';
-import { Switch } from '@syntatis/kubrick';
+```jsx {11}
+import { useState } from "react";
+import { Switch } from "@syntatis/kubrick";
 
 function App() {
 	const [isSelected, setIsSelected] = useState(false);
@@ -49,7 +66,7 @@ function App() {
 			name="show_in_rest"
 			isSelected={isSelected}
 			onChange={setIsSelected}
-			/>
+		/>
 	);
 }
 ```
@@ -59,11 +76,7 @@ function App() {
 You can disable the switch input by adding the `isDisabled` prop to the `Switch` component. This will disable the entire switch input. It will appear grayed out and users won't be able to navigate the input, interact or toggle the switch:
 
 ```jsx {4}
-<Switch
-	label="Show in REST API"
-	name="show_in_rest"
-	isDisabled
-	/>
+<Switch label="Show in REST API" name="show_in_rest" isDisabled />
 ```
 
 ### Read-only
@@ -76,7 +89,7 @@ You can set the switch input as read-only by adding the `isReadOnly` prop to the
 	name="show_in_rest"
 	defaultSelected
 	isReadOnly
-	/>
+/>
 ```
 
 ### Description
@@ -88,26 +101,32 @@ You can add a description to the switch input to provide more context to the use
 	label="Show in REST API"
 	name="show_in_rest"
 	description="Enable this option to show the content in the REST API."
-	/>
+/>
 ```
-
-## Events
-
-The `Switch` component will emit an event when the user toggle the switch input. You can listen to this event by passing a function to the following props:
-
-| Prop | Description |
-| --- | --- |
-| `onChange` | Triggered when the user toggles the switch input on and off. The callback function will receive the new selected state as a boolean. |
 
 ## Styles
 
-The `Switch` component has static classes, prefixed with `.kubrick-Switch-`. You can use these static classes to select and customize the component and its elements.
+<Table
+	component="Switch"
+	items={[
+		["root", "The component root element."],
+		[
+			"input",
+			"The element on the `Switch` component that appears as the input.",
+		],
+		["label", "The element that wraps the label text."],
+		["description", "The element that wraps the description text."],
+	]}
+/>
 
-<div className="table-classes">
-| Selector | Description |
-| --- | --- |
-| `root` | The root element of the `Spinner` component. |
-| `input` | The element on the `Spinner` component that appears as the input. |
-| `label` | The element that wraps the label text. |
-| `description` | The element that wraps the description text. |
-</div>
+## Events
+
+<Table
+	component="Switch"
+	items={[
+		[
+			"onChange",
+			"Triggered when the user toggles the switch input on and off. The function callback will receive the new selected state as a boolean.",
+		],
+	]}
+	/>

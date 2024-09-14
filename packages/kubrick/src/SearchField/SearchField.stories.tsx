@@ -26,6 +26,7 @@ const meta: Meta<typeof SearchField> = {
 				'isRequired',
 				'onChange',
 				'onSubmit',
+				'onClear',
 			],
 		},
 	},
