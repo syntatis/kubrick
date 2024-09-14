@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="https://raw.githubusercontent.com/syntatis/kubrick/main/art/kubrick%402x.png" width="200" height="auto" alt="Kubrick Logo" />
+	<img src="https://raw.githubusercontent.com/syntatis/kubrick/main/art/kubrick%402x.png" width="100%" height="auto" alt="Kubrick Logo" />
 	<p>Good ol' WordPress Admin Screen</p>
 	<br />
 	<a href="#">
