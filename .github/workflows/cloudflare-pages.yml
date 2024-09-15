@@ -6,7 +6,6 @@ on:
 
 env:
   NODE_VERSION: 20
-  NODE_ENV: production
   STORYBOOK_BASE_URL: https://66e68bc88881b2397d6befdb-zlgmfvcbsp.chromatic.com
 
 jobs:
@@ -49,6 +48,8 @@ jobs:
           composer install --prefer-dist
 
       - name: Run Build
+        env:
+          NODE_ENV: production
         run: |
           npm run build
           npm run website:build
