@@ -9,6 +9,8 @@ env:
 jobs:
   ci:
     uses: ./.github/workflows/ci.yml
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   publish-npm:
     runs-on: ubuntu-latest
