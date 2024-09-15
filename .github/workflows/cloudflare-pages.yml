@@ -3,9 +3,18 @@ name: cloudflare-pages
 on:
   workflow_call:
   workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+    paths:
+      - "website/**"
+      - ".github/workflows/cloudflare-pages.yml"
   push:
     branches:
-      - next
+      - main
     paths:
       - "website/**"
       - ".github/workflows/cloudflare-pages.yml"
