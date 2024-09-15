@@ -11,7 +11,12 @@ export default defineConfig({
 				Header: './src/templates/Header.astro',
 				Sidebar: './src/content/templates/Sidebar.astro',
 			},
-			customCss: ['./src/styles/tailwind.css', './src/styles/starlight.scss', './src/styles/pagefind.scss'],
+			customCss: [
+				'./src/styles/tailwind.css',
+				'./src/styles/variables.scss',
+				'./src/styles/starlight.scss',
+				'./src/styles/pagefind.scss'
+			],
 			expressiveCode: {
 				plugins: [pluginCollapsibleSections()],
 				styleOverrides: {
