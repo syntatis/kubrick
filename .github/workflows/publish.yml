@@ -1,0 +1,30 @@
+name: publish
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+env:
+  STORYBOOK_BASE_URL: https://66e68bc88881b2397d6befdb-zlgmfvcbsp.chromatic.com
+
+jobs:
+  cloudflare-pages:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectName: kubrick
+          directory: website/dist
+          wranglerVersion: '3'
