@@ -103,15 +103,15 @@ You can add a description to the `TextArea` component by providing a valid JSX e
 
 ## Styles
 
-The `TextArea` component has static classes, prefixed with `.kubrick-TextArea-`, that you can use these classes to select and customize the component and its elements.
-
-<div className="table-classes">
-	| Selector | Description | | --- | --- | | `root` | The root element of the
-	`TextArea` component. | | `label` | The label element of the `TextArea`
-	component. | | `textarea` | The `textarea` element of the `TextArea`
-	component. | | `description` | The wrapper element of the description content.
-	|
-</div>
+<Table
+	component="TextArea"
+	items={[
+		["root", "The root element of the `TextArea` component."],
+		["label", "The label element."],
+		["textarea", "The textarea input."],
+		["description", "The wrapper element of the description content."],
+	]}
+	/>
 
 ## Events
 
