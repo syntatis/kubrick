@@ -54,7 +54,7 @@ jobs:
       - name: Run build
         run: npm run build
 
-      - name: Publish (NPM)
+      - name: Publish to NPM
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: npx lerna publish from-package --yes --pre-dist-tag next
