@@ -38,8 +38,8 @@ jobs:
           restore-keys: ${{ runner.os }}-composer
 
       - name: Install dependencies
-        run:
-          npm ci --workspaces --no-audit --ignore-scripts
+        run: |
+          npm ci
           composer install
 
       - name: Run Chromatic
