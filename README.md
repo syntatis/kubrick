@@ -2,7 +2,7 @@
 
 <div align="center">
   <p align="center">
-    <img src="https://raw.githubusercontent.com/syntatis/kubrick/main/art/kubrick%402x.png" width="100%" height="auto" alt="Kubrick Logo" />
+    <img src="https://raw.githubusercontent.com/syntatis/kubrick/main/art/kubrick%402x.png" width="100%" height="auto" alt="Kubrick UI cover image showing a couple of components, such as the button, input, switch, etc." />
   </p>
 
   [![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=flat&logo=storybook&logoColor=white)](https://66e68bc88881b2397d6befdb-zlgmfvcbsp.chromatic.com) [![ci](https://github.com/syntatis/kubrick/actions/workflows/ci.yml/badge.svg)](https://github.com/syntatis/kubrick/actions/workflows/ci.yml) ![NPM Version](https://img.shields.io/npm/v/%40syntatis%2Fkubrick) ![NPM Downloads](https://img.shields.io/npm/d18m/%40syntatis%2Fkubrick) 
