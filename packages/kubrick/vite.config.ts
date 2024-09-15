@@ -75,7 +75,7 @@ export default defineConfig({
 		coverage: {
 			exclude: ['**/*.stories.{ts,tsx}'],
 			provider: 'istanbul',
-			reporter: ['html'],
+			reporter: ['clover', 'html'],
 			reportsDirectory: '../../coverage',
 		},
 		environment: 'jsdom',
