@@ -1,3 +1,4 @@
+/* stylelint-disable selector-id-pattern */
 /* stylelint-disable selector-class-pattern */
 @use '../../../packages/kubrick/scss/variables/colors' as colors;
 @use './variables';
@@ -81,6 +82,37 @@
 		border-radius: var(--border-radius-md);
 	}
 
+	details .toggle {
+		color: var(--sl-color-text);
+		background-color: var(--sl-color-gray-1);
+		border: 1px solid var(--sl-color-gray-2);
+	}
+
+	details[open] .toggle {
+		background-color: var(--sl-color-gray-2);
+		border: 1px solid var(--sl-color-gray-3);
+	}
+
+	.dropdown {
+		background-color: var(--sl-color-gray-1);
+		border: 1px solid var(--sl-color-gray-3);
+		box-shadow: var(--sl-shadow-sm);
+
+		.isMobile a {
+			border-top: 1px solid var(--sl-color-gray-3);
+		}
+	}
+
+	#starlight__on-this-page--mobile {
+		color: var(--sl-color-text);
+		background-color: var(--sl-color-gray-1);
+		border: 0;
+	}
+
+	.display-current {
+		color: var(--sl-color-text);
+	}
+
 	// ================================================
 	// Sidebar
 	// ================================================
@@ -158,6 +190,32 @@
 		a:focus {
 			color: var(--sl-color-gray-6);
 		}
+	}
+
+	starlight-menu-button {
+		button[aria-controls="starlight__sidebar"] {
+			--sl-icon-color: var(--sl-color-white);
+
+			background-color: transparent;
+			border: 0;
+		}
+
+		&[aria-expanded="true"] {
+			button[aria-controls="starlight__sidebar"] {
+				background-color: var(--sl-color-gray-7);
+			}
+
+			~ #starlight__sidebar {
+				@media (width < 50rem) {
+					background-color: var(--sl-color-gray-1);
+				}
+			}
+		}
+	}
+
+	.mobile-preferences {
+		padding: 1rem;
+		border: 0;
 	}
 
 	// ================================================

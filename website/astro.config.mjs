@@ -9,6 +9,7 @@ export default defineConfig({
 		starlight({
 			components: {
 				Header: './src/templates/Header.astro',
+				MobileMenuFooter: './src/content/templates/MobileMenuFooter.astro',
 				Sidebar: './src/content/templates/Sidebar.astro',
 			},
 			customCss: [
