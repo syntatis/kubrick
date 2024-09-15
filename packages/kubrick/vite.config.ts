@@ -76,6 +76,7 @@ export default defineConfig({
 			exclude: ['**/*.stories.{ts,tsx}'],
 			provider: 'istanbul',
 			reporter: ['html'],
+			reportsDirectory: '../../coverage',
 		},
 		environment: 'jsdom',
 		globals: true,

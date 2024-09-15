@@ -16,7 +16,7 @@ node_modules
 /.pnp
 .pnp.js
 
-# testing
+# tests
 /coverage
 
 # build
