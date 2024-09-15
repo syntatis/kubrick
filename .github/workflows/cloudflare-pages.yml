@@ -6,6 +6,7 @@ on:
 
 env:
   NODE_VERSION: 20
+  NODE_ENV: production
   STORYBOOK_BASE_URL: https://66e68bc88881b2397d6befdb-zlgmfvcbsp.chromatic.com
 
 jobs:
@@ -47,7 +48,7 @@ jobs:
           npm ci --workspaces --no-audit --ignore-scripts
           composer install
 
-      - name: Build
+      - name: Run Build
         run: npm run website:build
 
       - name: Publish to Cloudflare Pages
