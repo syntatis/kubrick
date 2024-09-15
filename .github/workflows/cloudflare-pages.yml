@@ -3,6 +3,9 @@ name: cloudflare-pages
 on:
   workflow_call:
   workflow_dispatch:
+  push:
+    branches:
+      - next
 
 env:
   NODE_VERSION: 20
