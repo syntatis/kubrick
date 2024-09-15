@@ -6,6 +6,7 @@ on:
   pull_request:
     branches:
       - main
+      - next
     types:
       - opened
       - synchronize
@@ -184,4 +185,4 @@ jobs:
         run: npm run build
 
       - name: Run test
-        run: npm run test
+        run: npm run test:coverage
