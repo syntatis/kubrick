@@ -63,6 +63,9 @@ jobs:
           composer install
           npm run build
 
+      - name: Run build
+        run: npm run build
+
       - name: Run lint
         run: npm run lint:scripts --workspaces --if-present
 
