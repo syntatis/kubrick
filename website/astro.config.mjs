@@ -78,7 +78,7 @@ export default defineConfig({
 				discord: 'https://discord.com/channels/1190360462932574329/1284775092974522412',
 				github: 'https://github.com/syntatis/kubrick',
 			},
-			title: 'Kubrick',
+			title: 'Kubrick UI',
 		}),
 		tailwind(),
 		react(),
