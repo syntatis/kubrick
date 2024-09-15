@@ -11,5 +11,5 @@ Named after the iconic default WordPress theme in the early days, [Kubrick](http
 
 ## Resources
 
-- [Storybook](https://main--65b4a01170cfc35b99f6ce97.chromatic.com/)
 - [Documentation](https://kubrick.syntatis.com)
+- [Storybook](https://main--65b4a01170cfc35b99f6ce97.chromatic.com)
