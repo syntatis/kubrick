@@ -62,4 +62,5 @@ jobs:
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           projectName: kubrick
           branch: main
+          directory: website/dist
           wranglerVersion: '3'
