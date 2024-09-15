@@ -13,7 +13,7 @@
 > [!CAUTION]
 > This project is still in active development and the code is changing a lot, which might make it unstable. We don’t recommend using it in production yet. Please wait until the project is more stable.
 
-Named after the iconic default WordPress theme in the early days, [Kubrick](https://wordpress.org/themes/default/) is a collection of React UI components to build WordPress admin application with the classic styles and interface.
+Named after the iconic default WordPress theme in the early days, [Kubrick UI](https://wordpress.org/themes/default/) is a collection of React components to build WordPress admin application with the classic styles and interface.
 
 ## Resources
 
