@@ -1,6 +1,6 @@
 {
   "name": "@syntatis/kubrick",
-  "description": "Good ol'WordPress Admin Screen",
+  "description": "Classic WordPress Admin UI",
   "version": "0.1.0-alpha.6",
   "license": "GPL-2.0-or-later",
   "type": "module",

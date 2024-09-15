@@ -1,7 +1,7 @@
 {
 	"name": "syntatis/kubrick",
 	"license": "GPL-2.0-or-later",
-	"description": "Good ol' WordPress Admin Screen",
+	"description": "Classic WordPress Admin UI",
 	"keywords": [
     "admin-dashboard",
     "react-components",
