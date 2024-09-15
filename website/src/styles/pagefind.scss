@@ -1,0 +1,43 @@
+/* stylelint-disable selector-pseudo-element-colon-notation */
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable selector-id-pattern */
+
+/**
+ * Pagefind.
+ */
+ #starlight__search {
+	--pagefind-ui-background: var(--sl-color-white);
+	--pagefind-ui-primary: var(--sl-color-accent-light);
+	--pagefind-ui-text: var(--sl-color-text);
+	--pagefind-ui-border: var(--sl-color-gray-2);
+	--pagefind-ui-border-width: 1px;
+
+	mark {
+		color: var(--sl-color-text);
+		background-color: var(--sl-color-yellow-low);
+	}
+
+	.pagefind-ui__form:before,
+	.pagefind-ui__search-input,
+	.pagefind-ui__result-link,
+	.pagefind-ui__result-title {
+		--pagefind-ui-text: var(--sl-color-text);
+	}
+
+	.pagefind-ui__search-clear:before {
+		background-color: var(--sl-color-gray-4);
+	}
+
+	.pagefind-ui__search-input {
+		color: var(--pagefind-ui-text);
+	}
+
+	.pagefind-ui__result-inner > .pagefind-ui__result-title:before {
+		background-color: var(--sl-color-text);
+	}
+
+	.pagefind-ui__result-title:not(:where(.pagefind-ui__result-nested *)),
+	.pagefind-ui__result-nested {
+		background-color: var(--sl-color-white);
+	}
+}

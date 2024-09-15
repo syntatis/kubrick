@@ -1,5 +1,63 @@
+/* stylelint-disable selector-class-pattern */
 @use '../../../packages/kubrick/scss/variables/colors' as colors;
 @use './styles';
+
+/**
+ * Starlight app.
+ */
+ :root[data-theme="light"], [data-theme='light'] ::backdrop {
+	/**
+	 * Base Colors.
+	 */
+	--sl-color-black: #{colors.$black};
+	--sl-color-white: #{colors.$white};
+	--sl-color-gray-1: #{colors.$gray-10};
+	--sl-color-gray-2: #{colors.$gray-50};
+	--sl-color-gray-3: #{colors.$gray-100};
+	--sl-color-gray-4: #{colors.$gray-200};
+	--sl-color-gray-5: #{colors.$gray-300};
+	--sl-color-gray-6: #{colors.$gray-400};
+	--sl-color-gray-7: #{colors.$gray-500};
+
+	/**
+	 * Accent Colors.
+	 */
+	--sl-color-accent-high: var(--color-accent-high);
+	--sl-color-accent-low: var(--color-accent-low);
+	--sl-color-accent: var(--color-accent);
+
+	/**
+	 * Color Schemes.
+	 */
+	--sl-color-blue-high: var(--color-blue-high);
+	--sl-color-blue-low: var(--color-blue-low);
+	--sl-color-blue: var(--color-blue);
+	--sl-color-green-high: var(--color-green-high);
+	--sl-color-green-low: var(--color-green-low);
+	--sl-color-green: var(--color-green);
+	--sl-color-red-high: var(--color-red-high);
+	--sl-color-red-low: var(--color-red-low);
+	--sl-color-red: var(--color-red);
+	--sl-color-yellow-high: var(--color-yellow-high);
+	--sl-color-yellow-low: var(--color-yellow-low);
+	--sl-color-yellow: var(--color-yellow);
+
+	/**
+	 * UI Colors.
+	 */
+	--sl-color-bg-nav: #{colors.$gray-900};
+	--sl-color-bg: var(--sl-color-white);
+	--sl-color-text-accent: var(--sl-color-accent);
+	--sl-color-text: var(--sl-color-black);
+	--sl-icon-color: var(--sl-color-gray-7);
+
+	/**
+	 * Main navigation.
+	 */
+	--sl-nav-pad-y: 0.75rem;
+	--sl-nav-pad-x: 1.5rem;
+	--sl-nav-height: var(--nav-height);
+}
 
 .page {
 	// ================================================
@@ -72,23 +130,6 @@
 
 	.header {
 		--sl-icon-color: var(--sl-color-white);
-
-		site-search {
-			button[data-open-modal] {
-				background-color: var(--sl-color-gray-7);
-				border: none;
-				border-radius: var(--border-radius-md);
-
-				&:hover {
-					background-color: var(--sl-color-gray-6);
-				}
-
-				> kbd {
-					color: var(--sl-color-text);
-					background-color: var(--sl-color-gray-2);
-				}
-			}
-		}
 	}
 
 	dialog {
@@ -102,6 +143,28 @@
 	// ================================================
 
 	.sidebar {
+		site-search {
+			button[data-open-modal] {
+				padding-block: .5rem;
+				padding-inline: .75rem .5rem;
+				margin-bottom: 1rem;
+				color: var(--pagefind-ui-text);
+				background-color: var(--pagefind-ui-background);
+				border: 1px solid var(--pagefind-ui-border);
+				border-radius: var(--border-radius-md);
+				transition: background-color 0.2s ease;
+
+				&:hover {
+					background-color: var(--sl-color-gray-1);
+				}
+
+				> kbd {
+					color: var(--sl-color-text);
+					background-color: var(--sl-color-gray-2);
+				}
+			}
+		}
+
 		ul ul li {
 			border-inline-start: 1px solid var(--sl-color-gray-2);
 		}

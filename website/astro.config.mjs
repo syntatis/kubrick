@@ -9,8 +9,9 @@ export default defineConfig({
 		starlight({
 			components: {
 				Header: './src/templates/Header.astro',
+				Sidebar: './src/content/templates/Sidebar.astro',
 			},
-			customCss: ['./src/styles/tailwind.css', './src/styles/starlight.scss'],
+			customCss: ['./src/styles/tailwind.css', './src/styles/starlight.scss', './src/styles/pagefind.scss'],
 			expressiveCode: {
 				plugins: [pluginCollapsibleSections()],
 				styleOverrides: {
