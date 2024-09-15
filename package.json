@@ -55,8 +55,8 @@
     "storybook": "storybook dev -p 6007",
     "storybook:build": "storybook build",
     "test": "npm run test -w @syntatis/kubrick",
-    "test:coverage": "npm run test --coverage",
-    "test:watch": "npm run test",
+    "test:coverage": "npm run test:coverage -w @syntatis/kubrick",
+    "test:watch": "npm run test:watch -w @syntatis/kubrick",
     "website:build": "npm run build -w @syntatis/website",
     "website:dev": "npm run dev -w @syntatis/website",
     "website:preview": "npm run preview -w @syntatis/website"
