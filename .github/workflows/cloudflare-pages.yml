@@ -6,6 +6,9 @@ on:
   push:
     branches:
       - next
+    paths:
+      - "website/**"
+      - ".github/workflows/cloudflare-pages.yml"
 
 env:
   NODE_VERSION: 20
