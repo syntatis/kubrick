@@ -11,12 +11,14 @@ on:
       - synchronize
     paths:
       - "website/**"
+      - "packages/kubrick/package.json"
       - ".github/workflows/cloudflare-pages.yml"
   push:
     branches:
       - main
     paths:
       - "website/**"
+      - "packages/kubrick/package.json"
       - ".github/workflows/cloudflare-pages.yml"
 
 env:
