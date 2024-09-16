@@ -11,7 +11,7 @@ const DEFAULT_COLS = 50;
 
 interface TextAreaProps extends GlobalProps, Omit<AriaTextFieldProps, 'type'> {
 	/**
-	 * Defines the number of columnes in the `textarea`.
+	 * Defines the number of columns in the `textarea`.
 	 *
 	 * @default 50
 	 */
