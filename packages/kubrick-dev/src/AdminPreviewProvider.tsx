@@ -1,5 +1,6 @@
+// eslint-disable-next-line import/no-named-as-default
+import clsx from 'clsx';
 import '../scss/preview.scss';
-import { useClasses } from './useClasses';
 
 interface AdminPreviewProviderProps {
 	children: React.ReactNode;
@@ -10,10 +11,8 @@ export const AdminPreviewProvider = ({
 	children,
 	className,
 }: AdminPreviewProviderProps) => {
-	const { clsx } = useClasses('AdminPreviewProvider');
-
 	return (
-		<div className={clsx({ classNames: ['__wp-core-body__', className] })}>
+		<div className={clsx(['__wp-core-body__', className])}>
 			<div className="wp-core-ui">{children}</div>
 		</div>
 	);

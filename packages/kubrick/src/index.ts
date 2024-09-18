@@ -1,6 +1,5 @@
 import '../scss/base.scss';
 
-export * from './AdminPreviewProvider';
 export * from './Box';
 export * from './Button';
 export * from './Checkbox';
@@ -20,3 +19,4 @@ export * from './Tabs';
 export * from './Tabs/Tab';
 export * from './TextArea';
 export * from './TextField';
+export * from './useClasses';
