@@ -9,9 +9,6 @@ on:
       CLOUDFLARE_ACCOUNT_ID:
         description: 'Account ID for publishing to Cloudflare Pages'
         required: true
-      GITHUB_TOKEN:
-        description: 'Token for accessing GitHub API'
-        required: true
   workflow_dispatch:
   pull_request:
     branches:
