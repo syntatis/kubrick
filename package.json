@@ -43,7 +43,7 @@
     "typescript": "^5.3.3"
   },
   "scripts": {
-    "build": "npm run build -w @syntatis/kubrick",
+    "build": "npm run build -w @syntatis/kubrick -w @syntatis/kubrick-dev",
     "chromatic": "chromatic --build-script-name=storybook:build",
     "format": "npm run format:scripts && npm run format:styles",
     "format:scripts": "eslint . --fix",
@@ -54,9 +54,9 @@
     "lint:types": "tsc --noEmit",
     "storybook": "storybook dev -p 6007",
     "storybook:build": "storybook build",
-    "test": "npm run test -w @syntatis/kubrick",
-    "test:coverage": "npm run test:coverage -w @syntatis/kubrick",
-    "test:watch": "npm run test:watch -w @syntatis/kubrick",
+    "test": "npm run test --workspaces --if-present",
+    "test:coverage": "npm run test:coverage --workspaces --if-present",
+    "test:watch": "npm run test:watch ---workspaces --if-present",
     "website:build": "npm run build -w @syntatis/website",
     "website:dev": "npm run dev -w @syntatis/website",
     "website:preview": "npm run preview -w @syntatis/website"
