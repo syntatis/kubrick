@@ -7,11 +7,12 @@
   "command": {
     "version": {
       "message": "Version bump",
-			"allowBranch": ["main", "dev"],
+			"allowBranch": ["main"],
       "changelog": false,
       "private": false,
-      "push": true,
+      "push": false,
       "exact": true,
+			"includeDependents": true,
       "ignoreChanges": [
         "**/*.md",
         "**/*.spec.ts",
