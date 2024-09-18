@@ -43,7 +43,7 @@ export default defineConfig({
 						return '_PreviewProvider.css';
 					}
 
-					return `${name}.[ext]`;
+					return `${name}`;
 				},
 				entryFileNames: '[name].js',
 			},
