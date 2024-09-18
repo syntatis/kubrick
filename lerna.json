@@ -10,7 +10,7 @@
 			"allowBranch": ["main"],
       "changelog": false,
       "private": false,
-      "push": false,
+      "push": true,
       "exact": true,
       "ignoreChanges": [
         "**/*.md",
