@@ -10,7 +10,7 @@
     "react",
     "component-library",
     "wordpress",
-		"development"
+    "development"
   ],
   "sideEffects": [
     "**/*.css"
@@ -24,15 +24,15 @@
     "access": "public"
   },
   "dependencies": {
-		"clsx": "^2.1.1"
+    "clsx": "^2.1.1"
   },
   "devDependencies": {
     "@syntatis/eslint-config": "^0.2.5",
     "@syntatis/stylelint-config": "^0.1.9",
-		"@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "@vitejs/plugin-react": "^4.2.1",
-		"eslint": "^8.57.1",
+    "eslint": "^8.57.1",
     "glob": "^11.0.0",
     "prettier": "^3.2.4",
     "react": "^18.0.0",

@@ -23,8 +23,8 @@
     "@astrojs/starlight-tailwind": "^2.0.3",
     "@astrojs/tailwind": "^5.1.0",
     "@expressive-code/plugin-collapsible-sections": "^0.36.1",
-    "@syntatis/kubrick": "^0.1.0-beta.2",
-    "@syntatis/kubrick-dev": "^0.0.0",
+    "@syntatis/kubrick": "file:../packages/kubrick",
+    "@syntatis/kubrick-dev": "file:../packages/kubrick-dev",
     "@wordpress/icons": "^10.5.0",
     "astro": "^4.10.2",
     "modern-normalize": "^3.0.1",
@@ -33,8 +33,8 @@
     "typescript": "^5.5.4"
   },
   "devDependencies": {
-    "@syntatis/eslint-config": "^0.2.5",
-    "@syntatis/stylelint-config": "^0.1.9",
+    "@syntatis/eslint-config": "file:../packages/eslint-config",
+    "@syntatis/stylelint-config": "file:../packages/stylelint-config",
     "eslint": "^8.55.0",
     "eslint-plugin-astro": "^1.2.3"
   }
