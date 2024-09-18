@@ -64,7 +64,7 @@ jobs:
           npm ci --workspaces --no-audit --ignore-scripts
           composer install --prefer-dist
 
-      - name: Run Build
+      - name: Run build
         env:
           NODE_ENV: production
         run: |
