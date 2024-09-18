@@ -1,0 +1,24 @@
+# compiled
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.zip
+*.tgz
+
+# tests
+*.test.ts
+*.test.tsx
+*.test.js
+*.test.jsx
+
+# configs
+*.config.*
+.editorconfig
+.eslint*
+tsconfig.*
+
+# misc
+src/

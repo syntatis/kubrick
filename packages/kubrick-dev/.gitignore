@@ -1,0 +1,7 @@
+# build
+index.d.ts
+index.js
+style.css
+
+# tests
+coverage

@@ -5,7 +5,7 @@
 @use '../../../wordpress/wp-admin/css/common.css';
 @use '../../../wordpress/wp-admin/css/edit.css';
 @use "../../../wordpress/wp-admin/css/forms.css";
-@use './base';
+@use '../../kubrick/scss/base';
 
 .__wp-core-body__ {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
