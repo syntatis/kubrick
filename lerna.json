@@ -12,7 +12,6 @@
       "private": false,
       "push": false,
       "exact": true,
-			"includeDependents": true,
       "ignoreChanges": [
         "**/*.md",
         "**/*.spec.ts",
