@@ -2,6 +2,10 @@ name: chromatic
 
 on:
   workflow_call:
+    secrets:
+      CHROMATIC_PROJECT_TOKEN:
+        description: 'Token for uploading Storybook to Chromatic'
+        required: true
   workflow_dispatch:
 
 env:
