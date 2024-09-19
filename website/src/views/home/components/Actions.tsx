@@ -14,7 +14,7 @@ export const Actions = () => {
 			<div className="max-w-max flex">
 				<pre>
 					<code className="py-4 px-6 rounded-md">
-						<span className="select-none mr-2">$</span>npm i @syntatis/kubrick
+						<span className="select-none mr-2">$</span>npm i @syntatis/kubrick@next
 					</code>
 				</pre>
 			</div>
