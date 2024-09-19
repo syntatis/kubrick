@@ -4,7 +4,7 @@ description: Learn how to use the Tabs component in your WordPress admin applica
 ---
 
 import { Image } from "astro:assets";
-import cover from "../../assets/switch-component.png";
+import cover from "../../assets/tabs-component.png";
 import Lead from "../../templates/Lead.astro";
 import Table from "../../templates/Table.astro";
 
@@ -14,6 +14,14 @@ import Table from "../../templates/Table.astro";
 	is shown, while the other tabs content is hidden allowing them to focus on the
 	selected section. The `Tabs` component is especially useful when you need to
 	present multiple categories of information or features.
+
+	<Image
+		src={cover}
+		alt="Kubrick UI Tabs component"
+		slot="cover"
+		quality="high"
+		loading="eager"
+	/>
 </Lead>
 
 ## Usage
