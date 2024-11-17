@@ -17,10 +17,12 @@ export const TabItem = (props: TabItemProps) => {
 	const { componentProps, rootProps } = useProps('Tabs', props);
 	const { isDisabled, isSelected, tabProps } = useTab({ key }, state, ref);
 	const { focusProps, isFocusVisible } = useFocusRing(componentProps);
-	const { navigate, url } = useTabsProvider();
+	const { baseuri, navigate } = useTabsProvider();
 
-	if (navigate) {
-		url?.searchParams.set(navigate, `${key}`);
+	if (navigate && baseuri) {
+		const uri = new URL(baseuri);
+
+		uri?.searchParams.set(navigate, `${key}`);
 
 		return (
 			<a
@@ -32,7 +34,7 @@ export const TabItem = (props: TabItemProps) => {
 				data-disabled={isDisabled || undefined}
 				data-focus-visible={isFocusVisible || undefined}
 				data-selected={isSelected || undefined}
-				href={`${url?.toString()}`}
+				href={`${uri?.toString()}`}
 				ref={ref}
 			>
 				{rendered}
