@@ -2,6 +2,7 @@ import { composeStory } from '@storybook/react';
 import { render, screen } from '@testing-library/react';
 import { expect, it } from 'vitest';
 import Meta, { Default } from './Tabs.stories';
+import { TabsProvider } from './TabsProvider';
 
 const Tabs = composeStory(Default, Meta);
 
@@ -67,4 +68,23 @@ it('should retain orientation', () => {
 	const tabList = screen.queryByRole('tablist');
 
 	expect(tabList).toHaveAttribute('aria-orientation', 'horizontal');
+});
+
+it('should render item as link', () => {
+	render(
+		<TabsProvider navigate url="http://localhost/app">
+			<Tabs />
+		</TabsProvider>
+	);
+
+	const general = screen.queryByText('General');
+	const shipping = screen.queryByText('Shipping');
+	const payments = screen.queryByText('Payments');
+
+	expect(general).toHaveRole('link');
+	expect(general).toHaveAttribute('href', 'http://localhost/app?tab=general');
+	expect(shipping).toHaveRole('link');
+	expect(shipping).toHaveAttribute('href', 'http://localhost/app?tab=shipping');
+	expect(payments).toHaveRole('link');
+	expect(payments).toHaveAttribute('href', 'http://localhost/app?tab=payments');
 });

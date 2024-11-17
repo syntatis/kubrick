@@ -17,10 +17,10 @@ export const TabItem = (props: TabItemProps) => {
 	const { componentProps, rootProps } = useProps('Tabs', props);
 	const { isDisabled, isSelected, tabProps } = useTab({ key }, state, ref);
 	const { focusProps, isFocusVisible } = useFocusRing(componentProps);
-	const { baseuri, navigate } = useTabsProvider();
+	const { navigate, url } = useTabsProvider();
 
-	if (navigate && baseuri) {
-		const uri = new URL(baseuri);
+	if (navigate && url) {
+		const uri = new URL(url);
 
 		uri?.searchParams.set(navigate, `${key}`);
 

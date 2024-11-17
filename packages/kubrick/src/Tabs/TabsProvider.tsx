@@ -3,19 +3,19 @@ import { ReactNode, createContext, useContext } from 'react';
 type Context = 'box' | 'settings';
 
 interface TabsContextArgs {
-	baseuri?: string;
 	/**
 	 * @default 'settings'
 	 */
 	context?: Context;
 	navigate?: string;
+	url?: string;
 }
 
 interface TabsProviderProps {
-	baseuri?: string;
 	children: ReactNode;
 	context?: Context;
 	navigate?: boolean | string;
+	url?: string;
 }
 
 const Context = createContext<TabsContextArgs>({
@@ -23,7 +23,7 @@ const Context = createContext<TabsContextArgs>({
 });
 
 export const TabsProvider = (props: TabsProviderProps) => {
-	const { baseuri, children, context } = props;
+	const { children, context, url } = props;
 	let navigate = 'tab';
 
 	if (typeof props.navigate === 'string') {
@@ -31,7 +31,7 @@ export const TabsProvider = (props: TabsProviderProps) => {
 	}
 
 	return (
-		<Context.Provider value={{ baseuri, context, navigate }}>
+		<Context.Provider value={{ context, navigate, url }}>
 			{children}
 		</Context.Provider>
 	);
