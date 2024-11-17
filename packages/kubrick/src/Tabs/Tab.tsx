@@ -6,6 +6,7 @@ import { GlobalProps } from '../types';
 export interface TabProps extends GlobalProps {
 	children: ReactNode;
 	key?: Key;
+	path?: string;
 	title: ReactNode;
 }
 

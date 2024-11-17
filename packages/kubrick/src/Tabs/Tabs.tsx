@@ -1,4 +1,4 @@
-import { ReactElement, forwardRef } from 'react';
+import { ReactElement, forwardRef, useEffect } from 'react';
 import { AriaTabListOptions, useObjectRef, useTabList } from 'react-aria';
 import { useTabListState } from 'react-stately';
 import { GlobalProps } from '../types';
@@ -30,7 +30,7 @@ interface TabsProps
 export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
 	(props: TabsProps, forwardedRef) => {
 		const ref = useObjectRef(forwardedRef);
-		const { context } = useTabsProvider();
+		const { context, navigate } = useTabsProvider();
 		const { clsx, componentProps, rootProps } = useProps('Tabs', props);
 		const state = useTabListState(componentProps);
 		let { orientation } = props;
@@ -39,6 +39,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
 		const { tabListProps } = useTabList(
 			{
 				...componentProps,
+				keyboardActivation: navigate ? 'manual' : undefined,
 				orientation,
 			},
 			state,
