@@ -31,6 +31,6 @@
 	},
 	"require-dev": {
 		"composer/installers": "^2.2",
-		"roots/wordpress": "^6.4"
+		"roots/wordpress": "6.6"
 	}
 }

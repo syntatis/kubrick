@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "93d8772e66fb68a93b43bbb613119b04",
+    "content-hash": "cd9a7beb74ca80c69caed0ae8e9109c7",
     "packages": [],
     "packages-dev": [
         {
@@ -155,7 +155,7 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "6.7",
+            "version": "6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
@@ -186,7 +186,7 @@
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress/issues",
-                "source": "https://github.com/roots/wordpress/tree/6.7"
+                "source": "https://github.com/roots/wordpress/tree/6.6"
             },
             "funding": [
                 {
@@ -269,22 +269,22 @@
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.7",
+            "version": "6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.7"
+                "reference": "6.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/release/wordpress-6.7-no-content.zip",
-                "shasum": "d30558244ed409b6421a5454f9c837d0884317f2"
+                "url": "https://downloads.wordpress.org/release/wordpress-6.6-no-content.zip",
+                "shasum": "6c0d82185d47782aab67a72d07dee459f9f6ceba"
             },
             "require": {
-                "php": ">= 7.2.24"
+                "php": ">= 7.0.0"
             },
             "provide": {
-                "wordpress/core-implementation": "6.7"
+                "wordpress/core-implementation": "6.6"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -335,7 +335,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-11-12T20:51:37+00:00"
+            "time": "2024-07-16T16:26:38+00:00"
         }
     ],
     "aliases": [],
