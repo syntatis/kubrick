@@ -7,11 +7,15 @@ interface TabsContextArgs {
 	 * @default 'settings'
 	 */
 	context?: Context;
+	navigate?: string;
+	url?: string;
 }
 
 interface TabsProviderProps {
 	children: ReactNode;
-	context: Context;
+	context?: Context;
+	navigate?: boolean | string;
+	url?: string;
 }
 
 const Context = createContext<TabsContextArgs>({
@@ -19,9 +23,18 @@ const Context = createContext<TabsContextArgs>({
 });
 
 export const TabsProvider = (props: TabsProviderProps) => {
-	const { children, context } = props;
+	const { children, context, url } = props;
+	let navigate = 'tab';
 
-	return <Context.Provider value={{ context }}>{children}</Context.Provider>;
+	if (typeof props.navigate === 'string') {
+		navigate = props.navigate as string;
+	}
+
+	return (
+		<Context.Provider value={{ context, navigate, url }}>
+			{children}
+		</Context.Provider>
+	);
 };
 
 export const useTabsProvider = () => {

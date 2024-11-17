@@ -164,7 +164,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
 					ref={ref}
 					required={componentProps.isRequired}
 					tabIndex={componentProps.excludeFromTabOrder ? -1 : undefined}
-					value={state.selectedKey}
+					value={state.selectedKey !== null ? state.selectedKey : undefined}
 				>
 					{children}
 				</select>
