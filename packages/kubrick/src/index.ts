@@ -19,4 +19,5 @@ export * from './Tabs';
 export * from './Tabs/Tab';
 export * from './TextArea';
 export * from './TextField';
+export * from './Tooltip';
 export * from './useClasses';
