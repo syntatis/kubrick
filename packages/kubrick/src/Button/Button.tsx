@@ -72,6 +72,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 					],
 				})}
 				{...mergeProps(buttonProps, hoverProps, focusProps)}
+				ref={ref}
 				role={role}
 			>
 				{prefix && (

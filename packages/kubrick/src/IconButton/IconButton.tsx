@@ -79,6 +79,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
 				})}
 				{...mergeProps(buttonProps, hoverProps, focusProps)}
 				aria-label={label}
+				ref={ref}
 				role={role}
 			>
 				{children}
