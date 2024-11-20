@@ -21,13 +21,13 @@
 			stroke: var(--kubrick-accent-color);
 		}
 
-		&.isSelected {
+		&.isSelected label {
 			.track {
 				fill: var(--kubrick-accent-color);
 			}
 		}
 
-		&.isDisabled {
+		&.isDisabled label {
 			cursor: not-allowed;
 
 			.track {

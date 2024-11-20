@@ -52,19 +52,18 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
 		const descriptionId = description ? useId() : undefined;
 
 		return (
-			<>
-				<label
-					{...rootProps({
-						classNames: [
-							classes.root,
-							{
-								[classes.isDisabled]: isDisabled,
-								[classes.isSelected]: state.isSelected,
-							},
-						],
-					})}
-					{...labelProps}
-				>
+			<div
+				{...rootProps({
+					classNames: [
+						classes.root,
+						{
+							[classes.isDisabled]: isDisabled,
+							[classes.isSelected]: state.isSelected,
+						},
+					],
+				})}
+			>
+				<label {...labelProps}>
 					<VisuallyHidden>
 						<input
 							{...inputProps}
@@ -134,7 +133,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
 						{description}
 					</p>
 				)}
-			</>
+			</div>
 		);
 	}
 );
