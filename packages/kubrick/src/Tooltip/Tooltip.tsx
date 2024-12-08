@@ -34,7 +34,7 @@ interface TooltipProps
 
 /**
  * ```js
- * import { Tooltip } from '@kinsta-martech/spectra-core';
+ * import { Tooltip } from '@syntatis/kubrick';
  * ```
  */
 export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
