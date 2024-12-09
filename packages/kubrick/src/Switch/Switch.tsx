@@ -39,14 +39,15 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
 		const ref = useObjectRef(forwardedRef);
 		const state = useToggleState(props);
 		const { clsx, componentProps, rootProps } = useProps('Switch', props);
-		const { inputProps, isDisabled, labelProps } = useSwitch(
-			{
-				...componentProps,
-				children: label,
-			},
-			state,
-			ref
-		);
+		const { inputProps, isDisabled, isReadOnly, isSelected, labelProps } =
+			useSwitch(
+				{
+					...componentProps,
+					children: label,
+				},
+				state,
+				ref
+			);
 		const { focusProps, isFocusVisible } = useFocusRing();
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 		const descriptionId = description ? useId() : undefined;
@@ -58,10 +59,13 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
 						classes.root,
 						{
 							[classes.isDisabled]: isDisabled,
-							[classes.isSelected]: state.isSelected,
+							[classes.isSelected]: isSelected,
 						},
 					],
 				})}
+				data-disabled={isDisabled || undefined}
+				data-readonly={isReadOnly || undefined}
+				data-selected={isSelected || undefined}
 			>
 				<label {...labelProps}>
 					<VisuallyHidden>
