@@ -141,3 +141,17 @@ it('should render collapsible label as function', async () => {
 	expect(content).not.toBeVisible();
 	expect(screen.queryByRole('button', { name: 'Expand' })).toBeEnabled();
 });
+
+it('should render "data-expanded" attribute', async () => {
+	const user = userEvent.setup();
+
+	render(<Box collapsible data-testid="box" />);
+
+	const button = screen.getByRole('button', { name: 'Toggle panel' });
+
+	expect(screen.getByTestId('box')).toHaveAttribute('data-expanded', 'true');
+
+	await user.click(button);
+
+	expect(screen.getByTestId('box')).not.toHaveAttribute('data-expanded');
+});
