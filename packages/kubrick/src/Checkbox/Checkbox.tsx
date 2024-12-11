@@ -43,7 +43,7 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
 				useId()
 			:	undefined;
 		const groupState = useContext(CheckboxGroupContext);
-		const { inputProps, isDisabled, isReadOnly, labelProps } =
+		const { inputProps, isDisabled, isReadOnly, isSelected, labelProps } =
 			groupState ?
 				// eslint-disable-next-line react-hooks/rules-of-hooks
 				useCheckboxGroupItem(
@@ -91,6 +91,9 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
 						},
 					],
 				})}
+				data-disabled={isDisabled || undefined}
+				data-readonly={isReadOnly || undefined}
+				data-selected={isSelected || undefined}
 			>
 				<label
 					className={clsx({

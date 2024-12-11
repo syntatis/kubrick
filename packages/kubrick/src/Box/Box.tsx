@@ -97,6 +97,7 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(
 						},
 					],
 				})}
+				data-expanded={expanded || undefined}
 				ref={ref}
 			>
 				{(title || collapsible) && (

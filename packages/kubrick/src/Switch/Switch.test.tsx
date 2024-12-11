@@ -122,3 +122,39 @@ it('should have the description', async () => {
 		'When enabled it will show post type in REST API.'
 	);
 });
+
+it('should have "data-selected"', async () => {
+	render(<Switch data-testid="switch-1" />);
+	expect(screen.getByTestId('switch-1')).not.toHaveAttribute('data-selected');
+
+	// isSelected
+	render(<Switch data-testid="switch-2" isSelected />);
+	expect(screen.getByTestId('switch-2')).toHaveAttribute(
+		'data-selected',
+		'true'
+	);
+});
+
+it('should have "data-disabled"', async () => {
+	render(<Switch data-testid="switch-1" />);
+	expect(screen.getByTestId('switch-1')).not.toHaveAttribute('data-disabled');
+
+	// isDisabled
+	render(<Switch data-testid="switch-2" isDisabled />);
+	expect(screen.getByTestId('switch-2')).toHaveAttribute(
+		'data-disabled',
+		'true'
+	);
+});
+
+it('should have "data-readonly"', async () => {
+	render(<Switch data-testid="switch-1" />);
+	expect(screen.getByTestId('switch-1')).not.toHaveAttribute('data-readonly');
+
+	// isDisabled
+	render(<Switch data-testid="switch-2" isReadOnly />);
+	expect(screen.getByTestId('switch-2')).toHaveAttribute(
+		'data-readonly',
+		'true'
+	);
+});
