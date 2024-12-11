@@ -30,6 +30,7 @@ interface TooltipProps
 	 * @default 5
 	 */
 	offset?: number;
+	placement?: 'bottom' | 'left' | 'right' | 'top';
 }
 
 /**
@@ -45,6 +46,7 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
 			content,
 			delay,
 			offset = DEFAULT_OFFSET,
+			placement = 'top',
 			role,
 		} = props;
 		const tooltipRef = useObjectRef(forwardedRef);
@@ -60,7 +62,7 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
 			isOpen: state.isOpen,
 			offset,
 			overlayRef: tooltipRef,
-			placement: 'left',
+			placement,
 			targetRef: triggerRef,
 		});
 		const { tooltipProps: triggerTooltipProps, triggerProps } =

@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@react-aria/checkbox": "^3.13.0",
-    "@react-aria/utils": "^3.23.0",
+    "@react-aria/focus": "^3.19.0",
+    "@react-aria/utils": "^3.26.0",
     "@react-stately/checkbox": "^3.6.1",
     "@react-stately/collections": "^3.10.4",
     "clsx": "^2.1.1",
@@ -32,6 +33,7 @@
     "react-stately": "^3.29.1"
   },
   "devDependencies": {
+		"@react-types/shared": "^3.26.0",
     "@storybook/react": "^8.0.0",
     "@storybook/react-vite": "^8.0.0",
     "@syntatis/eslint-config": "0.2.6",
