@@ -199,3 +199,39 @@ it('should call the "onChange" callback', async () => {
 	expect(fn).toBeCalledTimes(2);
 	expect(fn).toBeCalledWith(false);
 });
+
+it('should have "data-selected"', async () => {
+	render(<Checkbox data-testid="checkbox-1" />);
+	expect(screen.getByTestId('checkbox-1')).not.toHaveAttribute('data-selected');
+
+	// isSelected
+	render(<Checkbox data-testid="checkbox-2" isSelected />);
+	expect(screen.getByTestId('checkbox-2')).toHaveAttribute(
+		'data-selected',
+		'true'
+	);
+});
+
+it('should have "data-disabled"', async () => {
+	render(<Checkbox data-testid="checkbox-1" />);
+	expect(screen.getByTestId('checkbox-1')).not.toHaveAttribute('data-disabled');
+
+	// isDisabled
+	render(<Checkbox data-testid="checkbox-2" isDisabled />);
+	expect(screen.getByTestId('checkbox-2')).toHaveAttribute(
+		'data-disabled',
+		'true'
+	);
+});
+
+it('should have "data-readonly"', async () => {
+	render(<Checkbox data-testid="checkbox-1" />);
+	expect(screen.getByTestId('checkbox-1')).not.toHaveAttribute('data-readonly');
+
+	// isDisabled
+	render(<Checkbox data-testid="checkbox-2" isReadOnly />);
+	expect(screen.getByTestId('checkbox-2')).toHaveAttribute(
+		'data-readonly',
+		'true'
+	);
+});
