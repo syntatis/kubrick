@@ -236,6 +236,7 @@ it('should be marked as invalid and show error message', () => {
 		<RadioGroup
 			label="For each post in a feed, include"
 			validate={() => 'Please select one of the options!'}
+			value=""
 		>
 			<Radio value="full-text">Full text</Radio>
 			<Radio value="excerpt">Excerpt</Radio>
