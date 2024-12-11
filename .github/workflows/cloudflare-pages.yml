@@ -4,10 +4,10 @@ on:
   workflow_call:
     secrets:
       CLOUDFLARE_API_TOKEN:
-        description: 'Token for publishing to Cloudflare Pages'
+        description: "Token for publishing to Cloudflare Pages"
         required: true
       CLOUDFLARE_ACCOUNT_ID:
-        description: 'Account ID for publishing to Cloudflare Pages'
+        description: "Account ID for publishing to Cloudflare Pages"
         required: true
   workflow_dispatch:
   pull_request:
@@ -46,7 +46,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: "7.4"
 
       - name: Get Composer cache directory
         id: composer-cache
@@ -77,6 +77,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: kubrick
-          directory: website/dist
-          wranglerVersion: '3'
+          command: pages deploy website/dist --project-name=kubrick
+          wranglerVersion: "3"
