@@ -1,0 +1,31 @@
+---
+title: Tooltip
+description: Learn how to use the Tooltip component in your WordPress admin application.
+---
+
+import { Image } from "astro:assets";
+import { Aside } from "@astrojs/starlight/components";
+import cover from "../../assets/textarea-component.png";
+import Lead from "../../templates/Lead.astro";
+import Table from "../../templates/Table.astro";
+
+<Lead storybook="/docs/components-textarea--docs">
+	The `Tooltip` component is to display additional contextual information when
+	users hover over, focus on, or interact with an element.
+</Lead>
+
+## Usage
+
+To use the component, import the `Tooltip` component from the package:
+
+```jsx
+import { Tooltip } from "@syntatis/kubrick";
+```
+
+Then, you can use it in your application by adding the `Tooltip` component and passing the `content` prop with the content you want to display on the tooltip. You will also need to pass a component as a child to the `Tooltip` component, which will be the element that will trigger the tooltip. The child component should be
+
+```jsx
+<Tooltip content="">
+	<button>Hover me</button>
+</Tooltip>
+```
