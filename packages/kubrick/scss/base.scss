@@ -7,11 +7,80 @@
  */
 
 :root {
+	// Gray.
+	--kubrick-gray-10: colors.$gray-10;
+	--kubrick-gray-50: colors.$gray-50;
+	--kubrick-gray-100: colors.$gray-100;
+	--kubrick-gray-200: colors.$gray-200;
+	--kubrick-gray-300: colors.$gray-300;
+	--kubrick-gray-400: colors.$gray-400;
+	--kubrick-gray-500: colors.$gray-500;
+	--kubrick-gray-600: colors.$gray-600;
+	--kubrick-gray-700: colors.$gray-700;
+	--kubrick-gray-800: colors.$gray-800;
+	--kubrick-gray-900: colors.$gray-900;
+	--kubrick-gray-950: colors.$gray-950;
+
+	// Blue.
+	--kubrick-blue-10 : colors.$blue-10;
+	--kubrick-blue-50 : colors.$blue-50;
+	--kubrick-blue-100 : colors.$blue-100;
+	--kubrick-blue-200 : colors.$blue-200;
+	--kubrick-blue-300 : colors.$blue-300;
+	--kubrick-blue-400 : colors.$blue-400;
+	--kubrick-blue-500 : colors.$blue-500;
+	--kubrick-blue-600 : colors.$blue-600;
+	--kubrick-blue-700 : colors.$blue-700;
+	--kubrick-blue-800 : colors.$blue-800;
+	--kubrick-blue-900 : colors.$blue-900;
+	--kubrick-blue-950 : colors.$blue-950;
+
+	// Red.
+	--kubrick-red-10: colors.$red-10;
+	--kubrick-red-50: colors.$red-50;
+	--kubrick-red-100: colors.$red-100;
+	--kubrick-red-200: colors.$red-200;
+	--kubrick-red-300: colors.$red-300;
+	--kubrick-red-400: colors.$red-400;
+	--kubrick-red-500: colors.$red-500;
+	--kubrick-red-600: colors.$red-600;
+	--kubrick-red-700: colors.$red-700;
+	--kubrick-red-800: colors.$red-800;
+	--kubrick-red-900: colors.$red-900;
+	--kubrick-red-950: colors.$red-950;
+
+	// Yellow.
+	--kubrick-yellow-10: colors.$yellow-10;
+	--kubrick-yellow-50: colors.$yellow-50;
+	--kubrick-yellow-100: colors.$yellow-100;
+	--kubrick-yellow-200: colors.$yellow-200;
+	--kubrick-yellow-300: colors.$yellow-300;
+	--kubrick-yellow-400: colors.$yellow-400;
+	--kubrick-yellow-500: colors.$yellow-500;
+	--kubrick-yellow-600: colors.$yellow-600;
+	--kubrick-yellow-700: colors.$yellow-700;
+	--kubrick-yellow-800: colors.$yellow-800;
+	--kubrick-yellow-900: colors.$yellow-900;
+	--kubrick-yellow-950: colors.$yellow-950;
+
+	// Green.
+	--kubrick-green-10: colors.$green-10;
+	--kubrick-green-50: colors.$green-50;
+	--kubrick-green-100: colors.$green-100;
+	--kubrick-green-200: colors.$green-200;
+	--kubrick-green-300: colors.$green-300;
+	--kubrick-green-400: colors.$green-400;
+	--kubrick-green-500: colors.$green-500;
+	--kubrick-green-600: colors.$green-600;
+	--kubrick-green-700: colors.$green-700;
+	--kubrick-green-800: colors.$green-800;
+	--kubrick-green-900: colors.$green-900;
+	--kubrick-green-950: colors.$green-950;
+
+	// WordPress Accents.
 	--kubrick-accent-color: #{colors.$accent};
-	--kubrick-invalid-color: #{colors.$input-invalid};
-	--kubrick-description-color: #{colors.$input-description};
-	--kubrick-outline-color: var(--kubrick-accent-color);
 	--kubrick-body-background-color: #{colors.$page-bg};
+	--kubrick-outline-color: var(--kubrick-accent-color);
 }
 
 .admin-color-blue {
