@@ -36,18 +36,46 @@
 	--kubrick-blue-950 : colors.$blue-950;
 
 	// Red.
-	--kubrick-red-10: $red-10;
-	--kubrick-red-50: $red-50;
-	--kubrick-red-100: $red-100;
-	--kubrick-red-200: $red-200;
-	--kubrick-red-300: $red-300;
-	--kubrick-red-400: $red-400;
-	--kubrick-red-500: $red-500;
-	--kubrick-red-600: $red-600;
-	--kubrick-red-700: $red-700;
-	--kubrick-red-800: $red-800;
-	--kubrick-red-900: $red-900;
-	--kubrick-red-950: $red-950;
+	--kubrick-red-10: colors.$red-10;
+	--kubrick-red-50: colors.$red-50;
+	--kubrick-red-100: colors.$red-100;
+	--kubrick-red-200: colors.$red-200;
+	--kubrick-red-300: colors.$red-300;
+	--kubrick-red-400: colors.$red-400;
+	--kubrick-red-500: colors.$red-500;
+	--kubrick-red-600: colors.$red-600;
+	--kubrick-red-700: colors.$red-700;
+	--kubrick-red-800: colors.$red-800;
+	--kubrick-red-900: colors.$red-900;
+	--kubrick-red-950: colors.$red-950;
+
+	// Yellow.
+	--kubrick-yellow-10: colors.$yellow-10;
+	--kubrick-yellow-50: colors.$yellow-50;
+	--kubrick-yellow-100: colors.$yellow-100;
+	--kubrick-yellow-200: colors.$yellow-200;
+	--kubrick-yellow-300: colors.$yellow-300;
+	--kubrick-yellow-400: colors.$yellow-400;
+	--kubrick-yellow-500: colors.$yellow-500;
+	--kubrick-yellow-600: colors.$yellow-600;
+	--kubrick-yellow-700: colors.$yellow-700;
+	--kubrick-yellow-800: colors.$yellow-800;
+	--kubrick-yellow-900: colors.$yellow-900;
+	--kubrick-yellow-950: colors.$yellow-950;
+
+	// Green.
+	--kubrick-green-10: colors.$green-10;
+	--kubrick-green-50: colors.$green-50;
+	--kubrick-green-100: colors.$green-100;
+	--kubrick-green-200: colors.$green-200;
+	--kubrick-green-300: colors.$green-300;
+	--kubrick-green-400: colors.$green-400;
+	--kubrick-green-500: colors.$green-500;
+	--kubrick-green-600: colors.$green-600;
+	--kubrick-green-700: colors.$green-700;
+	--kubrick-green-800: colors.$green-800;
+	--kubrick-green-900: colors.$green-900;
+	--kubrick-green-950: colors.$green-950;
 
 	// WordPress Accents.
 	--kubrick-accent-color: #{colors.$accent};
