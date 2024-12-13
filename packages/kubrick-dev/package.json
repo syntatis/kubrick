@@ -2,7 +2,7 @@
   "name": "@syntatis/kubrick-dev",
   "description": "Classic WordPress Admin UI (Development)",
   "version": "0.1.0-beta.1",
-  "license": "GPL-2.0-or-later",
+  "license": "GPL-3.0-or-later",
   "type": "module",
   "keywords": [
     "admin-dashboard",
