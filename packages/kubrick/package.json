@@ -1,7 +1,7 @@
 {
   "name": "@syntatis/kubrick",
   "description": "Classic WordPress Admin UI",
-  "version": "0.1.0-beta.9",
+  "version": "0.1.0-beta.10",
   "license": "GPL-3.0-or-later",
   "type": "module",
   "keywords": [
