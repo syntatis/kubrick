@@ -13,9 +13,9 @@
 
 	&.invalid {
 		.input {
-			border-color: var(--kubrick-invalid-color);
+			border-color: colors.$red-500;
 			outline-width: 1px;
-			outline-color: var(--kubrick-invalid-color);
+			outline-color: colors.$red-500;
 		}
 	}
 }
@@ -32,7 +32,7 @@
 
 	.markedRequired {
 		margin-inline-start: 0.25rem;
-		color: var(--kubrick-invalid-color);
+		color: colors.$red-500;
 	}
 
 	&[aria-disabled="true"] {
