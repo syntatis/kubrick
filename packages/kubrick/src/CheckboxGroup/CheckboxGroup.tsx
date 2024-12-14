@@ -84,25 +84,27 @@ export const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
 				aria-invalid={isInvalid}
 				ref={ref}
 			>
-				<span
-					{...labelProps}
-					className={clsx({
-						classNames: classes.label,
-						prefixedNames: 'label',
-					})}
-				>
-					{label}
-					{isRequired ?
-						<span
-							className={clsx({
-								classNames: classes.markedRequired,
-								prefixedNames: 'marked-required',
-							})}
-						>
-							*
-						</span>
-					:	''}
-				</span>
+				{label && (
+					<span
+						{...labelProps}
+						className={clsx({
+							classNames: classes.label,
+							prefixedNames: 'label',
+						})}
+					>
+						{label}
+						{isRequired ?
+							<span
+								className={clsx({
+									classNames: classes.markedRequired,
+									prefixedNames: 'marked-required',
+								})}
+							>
+								*
+							</span>
+						:	''}
+					</span>
+				)}
 				<CheckboxGroupContext.Provider value={state}>
 					<div
 						className={clsx({
