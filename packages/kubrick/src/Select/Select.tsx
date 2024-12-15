@@ -33,7 +33,15 @@ interface SelectProps
 	descriptionArea?: 'after-input' | 'before-input';
 	label?: ReactNode;
 	name: string;
+	/**
+	 * Content or element to dis before the input.
+	 */
+	prefix?: ReactNode;
 	selectedItem?: string;
+	/**
+	 * Content or element to display after the input.
+	 */
+	suffix?: ReactNode;
 }
 
 function determineKey(props: OptionProps) {
@@ -84,7 +92,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
 			isRequired,
 			label,
 			name,
+			prefix,
 			selectedItem,
+			suffix,
 		} = props;
 		const ref = useObjectRef(forwardedRef);
 		const { clsx, componentProps, rootProps } = useProps('Select', props);
@@ -144,30 +154,57 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
 						:	''}
 					</label>
 				)}
-				<select
-					{...filterDOMProps(componentProps, { labelable: true })}
-					aria-describedby={selectProps['aria-describedby']}
-					aria-invalid={isInvalid || undefined}
-					aria-labelledby={selectProps['aria-labelledby']}
+				<div
 					className={clsx({
-						classNames: {
-							[classes.input]: true,
-						},
-						prefixedNames: 'input',
+						classNames: classes.inputWrapper,
+						prefixedNames: 'input-wrapper',
 					})}
-					disabled={isDisabled}
-					id={selectProps.id}
-					name={name}
-					onBlur={selectProps.onBlur}
-					onChange={(e) => state.setSelectedKey(e.target.value)}
-					onFocus={selectProps.onFocus}
-					ref={ref}
-					required={componentProps.isRequired}
-					tabIndex={componentProps.excludeFromTabOrder ? -1 : undefined}
-					value={state.selectedKey !== null ? state.selectedKey : undefined}
 				>
-					{children}
-				</select>
+					{prefix && (
+						<div
+							className={clsx({
+								classNames: classes.prefix,
+								prefixedNames: 'prefix',
+							})}
+						>
+							{prefix}
+						</div>
+					)}
+					<select
+						{...filterDOMProps(componentProps, { labelable: true })}
+						aria-describedby={selectProps['aria-describedby']}
+						aria-invalid={isInvalid || undefined}
+						aria-labelledby={selectProps['aria-labelledby']}
+						className={clsx({
+							classNames: {
+								[classes.input]: true,
+							},
+							prefixedNames: 'input',
+						})}
+						disabled={isDisabled}
+						id={selectProps.id}
+						name={name}
+						onBlur={selectProps.onBlur}
+						onChange={(e) => state.setSelectedKey(e.target.value)}
+						onFocus={selectProps.onFocus}
+						ref={ref}
+						required={componentProps.isRequired}
+						tabIndex={componentProps.excludeFromTabOrder ? -1 : undefined}
+						value={state.selectedKey !== null ? state.selectedKey : undefined}
+					>
+						{children}
+					</select>
+					{suffix && (
+						<div
+							className={clsx({
+								classNames: classes.suffix,
+								prefixedNames: 'suffix',
+							})}
+						>
+							{suffix}
+						</div>
+					)}
+				</div>
 				{errorMessageList.length >= 1 && (
 					<div
 						{...errorMessageProps}
