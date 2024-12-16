@@ -152,4 +152,23 @@ export const WithDescriptionBeforeInput: Story = {
 	render: Default.render,
 };
 
+export const WithAfffix: Story = {
+	args: {
+		'aria-label': 'Frequency',
+		description: 'Select the frequency for the site.',
+		label: '',
+		prefix: 'Frequency:',
+		suffix: 'Hz',
+	},
+	render(props) {
+		return (
+			<Select {...props}>
+				<Option value="80">80</Option>
+				<Option value="90">90</Option>
+				<Option value="100">100</Option>
+			</Select>
+		);
+	},
+};
+
 export default meta;
