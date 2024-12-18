@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Option, Select } from '../Select';
 import { Checkbox } from './Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
@@ -71,6 +72,20 @@ export const WithDescription: Story = {
 	args: {
 		description:
 			'When enabled, the editor will attempt to correct invalidly nested XHTML automatically. For example, if you open a `<strong>` tag but forget to close it, the editor will automatically close it for you.',
+	},
+};
+
+export const WithAffix: Story = {
+	args: {
+		description:
+			'Enable and set the frequency of API requests on the admin pages.',
+		label: 'Enable once every',
+		prefix: <strong>On admin pages:</strong>,
+		suffix: (
+			<Select name="frequency">
+				<Option value="1">1 minute</Option>
+			</Select>
+		),
 	},
 };
 

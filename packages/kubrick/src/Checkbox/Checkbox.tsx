@@ -17,6 +17,14 @@ export interface CheckboxProps
 		Omit<AriaCheckboxProps, 'isIndeterminate' | 'isInvalid' | 'isRequired'> {
 	description?: ReactNode;
 	label: ReactNode;
+	/**
+	 * Content or element to dis before the input.
+	 */
+	prefix?: ReactNode;
+	/**
+	 * Content or element to display after the input.
+	 */
+	suffix?: ReactNode;
 }
 
 /**
@@ -32,7 +40,7 @@ export interface CheckboxProps
  */
 export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
 	(props, forwardedRef) => {
-		const { description } = props;
+		const { description, prefix, suffix } = props;
 		const { clsx, componentProps, rootProps } = useProps('Checkbox', props);
 		const ref = useObjectRef(forwardedRef);
 		const inputRef = useRef<HTMLInputElement>(null);
@@ -95,26 +103,53 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
 				data-readonly={isReadOnly || undefined}
 				data-selected={isSelected || undefined}
 			>
-				<label
+				<div
 					className={clsx({
-						classNames: classes.label,
-						prefixedNames: 'label',
+						classNames: classes.inputWrapper,
+						prefixedNames: 'input-wrapper',
 					})}
-					id={labelId}
-					ref={ref}
 				>
-					<input
-						{...inputProps}
-						aria-describedby={descriptionId}
-						aria-labelledby={labelId}
+					{prefix && (
+						<div
+							className={clsx({
+								classNames: classes.prefix,
+								prefixedNames: 'prefix',
+							})}
+						>
+							{prefix}
+						</div>
+					)}
+					<label
 						className={clsx({
-							classNames: classes.input,
-							prefixedNames: 'input',
+							classNames: classes.label,
+							prefixedNames: 'label',
 						})}
-						ref={inputRef}
-					/>
-					{label}
-				</label>
+						id={labelId}
+						ref={ref}
+					>
+						<input
+							{...inputProps}
+							aria-describedby={descriptionId}
+							aria-labelledby={labelId}
+							className={clsx({
+								classNames: classes.input,
+								prefixedNames: 'input',
+							})}
+							ref={inputRef}
+						/>
+						{label}
+					</label>
+					{suffix && (
+						<div
+							className={clsx({
+								classNames: classes.suffix,
+								prefixedNames: 'suffix',
+							})}
+						>
+							{suffix}
+						</div>
+					)}
+				</div>
 				{description && (
 					<div
 						className={clsx({
