@@ -9,11 +9,17 @@
 
 	.label {
 		display: flex;
-		gap: 8px;
+		gap: 4px;
 
 		input {
 			flex-shrink: 0;
 		}
+	}
+
+	.inputWrapper {
+		display: flex;
+		gap: 8px;
+		align-items: center;
 	}
 
 	.input[type="checkbox"] {
