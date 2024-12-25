@@ -1,4 +1,4 @@
-@use 'sass:color';
+@use 'sass:color' as color;
 @use '../../scss/variables/colors';
 
 :global(.wp-core-ui) {
@@ -79,6 +79,7 @@
 
 			&:hover:not([aria-selected="true"], [aria-disabled="true"]) {
 				color: colors.$blue-500;
+				background-color: transparent;
 			}
 		}
 
@@ -126,6 +127,10 @@
 				border-bottom: 1px solid transparent;
 				border-left: 0;
 				transition: background-color 0.1s linear;
+
+				&:hover:not([aria-selected="true"], [aria-disabled="true"]) {
+					background-color: color.adjust(colors.$gray-10, $lightness: -5);
+				}
 			}
 
 			:global(.kubrick-Tabs-item[data-focus-visible="true"]) {

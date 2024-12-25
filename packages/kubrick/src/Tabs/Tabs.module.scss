@@ -23,6 +23,7 @@
 			&:hover:not([data-disabled="true"], [data-selected="true"]) {
 				color: colors.$gray-700;
 				cursor: pointer;
+				background-color: colors.$white;
 			}
 
 			&[data-selected="true"] {
