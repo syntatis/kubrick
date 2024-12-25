@@ -34,7 +34,7 @@ export const TabItem = (props: TabItemProps) => {
 				data-disabled={isDisabled || undefined}
 				data-focus-visible={isFocusVisible || undefined}
 				data-selected={isSelected || undefined}
-				href={`${isDisabled ? '#' : uri?.toString()}`}
+				href={isDisabled ? undefined : uri?.toString()}
 				ref={ref}
 			>
 				{rendered}

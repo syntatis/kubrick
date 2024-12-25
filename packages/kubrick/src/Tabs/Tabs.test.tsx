@@ -88,3 +88,22 @@ it('should render item as link', () => {
 	expect(payments).toHaveRole('link');
 	expect(payments).toHaveAttribute('href', 'http://localhost/app?tab=payments');
 });
+
+it('should not render link url when disabled', () => {
+	render(
+		<TabsProvider navigate url="http://localhost/app">
+			<Tabs disabledKeys={['general']} />
+		</TabsProvider>
+	);
+
+	const general = screen.queryByText('General');
+	const shipping = screen.queryByText('Shipping');
+	const payments = screen.queryByText('Payments');
+
+	expect(general).toHaveRole('generic');
+	expect(general).not.toHaveAttribute('href');
+	expect(shipping).toHaveRole('link');
+	expect(shipping).toHaveAttribute('href', 'http://localhost/app?tab=shipping');
+	expect(payments).toHaveRole('link');
+	expect(payments).toHaveAttribute('href', 'http://localhost/app?tab=payments');
+});
