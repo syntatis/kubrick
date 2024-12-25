@@ -66,25 +66,27 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
 				data-description-area={descriptionArea}
 				ref={ref}
 			>
-				<span
-					{...labelProps}
-					className={clsx({
-						classNames: classes.label,
-						prefixedNames: 'label',
-					})}
-				>
-					{label}
-					{isRequired ?
-						<span
-							className={clsx({
-								classNames: classes.markedRequired,
-								prefixedNames: 'marked-required',
-							})}
-						>
-							*
-						</span>
-					:	''}
-				</span>
+				{label && (
+					<span
+						{...labelProps}
+						className={clsx({
+							classNames: classes.label,
+							prefixedNames: 'label',
+						})}
+					>
+						{label}
+						{isRequired ?
+							<span
+								className={clsx({
+									classNames: classes.markedRequired,
+									prefixedNames: 'marked-required',
+								})}
+							>
+								*
+							</span>
+						:	''}
+					</span>
+				)}
 				<RadioContext.Provider value={state}>
 					<div
 						className={clsx({
