@@ -19,18 +19,18 @@
   "dependencies": {
     "@astrojs/check": "^0.9.2",
     "@astrojs/react": "^3.6.1",
-    "@astrojs/starlight": "^0.27.1",
+    "@astrojs/starlight": "^0.31.1",
     "@astrojs/starlight-tailwind": "^2.0.3",
-    "@astrojs/tailwind": "^5.1.0",
-    "@expressive-code/plugin-collapsible-sections": "^0.36.1",
+    "@astrojs/tailwind": "^5.1.5",
+    "@expressive-code/plugin-collapsible-sections": "^0.40.1",
     "@syntatis/kubrick": "file:../packages/kubrick",
     "@syntatis/kubrick-dev": "file:../packages/kubrick-dev",
-    "@wordpress/icons": "^10.5.0",
+    "@wordpress/icons": "^10.16.0",
     "astro": "^4.10.2",
     "modern-normalize": "^3.0.1",
     "sharp": "^0.33.5",
     "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.4"
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
     "@syntatis/eslint-config": "file:../packages/eslint-config",

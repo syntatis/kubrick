@@ -23,14 +23,14 @@
     "access": "public"
   },
   "dependencies": {
-    "@react-aria/checkbox": "^3.13.0",
+    "@react-aria/checkbox": "^3.15.1",
     "@react-aria/focus": "^3.19.0",
     "@react-aria/utils": "^3.26.0",
     "@react-stately/checkbox": "^3.6.1",
-    "@react-stately/collections": "^3.10.4",
+    "@react-stately/collections": "^3.12.1",
     "clsx": "^2.1.1",
-    "react-aria": "^3.31.1",
-    "react-stately": "^3.29.1"
+    "react-aria": "^3.37.0",
+    "react-stately": "^3.35.0"
   },
   "devDependencies": {
     "@react-types/shared": "^3.26.0",
@@ -53,7 +53,7 @@
     "react": "^18.0.0",
     "sass": "^1.79.4",
     "stylelint": "^16.2.0",
-    "typescript": "^5.3.3",
+    "typescript": "^5.7.3",
     "vite": "^5.1.1",
     "vite-plugin-external": "^4.3.1",
     "vite-plugin-lib-inject-css": "^2.0.1",
