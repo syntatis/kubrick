@@ -36,7 +36,11 @@ updates:
         versions: ["22.x"]
       - dependency-name: "react"
         versions: ["19.x"]
+      - dependency-name: "react-dom"
+        versions: ["19.x"]
       - dependency-name: "@types/react"
+        versions: ["19.x"]
+      - dependency-name: "@types/react-dom"
         versions: ["19.x"]
     schedule:
       interval: "weekly"
