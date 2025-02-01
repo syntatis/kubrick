@@ -20,7 +20,9 @@
 		"baseUrl": ".",
 	},
 	"exclude": [
+		"dist",
 		"node_modules",
-		"dist"
+		"wordpress",
+		"storybook-static"
 	]
 }
