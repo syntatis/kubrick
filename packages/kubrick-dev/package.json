@@ -29,7 +29,7 @@
   "devDependencies": {
     "@syntatis/eslint-config": "0.2.6",
     "@syntatis/stylelint-config": "0.1.10",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
     "@typescript-eslint/parser": "^7.0.0",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.57.1",
