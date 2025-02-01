@@ -29,6 +29,7 @@
     "@syntatis/kubrick": "file:./packages/kubrick",
     "@syntatis/kubrick-dev": "file:./packages/kubrick-dev",
     "@syntatis/stylelint-config": "file:./packages/stylelint-config",
+    "@types/js-yaml": "^4.0.9",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
