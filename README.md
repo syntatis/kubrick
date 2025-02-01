@@ -17,5 +17,4 @@ Named after the iconic default WordPress theme in the early days, [Kubrick UI](h
 
 ## Resources
 
-- [Documentation](https://kubrick.syntatis.com)
 - [Storybook](https://66e68bc88881b2397d6befdb-zlgmfvcbsp.chromatic.com)
