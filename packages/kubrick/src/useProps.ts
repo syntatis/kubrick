@@ -2,22 +2,20 @@ import { CSSProperties } from 'react';
 import { GlobalProps } from './types';
 import { ClassNamesArgs, useClasses } from './useClasses';
 
-interface ComponentPropsArgs extends GlobalProps {}
-
 interface RootPropsArgs {
 	classNames?: ClassNamesArgs;
 	prefixedNames?: string | string[];
 	styles?: CSSProperties;
 }
 
-export function useProps<T>(name: string, props?: ComponentPropsArgs & T) {
+export function useProps<T>(name: string, props?: GlobalProps & T) {
 	const {
 		className,
 		'data-testid': testId,
 		id,
 		style,
 		...componentProps
-	} = props || ({} as ComponentPropsArgs & T);
+	} = props || ({} as GlobalProps & T);
 	const { clsx } = useClasses(name);
 
 	return {

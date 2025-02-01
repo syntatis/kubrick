@@ -4,10 +4,9 @@ import { AriaButtonProps, useButton, useFocusRing } from 'react-aria';
 import { useProps } from '../useProps';
 import classes from './CloseButton.module.scss';
 
-interface CloseButtonProps
-	extends Omit<AriaButtonProps, 'elementType' | 'target'> {}
-
-export const CloseButton = (props: CloseButtonProps) => {
+export const CloseButton = (
+	props: Omit<AriaButtonProps, 'elementType' | 'target'>
+) => {
 	const { componentProps, rootProps } = useProps('Dialog', props);
 	const ref = useRef<HTMLButtonElement>(null);
 	const { buttonProps } = useButton(componentProps, ref);
