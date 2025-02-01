@@ -129,7 +129,7 @@
 				transition: background-color 0.1s linear;
 
 				&:hover:not([aria-selected="true"], [aria-disabled="true"]) {
-					background-color: color.adjust(colors.$gray-10, $lightness: -5);
+					background-color: color.adjust(colors.$gray-10, $lightness: -5%);
 				}
 			}
 
