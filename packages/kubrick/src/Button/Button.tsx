@@ -1,5 +1,5 @@
 import { mergeProps, useObjectRef } from '@react-aria/utils';
-import { ReactNode, forwardRef } from 'react';
+import { forwardRef, ReactNode } from 'react';
 import {
 	AriaButtonProps,
 	HoverProps,
@@ -12,9 +12,9 @@ import { useProps } from '../useProps';
 import classes from './Button.module.scss';
 
 interface ButtonProps
-	extends AriaButtonProps,
+	extends Affixable,
+		AriaButtonProps,
 		GlobalProps,
-		Affixable,
 		HoverProps {
 	children?: ReactNode;
 	/**

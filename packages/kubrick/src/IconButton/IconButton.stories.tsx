@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon, download } from '@wordpress/icons';
+import { download, Icon } from '@wordpress/icons';
 import { IconButton } from './IconButton';
 
 const meta: Meta<typeof IconButton> = {

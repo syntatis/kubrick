@@ -1,5 +1,5 @@
 import { useObjectRef } from '@react-aria/utils';
-import { ReactNode, forwardRef, useRef, useState } from 'react';
+import { forwardRef, ReactNode, useRef, useState } from 'react';
 import { useButton, useId } from 'react-aria';
 import { TabsProvider } from '../Tabs/TabsProvider';
 import { GlobalProps } from '../types';

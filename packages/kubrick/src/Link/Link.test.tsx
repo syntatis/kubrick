@@ -1,6 +1,6 @@
 import { composeStory } from '@storybook/react';
 import { render, screen } from '@testing-library/react';
-import { Icon, download, wordpress } from '@wordpress/icons';
+import { download, Icon, wordpress } from '@wordpress/icons';
 import { expect, it } from 'vitest';
 import Meta, { Default } from './Link.stories';
 

@@ -1,4 +1,4 @@
-import { Icon, closeSmall } from '@wordpress/icons';
+import { closeSmall, Icon } from '@wordpress/icons';
 import { useRef } from 'react';
 import { AriaButtonProps, useButton, useFocusRing } from 'react-aria';
 import { useProps } from '../useProps';

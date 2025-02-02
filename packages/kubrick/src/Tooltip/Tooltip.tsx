@@ -1,7 +1,7 @@
 import { FocusableProvider } from '@react-aria/focus';
 import { mergeProps, useObjectRef } from '@react-aria/utils';
 import { FocusableElement } from '@react-types/shared';
-import { ReactNode, forwardRef, useRef } from 'react';
+import { forwardRef, ReactNode, useRef } from 'react';
 import {
 	AriaTooltipProps,
 	Overlay,
@@ -19,8 +19,8 @@ export const DEFAULT_CLOSE_DELAY = 100;
 export const DEFAULT_OFFSET = 5;
 
 interface TooltipProps
-	extends GlobalProps,
-		AriaTooltipProps,
+	extends AriaTooltipProps,
+		GlobalProps,
 		TooltipTriggerProps {
 	children: ReactNode;
 	content: ReactNode;

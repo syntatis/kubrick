@@ -1,4 +1,4 @@
-import { OptgroupHTMLAttributes, forwardRef } from 'react';
+import { forwardRef, OptgroupHTMLAttributes } from 'react';
 import { useObjectRef } from 'react-aria';
 
 export const SelectGroup = forwardRef<

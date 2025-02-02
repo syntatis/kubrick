@@ -36,19 +36,6 @@ module.exports = [
 		},
 	},
 	{
-		files: [
-			'**/*.config.{js,mjs}',
-			'**/*.d.{js,mjs}',
-			'**/*.spec.{js,mjs}',
-			'**/*.test.{js,mjs}',
-			'index.{js,mjs}',
-		],
-		rules: {
-			'import-x/no-default-export': 'off',
-			'import-x/no-named-as-default': 'off',
-		},
-	},
-	{
 		rules: {
 			'@stylistic/max-len': [
 				'error',
@@ -156,6 +143,19 @@ module.exports = [
 					useTabs: true,
 				},
 			],
+		},
+	},
+	{
+		files: [
+			'**/*.config.{js,mjs}',
+			'**/*.d.{js,mjs}',
+			'**/*.spec.{js,mjs}',
+			'**/*.test.{js,mjs}',
+			'index.{js,mjs}',
+		],
+		rules: {
+			'import-x/no-default-export': 'off',
+			'import-x/no-named-as-default': 'off',
 		},
 	},
 ];

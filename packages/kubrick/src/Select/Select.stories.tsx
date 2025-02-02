@@ -4,6 +4,10 @@ import { Select } from './Select';
 import { SelectGroup } from './SelectGroup';
 
 const meta: Meta<typeof Select> = {
+	args: {
+		label: 'Site Language',
+		name: 'site_language',
+	},
 	argTypes: {
 		description: {
 			control: 'text',
@@ -14,10 +18,6 @@ const meta: Meta<typeof Select> = {
 		name: {
 			control: 'text',
 		},
-	},
-	args: {
-		label: 'Site Language',
-		name: 'site_language',
 	},
 	component: Select,
 	parameters: {

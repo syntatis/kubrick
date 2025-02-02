@@ -1,8 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon, external, wordpress } from '@wordpress/icons';
+import { external, Icon, wordpress } from '@wordpress/icons';
 import { Link } from './Link';
 
 const meta: Meta<typeof Link> = {
+	args: {
+		children: 'WordPress',
+		href: 'https://wordpress.org',
+	},
 	argTypes: {
 		children: {
 			control: 'text',
@@ -11,10 +15,6 @@ const meta: Meta<typeof Link> = {
 			control: 'select',
 			options: ['_blank', '_parent', '_self', '_top'],
 		},
-	},
-	args: {
-		children: 'WordPress',
-		href: 'https://wordpress.org',
 	},
 	component: Link,
 	parameters: {

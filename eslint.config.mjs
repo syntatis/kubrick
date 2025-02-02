@@ -14,6 +14,17 @@ export default [
 			'!**/.storybook',
 		],
 	},
-	...config,
 	...storybook.configs['flat/recommended'],
+	...config,
+	{
+		files: [
+			'**/*.stories.tsx',
+			'.storybook/main.ts',
+			'.storybook/preview.{ts,tsx}',
+			'.storybook/theme.ts',
+		],
+		rules: {
+			'import-x/no-default-export': 'off',
+		},
+	},
 ];

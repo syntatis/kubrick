@@ -1,5 +1,5 @@
 import { useObjectRef } from '@react-aria/utils';
-import { ReactNode, forwardRef } from 'react';
+import { forwardRef, ReactNode } from 'react';
 import { useButton } from 'react-aria';
 import { GlobalProps } from '../types';
 import { useProps } from '../useProps';
@@ -20,7 +20,7 @@ interface NoticeProps extends GlobalProps {
 	 *
 	 * @default false
 	 */
-	isDismissable?: { label: string } | boolean;
+	isDismissable?: boolean | { label: string };
 	/**
 	 * Whether the notice should be dismissed. When it is set to `true`, the notice
 	 * will be hidden. This is useful when the notice "dismissed" state should be

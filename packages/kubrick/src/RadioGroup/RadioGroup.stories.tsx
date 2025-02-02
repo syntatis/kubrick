@@ -3,14 +3,6 @@ import { Radio } from './Radio';
 import { RadioGroup } from './RadioGroup';
 
 const meta: Meta<typeof RadioGroup> = {
-	argTypes: {
-		description: {
-			control: 'text',
-		},
-		label: {
-			control: 'text',
-		},
-	},
 	args: {
 		children: [
 			<Radio key="full-text" value="full-text">
@@ -21,6 +13,14 @@ const meta: Meta<typeof RadioGroup> = {
 			</Radio>,
 		],
 		label: 'For each post in a feed, include',
+	},
+	argTypes: {
+		description: {
+			control: 'text',
+		},
+		label: {
+			control: 'text',
+		},
 	},
 	component: RadioGroup,
 	parameters: {

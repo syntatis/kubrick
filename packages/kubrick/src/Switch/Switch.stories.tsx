@@ -2,6 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Switch } from './Switch';
 
 const meta: Meta<typeof Switch> = {
+	args: {
+		label: 'Show in REST API',
+		name: 'show_in_rest',
+	},
 	argTypes: {
 		description: {
 			control: 'text',
@@ -9,10 +13,6 @@ const meta: Meta<typeof Switch> = {
 		label: {
 			control: 'text',
 		},
-	},
-	args: {
-		label: 'Show in REST API',
-		name: 'show_in_rest',
 	},
 	component: Switch,
 	parameters: {

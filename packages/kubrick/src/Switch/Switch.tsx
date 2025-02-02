@@ -1,11 +1,11 @@
-import { ReactNode, forwardRef } from 'react';
+import { forwardRef, ReactNode } from 'react';
 import {
 	AriaSwitchProps,
-	VisuallyHidden,
 	useFocusRing,
 	useId,
 	useObjectRef,
 	useSwitch,
+	VisuallyHidden,
 } from 'react-aria';
 import { useToggleState } from 'react-stately';
 import { GlobalProps } from '../types';

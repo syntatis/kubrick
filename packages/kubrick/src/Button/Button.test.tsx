@@ -1,7 +1,7 @@
 import { composeStory } from '@storybook/react';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Icon, desktop } from '@wordpress/icons';
+import { desktop, Icon } from '@wordpress/icons';
 import { expect, it, vi } from 'vitest';
 import Meta, { Default } from './Button.stories';
 

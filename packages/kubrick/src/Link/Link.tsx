@@ -1,13 +1,13 @@
 import { mergeProps, useObjectRef } from '@react-aria/utils';
-import { ReactNode, forwardRef } from 'react';
+import { forwardRef, ReactNode } from 'react';
 import { AriaLinkOptions, HoverProps, useHover, useLink } from 'react-aria';
 import { Affixable, GlobalProps } from '../types';
 import { useProps } from '../useProps';
 import classes from './Link.module.scss';
 
 export interface LinkProps
-	extends GlobalProps,
-		Affixable,
+	extends Affixable,
+		GlobalProps,
 		Omit<HoverProps, 'isDisabled'>,
 		Omit<
 			AriaLinkOptions,

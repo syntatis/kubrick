@@ -1,4 +1,4 @@
-import { ReactElement, forwardRef } from 'react';
+import { forwardRef, ReactElement } from 'react';
 import { AriaTabListOptions, useObjectRef, useTabList } from 'react-aria';
 import { useTabListState } from 'react-stately';
 import { GlobalProps } from '../types';

@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Notice } from './Notice';
 
 const meta: Meta<typeof Notice> = {
+	args: {
+		children: 'Settings saved.',
+	},
 	argTypes: {
 		children: {
 			control: 'text',
 		},
-	},
-	args: {
-		children: 'Settings saved.',
 	},
 	component: Notice,
 	parameters: {
