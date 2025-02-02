@@ -14,8 +14,8 @@ export default [
 			'!**/.storybook',
 		],
 	},
-	...storybook.configs['flat/recommended'],
 	...config,
+	...storybook.configs['flat/recommended'],
 	{
 		files: [
 			'**/*.stories.tsx',
