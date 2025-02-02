@@ -1,7 +1,7 @@
 {
   "name": "@syntatis/kubrick",
   "description": "Classic Admin UI for WordPress® built with React.js",
-  "version": "0.1.0-beta.14",
+  "version": "0.1.0",
   "license": "GPL-3.0",
   "type": "module",
   "keywords": [
@@ -36,8 +36,8 @@
     "@react-types/shared": "^3.27.0",
     "@storybook/react": "^8.5.1",
     "@storybook/react-vite": "^8.5.1",
-    "@syntatis/eslint-config": "0.2.6",
-    "@syntatis/stylelint-config": "0.1.10",
+    "@syntatis/eslint-config": "1.0.0",
+    "@syntatis/stylelint-config": "1.0.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
