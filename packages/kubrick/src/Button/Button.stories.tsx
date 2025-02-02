@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon, download, upload } from '@wordpress/icons';
+import { download, Icon, upload } from '@wordpress/icons';
 import { Spinner } from '../Spinner';
 import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
+	args: {
+		children: 'Save changes',
+	},
 	argTypes: {
 		children: {
 			control: {
 				type: 'text',
 			},
 		},
-	},
-	args: {
-		children: 'Save changes',
 	},
 	component: Button,
 	parameters: {

@@ -1,7 +1,7 @@
 import { mergeProps, useObjectRef } from '@react-aria/utils';
 import { Icon } from '@wordpress/icons';
 import { IconProps } from '@wordpress/icons/build-types/icon';
-import { ReactElement, forwardRef } from 'react';
+import { forwardRef, ReactElement } from 'react';
 import {
 	AriaButtonProps,
 	HoverProps,

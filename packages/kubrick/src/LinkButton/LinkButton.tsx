@@ -1,5 +1,5 @@
 import { mergeProps, useObjectRef } from '@react-aria/utils';
-import { ReactNode, forwardRef } from 'react';
+import { forwardRef, ReactNode } from 'react';
 import { AriaLinkOptions, HoverProps, useHover, useLink } from 'react-aria';
 import { GlobalProps } from '../types';
 import { useProps } from '../useProps';

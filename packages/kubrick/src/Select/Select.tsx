@@ -1,5 +1,5 @@
 import { filterDOMProps } from '@react-aria/utils';
-import { Children, ReactElement, ReactNode, forwardRef } from 'react';
+import { Children, forwardRef, ReactElement, ReactNode } from 'react';
 import { AriaSelectProps, useObjectRef, useSelect } from 'react-aria';
 import { Item, useSelectState } from 'react-stately';
 import { GlobalProps } from '../types';

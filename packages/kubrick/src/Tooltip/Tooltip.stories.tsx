@@ -4,14 +4,14 @@ import { IconButton } from '../IconButton';
 import { Tooltip } from './Tooltip';
 
 const meta: Meta<typeof Tooltip> = {
+	args: {
+		content:
+			'Do not put essential information in a tooltip. Tooltips have low discoverability and have usability issues on devices without hover interactions.',
+	},
 	argTypes: {
 		content: {
 			control: 'text',
 		},
-	},
-	args: {
-		content:
-			'Do not put essential information in a tooltip. Tooltips have low discoverability and have usability issues on devices without hover interactions.',
 	},
 	component: Tooltip,
 	decorators: [

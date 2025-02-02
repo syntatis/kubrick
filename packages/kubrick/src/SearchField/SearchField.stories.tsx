@@ -2,6 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { SearchField } from './SearchField';
 
 const meta: Meta<typeof SearchField> = {
+	args: {
+		label: 'Search',
+	},
 	argTypes: {
 		description: {
 			control: 'text',
@@ -9,9 +12,6 @@ const meta: Meta<typeof SearchField> = {
 		label: {
 			control: 'text',
 		},
-	},
-	args: {
-		label: 'Search',
 	},
 	component: SearchField,
 	parameters: {

@@ -1,12 +1,12 @@
 import { useObjectRef } from '@react-aria/utils';
-import { ReactNode, forwardRef } from 'react';
+import { forwardRef, ReactNode } from 'react';
 import { AriaTextFieldProps, useTextField } from 'react-aria';
 import { GlobalProps, Styleable } from '../types';
 import { useErrorMessage } from '../useErrorMessage';
 import { useProps } from '../useProps';
 import classes from './TextField.module.scss';
 
-interface TextFieldProps extends GlobalProps, AriaTextFieldProps, Styleable {
+interface TextFieldProps extends AriaTextFieldProps, GlobalProps, Styleable {
 	/**
 	 * Where to place the description.
 	 *

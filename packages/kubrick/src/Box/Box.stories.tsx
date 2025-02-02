@@ -7,6 +7,10 @@ import { Tab } from '../Tabs/Tab';
 import { Box } from './Box';
 
 const meta: Meta<typeof Box> = {
+	args: {
+		children:
+			'Your site has critical issues that should be addressed as soon as possible to improve its performance and security.',
+	},
 	argTypes: {
 		children: {
 			control: 'text',
@@ -17,10 +21,6 @@ const meta: Meta<typeof Box> = {
 		title: {
 			control: 'text',
 		},
-	},
-	args: {
-		children:
-			'Your site has critical issues that should be addressed as soon as possible to improve its performance and security.',
 	},
 	component: Box,
 	parameters: {

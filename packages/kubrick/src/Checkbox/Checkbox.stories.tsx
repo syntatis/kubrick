@@ -3,13 +3,13 @@ import { Option, Select } from '../Select';
 import { Checkbox } from './Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
+	args: {
+		label: 'WordPress should correct invalidly nested XHTML automatically',
+	},
 	argTypes: {
 		children: {
 			control: 'text',
 		},
-	},
-	args: {
-		label: 'WordPress should correct invalidly nested XHTML automatically',
 	},
 	component: Checkbox,
 	parameters: {

@@ -2,7 +2,7 @@
   "name": "@syntatis/kubrick-dev",
   "description": "Classic WordPress Admin UI (Development)",
   "version": "0.1.0-beta.2",
-  "license": "GPL-3.0-or-later",
+  "license": "GPL-3.0",
   "type": "module",
   "keywords": [
     "admin-dashboard",
@@ -32,7 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^8.22.0",
     "@typescript-eslint/parser": "^8.22.0",
     "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.57.1",
+    "eslint": "^9.19.0",
     "glob": "^11.0.1",
     "prettier": "^3.2.4",
     "react": "^18.0.0",

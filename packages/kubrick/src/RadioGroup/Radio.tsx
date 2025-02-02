@@ -1,8 +1,8 @@
 import { useObjectRef } from '@react-aria/utils';
 import {
-	ReactNode,
 	createContext,
 	forwardRef,
+	ReactNode,
 	useContext,
 	useRef,
 } from 'react';
@@ -12,9 +12,9 @@ import { GlobalProps } from '../types';
 import { useProps } from '../useProps';
 import classes from './Radio.module.scss';
 
-export const RadioContext = createContext<RadioGroupState | null>(null);
+export const RadioContext = createContext<null | RadioGroupState>(null);
 
-export interface RadioProps extends GlobalProps, AriaRadioProps {
+export interface RadioProps extends AriaRadioProps, GlobalProps {
 	children: ReactNode;
 }
 

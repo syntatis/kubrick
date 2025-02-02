@@ -1,5 +1,5 @@
 import { useId, useObjectRef } from '@react-aria/utils';
-import { ReactNode, forwardRef, useContext, useRef } from 'react';
+import { forwardRef, ReactNode, useContext, useRef } from 'react';
 import {
 	AriaCheckboxProps,
 	useCheckbox,

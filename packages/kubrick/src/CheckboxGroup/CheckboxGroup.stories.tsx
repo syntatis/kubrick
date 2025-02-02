@@ -3,14 +3,6 @@ import { Checkbox } from '../Checkbox';
 import { CheckboxGroup } from './CheckboxGroup';
 
 const meta: Meta<typeof CheckboxGroup> = {
-	argTypes: {
-		description: {
-			control: 'text',
-		},
-		label: {
-			control: 'text',
-		},
-	},
 	args: {
 		children: [
 			<Checkbox key="permalink" label="Permalink" value="permalink" />,
@@ -19,6 +11,14 @@ const meta: Meta<typeof CheckboxGroup> = {
 		],
 		label: 'Hide on screen',
 		name: 'hide_on_screen',
+	},
+	argTypes: {
+		description: {
+			control: 'text',
+		},
+		label: {
+			control: 'text',
+		},
 	},
 	component: CheckboxGroup,
 	parameters: {

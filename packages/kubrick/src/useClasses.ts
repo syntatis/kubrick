@@ -1,12 +1,12 @@
-// eslint-disable-next-line import/no-named-as-default
+// eslint-disable-next-line import-x/no-named-as-default
 import clsx from 'clsx';
 
-type Value = boolean | null | number | string | undefined;
-type Mapping = Record<string, unknown>;
+export type ClassNamesArgs = Argument | ArgumentArray;
 type Argument = ArgumentArray | Mapping | Value;
 type ArgumentArray = Argument[];
+type Mapping = Record<string, unknown>;
 
-export type ClassNamesArgs = Argument | ArgumentArray;
+type Value = boolean | null | number | string | undefined;
 
 export function parsePrefixedNames(names: string | string[]): string[] {
 	if (typeof names === 'string') {

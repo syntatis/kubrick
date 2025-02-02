@@ -1,4 +1,4 @@
-import { ReactElement, cloneElement, useEffect, useState } from 'react';
+import { cloneElement, ReactElement, useEffect, useState } from 'react';
 import { useOverlayTrigger } from 'react-aria';
 import { OverlayTriggerProps } from 'react-stately';
 import { Dialog, DialogProps } from './Dialog';

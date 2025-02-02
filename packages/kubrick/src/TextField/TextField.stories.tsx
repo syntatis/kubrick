@@ -2,6 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TextField } from './TextField';
 
 const meta: Meta<typeof TextField> = {
+	args: {
+		id: 'site-name',
+		label: 'Site Name',
+	},
 	argTypes: {
 		description: {
 			control: 'text',
@@ -9,10 +13,6 @@ const meta: Meta<typeof TextField> = {
 		label: {
 			control: 'text',
 		},
-	},
-	args: {
-		id: 'site-name',
-		label: 'Site Name',
 	},
 	component: TextField,
 	parameters: {
