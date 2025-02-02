@@ -1,6 +1,6 @@
 {
   "name": "@syntatis/monorepo",
-  "description": "Classic WordPress Admin UI",
+  "description": "Classic Admin UI for WordPress® built with React.js",
   "version": "0.0.0",
   "private": true,
   "type": "module",

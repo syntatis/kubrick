@@ -10,30 +10,32 @@
     "react",
     "typescript"
   ],
-  "main": "index.js",
+  "main": "index.cjs",
   "files": [
-    "base.js",
-    "react.js",
-    "typescript.js",
-    "index.js"
+    "base.cjs",
+    "react.cjs",
+    "typescript.cjs",
+    "index.cjs"
   ],
   "dependencies": {
     "@babel/eslint-parser": "^7.26.5",
-    "@stylistic/eslint-plugin": "^2.11.0",
-    "@typescript-eslint/eslint-plugin": "^8.22.0",
-    "@typescript-eslint/parser": "^8.22.0",
-    "eslint-config-prettier": "^9.1.0",
+		"@eslint/js": "^9.17.0",
+    "@stylistic/eslint-plugin": "^3.0.1",
+    "eslint-config-prettier": "^10.0.1",
     "eslint-import-resolver-node": "^0.3.9",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "npm:eslint-plugin-i@^2.29.1",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-perfectionist": "^2.5.0",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import-x": "^4.6.1",
+    "eslint-plugin-jsx-a11y": "^6.10.1",
+    "eslint-plugin-perfectionist": "^4.7.0",
     "eslint-plugin-prettier": "^5.2.3",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react": "^7.37.3",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-storybook": "^0.11.2",
+    "globals": "^15.14.0",
+    "typescript-eslint": "^8.21.0"
   },
   "peerDependencies": {
-    "eslint": "^8.55.0",
+    "eslint": "^9.0.0",
     "prettier": "^3.2.0",
     "typescript": "^5.2.0"
   }
