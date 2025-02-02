@@ -13,9 +13,9 @@
 
 	&.invalid {
 		.input {
-			border-color: colors.$red-500;
 			outline-width: 1px;
 			outline-color: colors.$red-500;
+			border-color: colors.$red-500;
 		}
 	}
 }
