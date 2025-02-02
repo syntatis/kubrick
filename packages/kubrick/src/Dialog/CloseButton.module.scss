@@ -7,9 +7,9 @@
 	margin: 0;
 	color: colors.$gray-50;
 	cursor: pointer;
+	outline: 0;
 	background: none;
 	border: 1px solid transparent;
-	outline: 0;
 
 	&.focusRing {
 		outline: 2px solid var(--kubrick-outline-color);
