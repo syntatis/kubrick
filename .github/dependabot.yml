@@ -32,8 +32,6 @@ updates:
           - "minor"
           - "patch"
     ignore:
-      - dependency-name: "@types/node"
-        versions: ["22.x"]
       - dependency-name: "react"
         versions: ["19.x"]
       - dependency-name: "react-dom"
