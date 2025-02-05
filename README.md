@@ -1,4 +1,4 @@
-![Banner](art/kubrick%402x.png)
+[![Banner](art/kubrick%402x.png)](https://66e68bc88881b2397d6befdb-zlgmfvcbsp.chromatic.com)
 
 <div align="center">
 
