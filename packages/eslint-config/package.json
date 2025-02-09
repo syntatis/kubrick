@@ -18,9 +18,9 @@
     "index.cjs"
   ],
   "dependencies": {
-    "@babel/eslint-parser": "^7.26.5",
-    "@eslint/js": "^9.17.0",
-    "@stylistic/eslint-plugin": "^3.0.1",
+    "@babel/eslint-parser": "^7.26.8",
+    "@eslint/js": "^9.20.0",
+    "@stylistic/eslint-plugin": "^3.1.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-import-resolver-node": "^0.3.9",
     "eslint-import-resolver-typescript": "^3.7.0",
