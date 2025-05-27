@@ -3,9 +3,10 @@ const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const globals = require('globals');
 
 module.exports = [
-	reactPlugin.configs.flat?.recommended,
-	reactPlugin.configs.flat?.['jsx-runtime'],
 	{
+		files: ['**/*.jsx', '**/*.tsx'],
+		...reactPlugin.configs.flat?.recommended,
+		...reactPlugin.configs.flat?.['jsx-runtime'],
 		languageOptions: {
 			globals: {
 				...globals.browser,
@@ -18,6 +19,8 @@ module.exports = [
 		},
 		plugins: {
 			'react-hooks': reactHooksPlugin,
+			...reactPlugin.configs.flat?.recommended.plugins,
+			...reactPlugin.configs.flat?.['jsx-runtime'].plugins,
 		},
 		rules: {
 			'react/function-component-definition': [
@@ -28,6 +31,8 @@ module.exports = [
 			],
 			'react/prop-types': 'off',
 			...reactHooksPlugin.configs.recommended.rules,
+			...reactPlugin.configs.flat?.recommended.rules,
+			...reactPlugin.configs.flat?.['jsx-runtime'].rules,
 		},
 		settings: {
 			react: {
