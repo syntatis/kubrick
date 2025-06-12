@@ -35,7 +35,7 @@
   "devDependencies": {
     "@react-types/shared": "^3.30.0",
     "@storybook/react": "^8.6.14",
-    "@storybook/react-vite": "^8.6.14",
+    "@storybook/react-vite": "^9.0.6",
     "@syntatis/eslint-config": "1.0.0",
     "@syntatis/stylelint-config": "1.0.0",
     "@testing-library/jest-dom": "^6.6.3",
