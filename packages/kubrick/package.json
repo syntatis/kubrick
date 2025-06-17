@@ -23,13 +23,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@react-aria/checkbox": "^3.15.6",
-    "@react-aria/focus": "^3.20.4",
+    "@react-aria/checkbox": "^3.15.7",
+    "@react-aria/focus": "^3.20.5",
     "@react-aria/utils": "^3.26.0",
     "@react-stately/checkbox": "^3.6.1",
     "@react-stately/collections": "^3.12.5",
     "clsx": "^2.1.1",
-    "react-aria": "^3.41.0",
+    "react-aria": "^3.41.1",
     "react-stately": "^3.39.0"
   },
   "devDependencies": {
