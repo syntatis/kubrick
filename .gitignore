@@ -34,6 +34,8 @@ tmp
 *-debug.log*
 *-error.log*
 .pnpm-debug.log*
+*.log
+
 
 # local env files
 .env*.local

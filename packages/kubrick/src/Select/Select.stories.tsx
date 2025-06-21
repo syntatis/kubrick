@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Option } from './Option';
 import { Select } from './Select';
 import { SelectGroup } from './SelectGroup';
