@@ -2,7 +2,7 @@
   "name": "@syntatis/kubrick",
   "description": "Classic Admin UI for WordPress® built with React.js",
   "version": "0.1.0",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "type": "module",
   "keywords": [
     "admin-dashboard",
