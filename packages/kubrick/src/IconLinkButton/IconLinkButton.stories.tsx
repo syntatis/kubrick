@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Icon, wordpress } from '@wordpress/icons';
 import { IconLinkButton } from './IconLinkButton';
 
