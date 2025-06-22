@@ -4,7 +4,7 @@
 
   [![ci](https://github.com/syntatis/kubrick/actions/workflows/ci.yml/badge.svg)](https://github.com/syntatis/kubrick/actions/workflows/ci.yml)
   [![codecov](https://codecov.io/gh/syntatis/kubrick/graph/badge.svg?token=RU6U0B93WH)](https://codecov.io/gh/syntatis/kubrick)
-  ![NPM Version](https://img.shields.io/npm/v/%40syntatis%2Fkubrick)
+  [![NPM Version](https://img.shields.io/npm/v/%40syntatis%2Fkubrick)](https://www.npmjs.com/package/@syntatis/kubrick)
   ![NPM Downloads](https://img.shields.io/npm/d18m/%40syntatis%2Fkubrick)
   [![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=flat&logo=storybook&logoColor=white)](https://66e68bc88881b2397d6befdb-zlgmfvcbsp.chromatic.com)
 

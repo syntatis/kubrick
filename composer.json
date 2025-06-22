@@ -1,6 +1,6 @@
 {
 	"name": "syntatis/kubrick",
-	"license": "GPL-2.0-or-later",
+	"license": "MIT",
 	"description": "Classic WordPress Admin UI",
 	"keywords": [
     "admin-dashboard",
