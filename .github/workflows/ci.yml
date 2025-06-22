@@ -4,9 +4,21 @@ on:
   workflow_call:
     secrets:
       CODECOV_TOKEN:
-        description: 'Token for uploading test coverage to Codecov'
+        description: "Token for uploading test coverage to Codecov"
         required: true
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "**.ts"
+      - "**.tsx"
+      - "**.scss"
+      - ".github/workflows/**"
+      - ".eslint*"
+      - ".stylelint*"
+      - "package-lock.json"
+      - "package.json"
   pull_request:
     branches:
       - main
@@ -48,7 +60,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: "7.4"
 
       - name: Get Composer cache directory
         id: composer-cache
@@ -88,7 +100,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: "7.4"
 
       - name: Get Composer cache directory
         id: composer-cache
@@ -127,7 +139,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: "7.4"
 
       - name: Get Composer cache directory
         id: composer-cache
@@ -166,7 +178,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: "7.4"
 
       - name: Get Composer cache directory
         id: composer-cache
