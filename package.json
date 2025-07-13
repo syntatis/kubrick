@@ -13,10 +13,10 @@
     "website"
   ],
   "devDependencies": {
-    "@storybook/addon-a11y": "^9.0.15",
-    "@storybook/addon-links": "^9.0.15",
-    "@storybook/addon-themes": "^9.0.15",
-    "@storybook/react-vite": "^9.0.15",
+    "@storybook/addon-a11y": "^9.0.16",
+    "@storybook/addon-links": "^9.0.16",
+    "@storybook/addon-themes": "^9.0.16",
+    "@storybook/react-vite": "^9.0.16",
     "@syntatis/eslint-config": "file:./packages/eslint-config",
     "@syntatis/kubrick": "file:./packages/kubrick",
     "@syntatis/kubrick-dev": "file:./packages/kubrick-dev",
@@ -28,14 +28,14 @@
     "@typescript-eslint/parser": "^8.36.0",
     "@wordpress/icons": "^10.26.0",
     "chromatic": "^13.1.2",
-    "eslint": "^9.30.1",
+    "eslint": "^9.31.0",
     "eslint-plugin-storybook": "^9.0.15",
     "lerna": "^8.2.3",
     "prettier": "^3.6.2",
     "storybook": "^9.0.12",
     "stylelint": "^16.21.1",
     "typescript": "^5.8.3",
-    "@storybook/addon-docs": "^9.0.15"
+    "@storybook/addon-docs": "^9.0.16"
   },
   "scripts": {
     "build": "npm run build -w @syntatis/kubrick -w @syntatis/kubrick-dev",
