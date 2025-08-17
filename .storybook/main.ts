@@ -8,24 +8,24 @@ function getAbsolutePath(value: string): any {
 }
 
 const config: StorybookConfig = {
-    addons: [
-        getAbsolutePath('@storybook/addon-a11y'),
-        getAbsolutePath('@storybook/addon-themes'),
-        getAbsolutePath('@storybook/addon-links'),
-        getAbsolutePath("@storybook/addon-docs")
-    ],
+	addons: [
+		getAbsolutePath('@storybook/addon-a11y'),
+		getAbsolutePath('@storybook/addon-themes'),
+		getAbsolutePath('@storybook/addon-links'),
+		getAbsolutePath('@storybook/addon-docs'),
+	],
 
-    core: {},
+	core: {},
 
-    framework: {
+	framework: {
 		name: getAbsolutePath('@storybook/react-vite'),
 		options: {},
 	},
 
-    staticDirs: ['../wordpress'],
-    stories: ['../packages/kubrick/src/**/*.stories.@(ts|tsx)'],
+	staticDirs: ['../wordpress'],
+	stories: ['../packages/kubrick/src/**/*.stories.@(ts|tsx)'],
 
-    typescript: {
+	typescript: {
 		reactDocgen: 'react-docgen-typescript',
 		reactDocgenTypescriptOptions: {
 			compilerOptions: {
@@ -36,11 +36,11 @@ const config: StorybookConfig = {
 		},
 	},
 
-    viteFinal: (config) => {
+	viteFinal: (config) => {
 		config.plugins?.push(tsConfigPaths());
 
 		return config;
-	}
+	},
 };
 
 export default config;
