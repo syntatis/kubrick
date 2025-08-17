@@ -12,7 +12,10 @@ export const TabPanel = (props: TabPanelProps) => {
 	const { state } = props;
 	const ref = useRef(null);
 	const { tabPanelProps } = useTabPanel(props, state, ref);
-	const { clsx } = useProps('Tabs', props);
+	const { clsx } = useProps('Tabs', {
+		...props,
+		id: props.id ? String(props.id) : undefined,
+	});
 
 	return (
 		<div
