@@ -1,7 +1,7 @@
 {
   "name": "@syntatis/kubrick-dev",
   "description": "Classic WordPress Admin UI (Development)",
-  "version": "0.2.1",
+  "version": "0.2.0",
   "license": "MIT",
   "type": "module",
   "keywords": [
@@ -27,7 +27,7 @@
     "clsx": "^2.1.1"
   },
   "devDependencies": {
-    "@syntatis/eslint-config": "3.0.0",
+    "@syntatis/eslint-config": "2.0.0",
     "@syntatis/stylelint-config": "2.0.0",
     "@typescript-eslint/eslint-plugin": "^8.39.1",
     "@typescript-eslint/parser": "^8.37.0",

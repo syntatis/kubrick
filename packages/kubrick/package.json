@@ -1,7 +1,7 @@
 {
   "name": "@syntatis/kubrick",
   "description": "Classic Admin UI for WordPress® built with React.js",
-  "version": "0.2.1",
+  "version": "0.2.0",
   "license": "MIT",
   "type": "module",
   "keywords": [
@@ -35,7 +35,7 @@
   "devDependencies": {
     "@react-types/shared": "^3.31.0",
     "@storybook/react-vite": "^9.1.2",
-    "@syntatis/eslint-config": "3.0.0",
+    "@syntatis/eslint-config": "2.0.0",
     "@syntatis/stylelint-config": "2.0.0",
     "@testing-library/jest-dom": "^6.7.0",
     "@testing-library/react": "^16.3.0",
