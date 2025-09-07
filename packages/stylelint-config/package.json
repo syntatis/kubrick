@@ -14,7 +14,7 @@
     "index.cjs"
   ],
   "dependencies": {
-    "stylelint-config-recess-order": "^7.1.0",
+    "stylelint-config-recess-order": "^7.3.0",
     "stylelint-config-standard-scss": "^15.0.0"
   },
   "peerDependencies": {
