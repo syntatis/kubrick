@@ -43,7 +43,7 @@
     "@types/jsdom": "^21.1.7",
     "@typescript-eslint/eslint-plugin": "^8.42.0",
     "@typescript-eslint/parser": "^8.40.0",
-    "@vitejs/plugin-react": "^4.7.0",
+    "@vitejs/plugin-react": "^5.0.2",
     "@vitest/coverage-istanbul": "^3.2.2",
     "eslint": "^9.35.0",
     "glob": "^11.0.2",
