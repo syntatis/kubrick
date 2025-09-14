@@ -51,7 +51,7 @@
     "prettier": "^3.6.2",
     "react": "^18.0.0",
     "sass": "^1.92.1",
-    "stylelint": "^16.23.1",
+    "stylelint": "^16.24.0",
     "typescript": "^5.9.2",
     "vite": "^7.1.5",
     "vite-plugin-external": "^6.2.2",
