@@ -53,7 +53,7 @@
     "sass": "^1.92.1",
     "stylelint": "^16.23.1",
     "typescript": "^5.9.2",
-    "vite": "^7.1.5",
+    "vite": "^7.1.11",
     "vite-plugin-external": "^6.2.2",
     "vite-plugin-lib-inject-css": "^2.2.2",
     "vite-tsconfig-paths": "^5.1.3",
