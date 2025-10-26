@@ -23,14 +23,14 @@
     "access": "public"
   },
   "dependencies": {
-    "@react-aria/checkbox": "^3.16.1",
-    "@react-aria/focus": "^3.21.1",
+    "@react-aria/checkbox": "^3.16.2",
+    "@react-aria/focus": "^3.21.2",
     "@react-aria/utils": "^3.26.0",
     "@react-stately/checkbox": "^3.6.1",
-    "@react-stately/collections": "^3.12.7",
+    "@react-stately/collections": "^3.12.8",
     "clsx": "^2.1.1",
-    "react-aria": "^3.43.1",
-    "react-stately": "^3.41.0"
+    "react-aria": "^3.44.0",
+    "react-stately": "^3.42.0"
   },
   "devDependencies": {
     "@react-types/shared": "^3.32.0",
