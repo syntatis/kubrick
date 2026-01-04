@@ -18,9 +18,9 @@
     "index.cjs"
   ],
   "dependencies": {
-    "@babel/eslint-parser": "^7.28.4",
-    "@eslint/js": "^9.31.0",
-    "@stylistic/eslint-plugin": "^5.3.1",
+    "@babel/eslint-parser": "^7.28.5",
+    "@eslint/js": "^9.39.2",
+    "@stylistic/eslint-plugin": "^5.6.1",
     "eslint-config-prettier": "^10.1.5",
     "eslint-import-resolver-node": "^0.3.9",
     "eslint-import-resolver-typescript": "^4.4.4",
@@ -32,7 +32,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-storybook": "^9.1.5",
     "globals": "^16.4.0",
-    "typescript-eslint": "^8.43.0"
+    "typescript-eslint": "^8.51.0"
   },
   "peerDependencies": {
     "eslint": "^9.0.0",
