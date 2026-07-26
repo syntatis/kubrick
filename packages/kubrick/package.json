@@ -23,11 +23,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@react-aria/checkbox": "^3.16.1",
-    "@react-aria/focus": "^3.21.1",
-    "@react-aria/utils": "^3.26.0",
-    "@react-stately/checkbox": "^3.6.1",
-    "@react-stately/collections": "^3.12.7",
+    "@react-aria/checkbox": "^3.17.1",
+    "@react-aria/focus": "^3.22.1",
+    "@react-aria/utils": "^3.34.1",
+    "@react-stately/checkbox": "^3.8.1",
+    "@react-stately/collections": "^3.13.1",
     "clsx": "^2.1.1",
     "react-aria": "^3.43.1",
     "react-stately": "^3.41.0"
