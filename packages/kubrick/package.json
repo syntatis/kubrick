@@ -54,7 +54,7 @@
     "jsdom": "^26.1.0",
     "react": "^18.0.0",
     "sass": "^1.92.1",
-    "stylelint": "^16.23.1",
+    "stylelint": "^17.14.1",
     "vite-plugin-external": "^6.2.2",
     "vite-plugin-lib-inject-css": "^2.2.2",
     "vite-tsconfig-paths": "^6.1.1",
