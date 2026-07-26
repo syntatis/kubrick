@@ -33,30 +33,32 @@
     "react-stately": "^3.41.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+		"@eslint-react/eslint-plugin": "^5.18.0",
+		"@eslint-react/kit": "^5.18.0",
     "@react-types/shared": "^3.32.0",
+		"@stylistic/eslint-plugin": "^5.10.0",
+		"@syntatis/stylelint-config": "file:../packages/stylelint-config",
     "@storybook/react-vite": "^9.1.5",
-    "@syntatis/eslint-config": "3.0.0",
-    "@syntatis/stylelint-config": "2.0.0",
+    "@syntatis/eslint-config": "file:../packages/eslint-config",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/jsdom": "^21.1.7",
-    "@typescript-eslint/eslint-plugin": "^8.42.0",
-    "@typescript-eslint/parser": "^8.40.0",
+    "@typescript-eslint/eslint-plugin": "^8.65.0",
+    "@typescript-eslint/parser": "^8.65.0",
     "@vitejs/plugin-react": "^5.0.2",
     "@vitest/coverage-istanbul": "^3.2.2",
-    "eslint": "^9.35.0",
+		"eslint": "^10.8.0",
     "glob": "^11.0.2",
     "jsdom": "^26.1.0",
-    "prettier": "^3.6.2",
     "react": "^18.0.0",
     "sass": "^1.92.1",
     "stylelint": "^16.23.1",
-    "typescript": "^5.9.2",
-    "vite": "^7.2.2",
     "vite-plugin-external": "^6.2.2",
     "vite-plugin-lib-inject-css": "^2.2.2",
     "vite-tsconfig-paths": "^5.1.3",
+    "vite": "^7.2.2",
     "vitest": "^3.0.0"
   },
   "peerDependencies": {
@@ -64,6 +66,9 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
+	"overrides": {
+  	"eslint-plugin-import": "npm:eslint-plugin-import-x@^4.17.1"
+	},
   "scripts": {
     "build": "vite build",
     "format": "npm run format:scripts && npm run format:styles",
