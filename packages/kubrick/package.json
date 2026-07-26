@@ -39,7 +39,7 @@
     "@react-types/shared": "^3.32.0",
 		"@stylistic/eslint-plugin": "^5.10.0",
 		"@syntatis/stylelint-config": "file:../packages/stylelint-config",
-    "@storybook/react-vite": "^9.1.5",
+    "@storybook/react-vite": "^10.5.4",
     "@syntatis/eslint-config": "file:../packages/eslint-config",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",

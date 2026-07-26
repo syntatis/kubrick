@@ -1,6 +1,6 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
 import { Decorator, Preview } from '@storybook/react-vite';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './preview.scss';
 
 const DEFAULT_THEME = 'modern';

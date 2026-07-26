@@ -1,6 +1,9 @@
 import { StorybookConfig } from '@storybook/react-vite';
+import { createRequire } from 'node:module';
 import { dirname, join } from 'path';
 import tsConfigPaths from 'vite-tsconfig-paths';
+
+const require = createRequire(import.meta.url);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function getAbsolutePath(value: string): any {
