@@ -10,8 +10,7 @@ const DEFAULT_ROWS = 5;
 const DEFAULT_COLS = 50;
 
 interface TextAreaProps
-	extends GlobalProps,
-		Omit<AriaTextFieldProps<HTMLTextAreaElement>, 'type'> {
+	extends GlobalProps, Omit<AriaTextFieldProps<HTMLTextAreaElement>, 'type'> {
 	/**
 	 * Defines the number of columns in the `textarea`.
 	 *

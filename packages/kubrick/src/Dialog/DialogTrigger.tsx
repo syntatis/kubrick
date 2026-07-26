@@ -1,4 +1,4 @@
-import { cloneElement, ReactElement, useEffect, useState } from 'react';
+import { cloneElement, ReactElement, useLayoutEffect, useState } from 'react';
 import { useOverlayTrigger } from 'react-aria';
 import { OverlayTriggerProps } from 'react-stately';
 import { Dialog, DialogProps } from './Dialog';
@@ -32,7 +32,7 @@ export const DialogTrigger = (props: DialogTriggerProps) => {
 	const { children, portalSelector, render, ...rest } = props;
 	const [portalContainer, setPortalContainer] = useState<Element | undefined>();
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (!portalSelector) {
 			return;
 		}
@@ -40,6 +40,7 @@ export const DialogTrigger = (props: DialogTriggerProps) => {
 		const portalElement = document.querySelector(portalSelector);
 
 		if (portalElement) {
+			// eslint-disable-next-line @eslint-react/set-state-in-effect -- portal container from DOM
 			setPortalContainer(portalElement);
 		}
 	}, [portalSelector]);

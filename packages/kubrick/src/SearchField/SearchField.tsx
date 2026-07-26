@@ -9,8 +9,7 @@ import { ClearButton } from './ClearButton';
 import classes from './SearchField.module.scss';
 
 interface SearchFieldProps
-	extends GlobalProps,
-		Omit<AriaSearchFieldProps, 'type'> {
+	extends GlobalProps, Omit<AriaSearchFieldProps, 'type'> {
 	/**
 	 * Where to place the description.
 	 *

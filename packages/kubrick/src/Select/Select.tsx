@@ -11,7 +11,8 @@ import classes from './Select.module.scss';
 type ChildItem = ReactElement<OptionProps, typeof Option>;
 
 interface SelectProps
-	extends GlobalProps,
+	extends
+		GlobalProps,
 		Omit<
 			AriaSelectProps<object>,
 			| 'defaultSelectedKey'
@@ -65,7 +66,7 @@ function mapChildren(children: Array<ChildItem> | ChildItem) {
 		const { props } = child as ChildItem;
 		const key = determineKey(props);
 
-		return <Item {...props} key={key} textValue={key} />;
+		return <Item key={key} {...props} textValue={key} />;
 	});
 }
 

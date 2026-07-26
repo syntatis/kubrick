@@ -8,7 +8,8 @@ import { useProps } from '../useProps';
 import classes from './IconLinkButton.module.scss';
 
 export interface IconLinkButtonProps
-	extends GlobalProps,
+	extends
+		GlobalProps,
 		Omit<HoverProps, 'isDisabled'>,
 		Omit<
 			AriaLinkOptions,

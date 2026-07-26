@@ -14,7 +14,8 @@ import { useProps } from '../useProps';
 import classes from './IconButton.module.scss';
 
 interface IconButtonProps
-	extends GlobalProps,
+	extends
+		GlobalProps,
 		HoverProps,
 		Omit<AriaButtonProps, 'aria-label' | 'elementType' | 'label' | 'target'> {
 	children: ReactElement<IconProps, typeof Icon>;
