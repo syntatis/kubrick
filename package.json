@@ -9,8 +9,7 @@
     "npm": ">=10"
   },
   "workspaces": [
-    "packages/*",
-    "website"
+    "packages/*"
   ],
   "devDependencies": {
     "@storybook/addon-a11y": "^9.1.5",
