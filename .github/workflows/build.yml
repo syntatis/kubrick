@@ -3,9 +3,6 @@ name: build
 on:
   workflow_dispatch:
 
-env:
-  NODE_VERSION: 22
-
 jobs:
   ci:
     uses: ./.github/workflows/ci.yml
@@ -45,7 +42,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           cache: "npm"
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: .nvmrc
 
       - name: Install dependencies
         run: |

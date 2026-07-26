@@ -8,9 +8,6 @@ on:
         required: true
   workflow_dispatch:
 
-env:
-  NODE_VERSION: 22
-
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -22,7 +19,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: .nvmrc
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
