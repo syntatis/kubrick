@@ -1,17 +1,14 @@
-const {
-	createTypeScriptImportResolver,
-} = require('eslint-import-resolver-typescript');
-const eslintPluginImportX = require('eslint-plugin-import-x');
-// eslint-disable-next-line import-x/newline-after-import
-const tseslint = require('typescript-eslint');
-const tseslintConfigs = tseslint.configs;
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import { flatConfigs } from 'eslint-plugin-import-x';
+import { configs } from 'typescript-eslint';
+import { defineConfig } from "eslint/config";
 
-module.exports = tseslint.config(
-	tseslintConfigs.recommended,
-	eslintPluginImportX.flatConfigs.typescript,
+export default defineConfig(
+	configs.recommended,
+	flatConfigs.typescript,
 	{
 		settings: {
-			'import/resolver-next': [
+			'import-x/resolver-next': [
 				createTypeScriptImportResolver({
 					alwaysTryTypes: true,
 				}),

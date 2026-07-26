@@ -1,12 +1,12 @@
-const eslint = require('@eslint/js');
-const stylisticPlugin = require('@stylistic/eslint-plugin');
-const prettierConfig = require('eslint-config-prettier');
-const eslintPluginImportX = require('eslint-plugin-import-x');
-const perfectionistPlugin = require('eslint-plugin-perfectionist');
-const prettierPlugin = require('eslint-plugin-prettier');
-const globals = require('globals');
+import eslint from '@eslint/js';
+import stylisticPlugin from '@stylistic/eslint-plugin';
+import prettierConfig from 'eslint-config-prettier';
+import eslintPluginImportX from 'eslint-plugin-import-x';
+import perfectionistPlugin from 'eslint-plugin-perfectionist';
+import prettierPlugin from 'eslint-plugin-prettier';
+import globals from 'globals';
 
-module.exports = [
+export default [
 	eslint.configs.recommended,
 	eslintPluginImportX.flatConfigs.recommended,
 	perfectionistPlugin.configs['recommended-natural'],
@@ -110,26 +110,18 @@ module.exports = [
 					'prefer-inline': true,
 				},
 			],
-			'perfectionist/sort-exports': [
-				'error',
-				{
-					groupKind: 'values-first',
-				},
-			],
+			'perfectionist/sort-exports': ['error'],
 			'perfectionist/sort-imports': [
 				'error',
 				{
 					groups: [
 						'type',
 						['builtin', 'external'],
-						'internal-type',
 						'internal',
-						['parent-type', 'sibling-type', 'index-type'],
 						['parent', 'sibling', 'index'],
-						'object',
 						'unknown',
 					],
-					newlinesBetween: 'never',
+					newlinesBetween: 0,
 					type: 'natural',
 				},
 			],
@@ -152,6 +144,7 @@ module.exports = [
 			'**/*.spec.{js,mjs}',
 			'**/*.test.{js,mjs}',
 			'index.{js,mjs}',
+			'**/eslint-config/*.mjs',
 		],
 		rules: {
 			'import-x/no-default-export': 'off',
