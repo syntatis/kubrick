@@ -1,13 +1,32 @@
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-import { flatConfigs } from 'eslint-plugin-import-x';
+import { defineConfig } from 'eslint/config';
 import { configs } from 'typescript-eslint';
-import { defineConfig } from "eslint/config";
 
 export default defineConfig(
 	configs.recommended,
-	flatConfigs.typescript,
 	{
+		files: ['**/*.{ts,tsx,cts,mts}'],
+		rules: {
+			'import-x/named': 'off',
+		},
 		settings: {
+			'import-x/extensions': [
+				'.ts',
+				'.tsx',
+				'.cts',
+				'.mts',
+				'.js',
+				'.jsx',
+				'.cjs',
+				'.mjs',
+			],
+			'import-x/external-module-folders': [
+				'node_modules',
+				'node_modules/@types',
+			],
+			'import-x/parsers': {
+				'@typescript-eslint/parser': ['.ts', '.tsx', '.cts', '.mts'],
+			},
 			'import-x/resolver-next': [
 				createTypeScriptImportResolver({
 					alwaysTryTypes: true,
@@ -16,6 +35,7 @@ export default defineConfig(
 		},
 	},
 	{
+		files: ['**/*.{ts,tsx,cts,mts}'],
 		rules: {
 			'@typescript-eslint/no-unused-vars': [
 				'error',
@@ -33,7 +53,7 @@ export default defineConfig(
 			'**/*.d.{ts,tsx}',
 			'**/*.spec.{ts,tsx}',
 			'**/*.test.{ts,tsx}',
-			'index.{t}',
+			'index.{ts,tsx,cts,mts}',
 		],
 		rules: {
 			'@typescript-eslint/ban-ts-comment': 'off',
