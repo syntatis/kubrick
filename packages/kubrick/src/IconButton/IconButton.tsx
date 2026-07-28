@@ -1,17 +1,6 @@
 import { mergeProps, useObjectRef } from '@react-aria/utils';
 import { Icon } from '@wordpress/icons';
-import { IconProps } from '@wordpress/icons/build-types/icon';
 import { forwardRef, ReactElement } from 'react';
-import {
-	AriaButtonProps,
-	HoverProps,
-	useButton,
-	useFocusRing,
-	useHover,
-} from 'react-aria';
-import { GlobalProps } from '../types';
-import { useProps } from '../useProps';
-import classes from './IconButton.module.scss';
 
 interface IconButtonProps
 	extends
@@ -40,6 +29,18 @@ interface IconButtonProps
 	 */
 	variant?: 'primary' | 'secondary';
 }
+import {
+	AriaButtonProps,
+	HoverProps,
+	useButton,
+	useFocusRing,
+	useHover,
+} from 'react-aria';
+import { GlobalProps } from '../types';
+import { useProps } from '../useProps';
+import classes from './IconButton.module.scss';
+
+type IconProps = React.ComponentProps<typeof Icon>;
 
 /**
  * ```jsx

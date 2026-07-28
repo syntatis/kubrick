@@ -26,14 +26,14 @@
     "@types/react-dom": "^18.3.7",
     "@typescript-eslint/eslint-plugin": "^8.65.0",
     "@typescript-eslint/parser": "^8.65.0",
-    "@wordpress/icons": "^15.2.0",
+    "@wordpress/icons": "^15.0.0",
     "eslint": "^10.8.0",
     "eslint-plugin-storybook": "^10.5.4",
     "lerna": "^9.0.0",
     "prettier": "^3.6.2",
     "storybook": "^10.5.4",
     "stylelint": "^17.14.1",
-    "typescript": "^5.9.2"
+    "typescript": "^6.0.3"
   },
   "scripts": {
     "build": "npm run build -w @syntatis/kubrick -w @syntatis/kubrick-dev",
