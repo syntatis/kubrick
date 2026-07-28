@@ -10,8 +10,7 @@ const DEFAULT_ROWS = 5;
 const DEFAULT_COLS = 50;
 
 interface TextAreaProps
-	extends GlobalProps,
-		Omit<AriaTextFieldProps<HTMLTextAreaElement>, 'type'> {
+	extends GlobalProps, Omit<AriaTextFieldProps<HTMLTextAreaElement>, 'type'> {
 	/**
 	 * Defines the number of columns in the `textarea`.
 	 *
@@ -139,8 +138,8 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 							prefixedNames: 'error-message',
 						})}
 					>
-						{errorMessageList.map((message, index) => {
-							return <p key={index}>{message}</p>;
+						{errorMessageList.map((message) => {
+							return <p key={String(message)}>{message}</p>;
 						})}
 					</div>
 				)}

@@ -1,6 +1,8 @@
 import { StorybookConfig } from '@storybook/react-vite';
+import { createRequire } from 'node:module';
 import { dirname, join } from 'path';
-import tsConfigPaths from 'vite-tsconfig-paths';
+
+const require = createRequire(import.meta.url);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function getAbsolutePath(value: string): any {
@@ -28,16 +30,16 @@ const config: StorybookConfig = {
 	typescript: {
 		reactDocgen: 'react-docgen-typescript',
 		reactDocgenTypescriptOptions: {
-			compilerOptions: {
-				allowSyntheticDefaultImports: false,
-				esModuleInterop: false,
-			},
+			include: ['**/*.stories.tsx'],
 			propFilter: () => true,
 		},
 	},
 
 	viteFinal: (config) => {
-		config.plugins?.push(tsConfigPaths());
+		config.resolve = {
+			...config.resolve,
+			tsconfigPaths: true,
+		};
 
 		return config;
 	},

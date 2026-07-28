@@ -11,9 +11,9 @@ updates:
     schedule:
       interval: "monthly"
     labels:
+      - "chore"
       - "dependencies"
       - "github-actions"
-      - "workflows"
 
   - package-ecosystem: "npm"
     versioning-strategy: increase
@@ -40,9 +40,42 @@ updates:
         versions: ["19.x"]
       - dependency-name: "@types/react-dom"
         versions: ["19.x"]
+      # Some dependencies are not compatible with the latest versions yet.
+      - dependency-name: "typescript"
+        versions: [">6"]
+      # Keep the version to align with the current stable WordPress version.
+      - dependency-name: "@wordpress/icons"
+        versions: [">11"]
     schedule:
       interval: "weekly"
       day: "sunday"
     labels:
       - "dependencies"
+      - "chore"
       - "npm"
+
+  - package-ecosystem: "composer"
+    versioning-strategy: increase
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+    groups:
+      composer-require:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      composer-require-dev:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+    ignore:
+      - dependency-name: "phpunit/phpunit"
+      - dependency-name: "roots/wordpress"
+        versions: [">6.6"]
+    labels:
+      - "dependencies"
+      - "chore"
+      - "composer"

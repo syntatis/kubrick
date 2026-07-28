@@ -19,9 +19,7 @@ export const DEFAULT_CLOSE_DELAY = 100;
 export const DEFAULT_OFFSET = 5;
 
 interface TooltipProps
-	extends AriaTooltipProps,
-		GlobalProps,
-		TooltipTriggerProps {
+	extends AriaTooltipProps, GlobalProps, TooltipTriggerProps {
 	children: ReactNode;
 	content: ReactNode;
 	/**

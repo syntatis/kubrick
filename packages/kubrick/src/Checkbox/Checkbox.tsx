@@ -12,7 +12,8 @@ import { useProps } from '../useProps';
 import classes from './Checkbox.module.scss';
 
 export interface CheckboxProps
-	extends GlobalProps,
+	extends
+		GlobalProps,
 		// WordPress does not support indeterminate state for checkboxes (yet).
 		Omit<AriaCheckboxProps, 'isIndeterminate' | 'isInvalid' | 'isRequired'> {
 	description?: ReactNode;
@@ -47,13 +48,13 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
 		const labelId = useId();
 		const descriptionId =
 			description ?
-				// eslint-disable-next-line react-hooks/rules-of-hooks
+				// eslint-disable-next-line @eslint-react/rules-of-hooks
 				useId()
 			:	undefined;
 		const groupState = useContext(CheckboxGroupContext);
 		const { inputProps, isDisabled, isReadOnly, isSelected, labelProps } =
 			groupState ?
-				// eslint-disable-next-line react-hooks/rules-of-hooks
+				// eslint-disable-next-line @eslint-react/rules-of-hooks
 				useCheckboxGroupItem(
 					{
 						...componentProps,
@@ -66,13 +67,13 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
 					groupState,
 					inputRef
 				)
-				// eslint-disable-next-line react-hooks/rules-of-hooks
+				// eslint-disable-next-line @eslint-react/rules-of-hooks
 			:	useCheckbox(
 					{
 						...componentProps,
 						children: props.label,
 					},
-					// eslint-disable-next-line react-hooks/rules-of-hooks
+					// eslint-disable-next-line @eslint-react/rules-of-hooks
 					useToggleState(componentProps),
 					inputRef
 				);

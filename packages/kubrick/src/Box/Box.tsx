@@ -71,7 +71,7 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(
 			buttonRef
 		);
 		const renderedTitle = typeof title === 'string' ? <h2>{title}</h2> : title;
-		let toggleLabel = null;
+		let toggleLabel;
 
 		switch (typeof collapsible) {
 			case 'function':

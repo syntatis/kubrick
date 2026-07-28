@@ -12,10 +12,7 @@ import { useProps } from '../useProps';
 import classes from './Button.module.scss';
 
 interface ButtonProps
-	extends Affixable,
-		AriaButtonProps,
-		GlobalProps,
-		HoverProps {
+	extends Affixable, AriaButtonProps, GlobalProps, HoverProps {
 	children?: ReactNode;
 	/**
 	 * The size of the button.

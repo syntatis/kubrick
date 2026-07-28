@@ -1,14 +1,10 @@
 import { mergeProps, useObjectRef } from '@react-aria/utils';
 import { Icon } from '@wordpress/icons';
-import { IconProps } from '@wordpress/icons/build-types/icon';
 import { forwardRef, ReactElement } from 'react';
-import { AriaLinkOptions, HoverProps, useHover, useLink } from 'react-aria';
-import { GlobalProps } from '../types';
-import { useProps } from '../useProps';
-import classes from './IconLinkButton.module.scss';
 
 export interface IconLinkButtonProps
-	extends GlobalProps,
+	extends
+		GlobalProps,
 		Omit<HoverProps, 'isDisabled'>,
 		Omit<
 			AriaLinkOptions,
@@ -43,6 +39,12 @@ export interface IconLinkButtonProps
 	 */
 	variant?: 'primary' | 'secondary';
 }
+import { AriaLinkOptions, HoverProps, useHover, useLink } from 'react-aria';
+import { GlobalProps } from '../types';
+import { useProps } from '../useProps';
+import classes from './IconLinkButton.module.scss';
+
+type IconProps = React.ComponentProps<typeof Icon>;
 
 /**
  * ```jsx

@@ -1,5 +1,5 @@
 import { filterDOMProps } from '@react-aria/utils';
-import { Children, forwardRef, ReactElement, ReactNode } from 'react';
+import { forwardRef, ReactElement, ReactNode } from 'react';
 import { AriaSelectProps, useObjectRef, useSelect } from 'react-aria';
 import { Item, useSelectState } from 'react-stately';
 import { GlobalProps } from '../types';
@@ -11,7 +11,8 @@ import classes from './Select.module.scss';
 type ChildItem = ReactElement<OptionProps, typeof Option>;
 
 interface SelectProps
-	extends GlobalProps,
+	extends
+		GlobalProps,
 		Omit<
 			AriaSelectProps<object>,
 			| 'defaultSelectedKey'
@@ -50,23 +51,22 @@ function determineKey(props: OptionProps) {
 	return typeof value === 'string' ? value : children;
 }
 
-function getKeys(
-	children: Array<ChildItem> | ChildItem
-): Array<string> | undefined {
-	return Children.map(children, (child) => {
-		const { props } = child as ChildItem;
-
-		return determineKey(props);
-	});
+function getKeys(children: Array<ChildItem> | ChildItem): Array<string> {
+	return toChildArray(children).map((child) => determineKey(child.props));
 }
 
 function mapChildren(children: Array<ChildItem> | ChildItem) {
-	return Children.map(children, (child) => {
-		const { props } = child as ChildItem;
-		const key = determineKey(props);
+	return toChildArray(children).map((child) => {
+		const key = determineKey(child.props);
 
-		return <Item {...props} key={key} textValue={key} />;
+		return <Item key={key} {...child.props} textValue={key} />;
 	});
+}
+
+function toChildArray(
+	children: Array<ChildItem> | ChildItem
+): Array<ChildItem> {
+	return Array.isArray(children) ? children : [children];
 }
 
 /**
@@ -213,8 +213,8 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
 							prefixedNames: 'error-message',
 						})}
 					>
-						{errorMessageList.map((message, index) => {
-							return <p key={`error-message-${index}`}>{message}</p>;
+						{errorMessageList.map((message) => {
+							return <p key={String(message)}>{message}</p>;
 						})}
 					</div>
 				)}

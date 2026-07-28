@@ -13,7 +13,8 @@ import classes from './Dialog.module.scss';
 import { useDialogContext } from './DialogProvider';
 
 export interface DialogProps
-	extends AriaModalOverlayProps,
+	extends
+		AriaModalOverlayProps,
 		Omit<AriaDialogProps, 'role'>,
 		Styleable,
 		Testable {

@@ -49,7 +49,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
 				ref
 			);
 		const { focusProps, isFocusVisible } = useFocusRing();
-		// eslint-disable-next-line react-hooks/rules-of-hooks
+		// eslint-disable-next-line @eslint-react/rules-of-hooks
 		const descriptionId = description ? useId() : undefined;
 
 		return (
