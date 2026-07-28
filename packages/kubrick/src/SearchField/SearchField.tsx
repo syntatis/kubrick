@@ -9,8 +9,7 @@ import { ClearButton } from './ClearButton';
 import classes from './SearchField.module.scss';
 
 interface SearchFieldProps
-	extends GlobalProps,
-		Omit<AriaSearchFieldProps, 'type'> {
+	extends GlobalProps, Omit<AriaSearchFieldProps, 'type'> {
 	/**
 	 * Where to place the description.
 	 *
@@ -124,8 +123,8 @@ export const SearchField = forwardRef<HTMLInputElement, SearchFieldProps>(
 							prefixedNames: 'error-message',
 						})}
 					>
-						{errorMessageList.map((message, index) => {
-							return <p key={index}>{message}</p>;
+						{errorMessageList.map((message) => {
+							return <p key={String(message)}>{message}</p>;
 						})}
 					</div>
 				)}

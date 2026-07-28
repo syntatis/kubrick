@@ -1,0 +1,11 @@
+{
+	"extends": "../tsconfig.json",
+	"include": [
+		"./**/*.ts",
+		"./**/*.tsx",
+		"./**/*.d.ts",
+		"../packages/kubrick/src/**/*.ts",
+		"../packages/kubrick/src/**/*.tsx",
+		"../packages/kubrick/src/**/*.d.ts"
+	]
+}

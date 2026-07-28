@@ -10,8 +10,7 @@ import styles from './Tabs.module.scss';
 import { useTabsProvider } from './TabsProvider';
 
 interface TabsProps
-	extends GlobalProps,
-		Omit<AriaTabListOptions<object>, 'items'> {
+	extends GlobalProps, Omit<AriaTabListOptions<object>, 'items'> {
 	children: Array<ReactElement<TabProps>> | ReactElement<TabProps>;
 }
 

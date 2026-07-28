@@ -8,7 +8,8 @@ import classes from './LinkButton.module.scss';
 const DEFAULT_VARIANT = 'primary';
 
 export interface LinkButtonProps
-	extends GlobalProps,
+	extends
+		GlobalProps,
 		Omit<HoverProps, 'isDisabled'>,
 		Omit<
 			AriaLinkOptions,
