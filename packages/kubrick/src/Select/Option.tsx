@@ -9,10 +9,10 @@ export interface OptionProps {
 export const Option = forwardRef<HTMLOptionElement, OptionProps>(
 	(props, forwardedRef) => {
 		const ref = useObjectRef(forwardedRef);
-		const { children } = props;
+		const { children, ...restProps } = props;
 
 		return (
-			<option ref={ref} {...props}>
+			<option ref={ref} {...restProps}>
 				{children}
 			</option>
 		);

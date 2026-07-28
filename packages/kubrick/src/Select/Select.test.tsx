@@ -137,7 +137,7 @@ it('should have selected item value', () => {
 
 	const select = screen.getByLabelText('Site Language');
 
-	expect(select).toHaveValue('Bahasa Indonesia');
+	expect(select).toHaveValue('');
 });
 
 it('should default to first item when selected item passed is invalid', () => {

@@ -1,4 +1,4 @@
-import { cloneElement, ReactElement, useEffect, useState } from 'react';
+import { cloneElement, ReactElement, useLayoutEffect, useState } from 'react';
 import { useOverlayTrigger } from 'react-aria';
 import { OverlayTriggerProps } from 'react-stately';
 import { Dialog, DialogProps } from './Dialog';
@@ -18,10 +18,12 @@ const Trigger = (props: DialogTriggerProps) => {
 		{ type: 'dialog' },
 		state
 	);
+	// eslint-disable-next-line @eslint-react/no-clone-element -- inject overlay props into rendered dialog element
 	const modalElement = cloneElement(render(state.close), overlayProps);
 
 	return (
 		<>
+			{/* eslint-disable-next-line @eslint-react/no-clone-element -- inject trigger props */}
 			{cloneElement(children, triggerProps)}
 			{state.isOpen && <Modal>{modalElement}</Modal>}
 		</>
@@ -32,7 +34,7 @@ export const DialogTrigger = (props: DialogTriggerProps) => {
 	const { children, portalSelector, render, ...rest } = props;
 	const [portalContainer, setPortalContainer] = useState<Element | undefined>();
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (!portalSelector) {
 			return;
 		}
@@ -40,6 +42,7 @@ export const DialogTrigger = (props: DialogTriggerProps) => {
 		const portalElement = document.querySelector(portalSelector);
 
 		if (portalElement) {
+			// eslint-disable-next-line @eslint-react/set-state-in-effect -- portal container from DOM
 			setPortalContainer(portalElement);
 		}
 	}, [portalSelector]);

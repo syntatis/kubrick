@@ -140,7 +140,7 @@ it('should be marked as invalid and render the error message', () => {
 it('should be marked as required', () => {
 	render(<CheckboxGroup isRequired />);
 
-	expect(screen.getByRole('group')).toHaveAccessibleName('Hide on screen *');
+	expect(screen.getByRole('group')).toHaveAccessibleName('Hide on screen*');
 
 	const checkboxes = screen.getAllByRole('checkbox');
 
