@@ -73,6 +73,8 @@ updates:
           - "patch"
     ignore:
       - dependency-name: "phpunit/phpunit"
+      - dependency-name: "roots/wordpress"
+        versions: [">6.6"]
     labels:
       - "dependencies"
       - "chore"
