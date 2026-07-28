@@ -17,7 +17,6 @@
 		"isolatedModules": true,
 		"jsx": "react-jsx",
 		"incremental": true,
-		"baseUrl": ".",
 	},
 	"exclude": [
 		"dist",
