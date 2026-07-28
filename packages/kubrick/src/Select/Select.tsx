@@ -213,8 +213,8 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
 							prefixedNames: 'error-message',
 						})}
 					>
-						{errorMessageList.map((message, index) => {
-							return <p key={`error-message-${index}`}>{message}</p>;
+						{errorMessageList.map((message) => {
+							return <p key={String(message)}>{message}</p>;
 						})}
 					</div>
 				)}

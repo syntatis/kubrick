@@ -1,5 +1,5 @@
 import config from '@syntatis/eslint-config';
-import storybook from 'eslint-plugin-storybook';
+import { configs as storybookConfigs } from 'eslint-plugin-storybook';
 
 export default [
 	{
@@ -15,7 +15,7 @@ export default [
 		],
 	},
 	...config,
-	...storybook.configs['flat/recommended'],
+	...storybookConfigs['flat/recommended'],
 	{
 		files: [
 			'**/*.stories.tsx',

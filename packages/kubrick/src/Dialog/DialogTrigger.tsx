@@ -18,10 +18,12 @@ const Trigger = (props: DialogTriggerProps) => {
 		{ type: 'dialog' },
 		state
 	);
+	// eslint-disable-next-line @eslint-react/no-clone-element -- inject overlay props into rendered dialog element
 	const modalElement = cloneElement(render(state.close), overlayProps);
 
 	return (
 		<>
+			{/* eslint-disable-next-line @eslint-react/no-clone-element -- inject trigger props */}
 			{cloneElement(children, triggerProps)}
 			{state.isOpen && <Modal>{modalElement}</Modal>}
 		</>

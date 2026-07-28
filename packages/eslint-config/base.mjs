@@ -1,15 +1,15 @@
 import eslint from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 import prettierConfig from 'eslint-config-prettier';
-import eslintPluginImportX from 'eslint-plugin-import-x';
-import perfectionistPlugin from 'eslint-plugin-perfectionist';
+import { flatConfigs as importXFlatConfigs } from 'eslint-plugin-import-x';
+import { configs as perfectionistConfigs } from 'eslint-plugin-perfectionist';
 import prettierPlugin from 'eslint-plugin-prettier';
 import globals from 'globals';
 
 export default [
 	eslint.configs.recommended,
-	eslintPluginImportX.flatConfigs.recommended,
-	perfectionistPlugin.configs['recommended-natural'],
+	importXFlatConfigs.recommended,
+	perfectionistConfigs['recommended-natural'],
 	prettierConfig,
 	{
 		languageOptions: {
