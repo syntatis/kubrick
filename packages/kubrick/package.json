@@ -50,7 +50,7 @@
     "@vitejs/plugin-react": "^6.0.4",
     "@vitest/coverage-istanbul": "^4.1.10",
     "eslint": "^10.8.0",
-    "glob": "^11.0.2",
+    "glob": "^13.0.6",
     "jsdom": "^29.1.1",
     "react": "^18.0.0",
     "sass": "^1.92.1",
@@ -61,7 +61,7 @@
     "vitest": "^4.1.10"
   },
   "peerDependencies": {
-    "@wordpress/icons": "^9.0.0 || ^10.0.0",
+    "@wordpress/icons": ">=9.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },

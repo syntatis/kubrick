@@ -13,6 +13,7 @@
   ],
   "devDependencies": {
     "@storybook/addon-a11y": "^10.5.4",
+    "@storybook/addon-docs": "^10.5.4",
     "@storybook/addon-links": "^10.5.4",
     "@storybook/addon-themes": "^10.5.4",
     "@storybook/react-vite": "^10.5.4",
@@ -25,20 +26,17 @@
     "@types/react-dom": "^18.3.7",
     "@typescript-eslint/eslint-plugin": "^8.65.0",
     "@typescript-eslint/parser": "^8.65.0",
-    "@wordpress/icons": "^10.30.0",
-    "chromatic": "^18.1.0",
+    "@wordpress/icons": "^15.2.0",
     "eslint": "^10.8.0",
     "eslint-plugin-storybook": "^10.5.4",
-    "lerna": "^8.2.3",
+    "lerna": "^9.0.0",
     "prettier": "^3.6.2",
     "storybook": "^10.5.4",
     "stylelint": "^17.14.1",
-    "typescript": "^5.9.2",
-    "@storybook/addon-docs": "^10.5.4"
+    "typescript": "^5.9.2"
   },
   "scripts": {
     "build": "npm run build -w @syntatis/kubrick -w @syntatis/kubrick-dev",
-    "chromatic": "chromatic --build-script-name=storybook:build",
     "format": "npm run format:scripts && npm run format:styles",
     "format:scripts": "eslint . --fix",
     "format:styles": "stylelint '**/*.scss' --fix",
