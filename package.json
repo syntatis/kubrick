@@ -26,8 +26,10 @@
     "@types/react-dom": "^18.3.7",
     "@typescript-eslint/eslint-plugin": "^8.65.0",
     "@typescript-eslint/parser": "^8.65.0",
-    "@wordpress/icons": "^15.0.0",
+    "@wordpress/icons": "^11.0.0",
     "eslint": "^10.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "eslint-plugin-storybook": "^10.5.4",
     "lerna": "^9.0.0",
     "prettier": "^3.6.2",
@@ -37,17 +39,17 @@
   },
   "scripts": {
     "build": "npm run build -w @syntatis/kubrick -w @syntatis/kubrick-dev",
-    "format": "npm run format:scripts && npm run format:styles",
-    "format:scripts": "eslint . --fix",
-    "format:styles": "stylelint '**/*.scss' --fix",
+    "fmt": "npm run fmt:scripts && npm run fmt:styles",
+    "fmt:scripts": "eslint . --fix",
+    "fmt:styles": "stylelint '**/*.scss' --fix",
     "lint": "npm run lint:scripts && npm run lint:styles && npm run lint:types",
     "lint:scripts": "eslint .",
     "lint:styles": "stylelint '**/*.scss'",
-    "lint:types": "tsc --noEmit",
     "storybook": "storybook dev -p 6007",
     "storybook:build": "storybook build",
     "test": "npm run test --workspaces --if-present",
     "test:coverage": "npm run test:coverage --workspaces --if-present",
-    "test:watch": "npm run test:watch ---workspaces --if-present"
+    "test:watch": "npm run test:watch ---workspaces --if-present",
+    "typecheck": "tsc --noEmit"
   }
 }
