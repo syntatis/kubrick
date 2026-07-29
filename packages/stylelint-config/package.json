@@ -1,6 +1,9 @@
 {
   "name": "@syntatis/stylelint-config",
   "description": "Curated CSS and SCSS linter configs",
+	"repository": {
+		"url": "https://github.com/syntatis/kubrick"
+	},
   "version": "2.1.0",
   "license": "MIT",
   "keywords": [

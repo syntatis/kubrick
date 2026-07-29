@@ -1,6 +1,9 @@
 {
   "name": "@syntatis/eslint-config",
   "description": "Curated JavaScript, TypeScript and React linter configs",
+	"repository": {
+		"url": "https://github.com/syntatis/kubrick"
+	},
   "version": "4.0.0",
   "license": "MIT",
   "keywords": [

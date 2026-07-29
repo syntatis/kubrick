@@ -1,6 +1,9 @@
 {
   "name": "@syntatis/kubrick-dev",
   "description": "Classic WordPress Admin UI (Development)",
+	"repository": {
+		"url": "https://github.com/syntatis/kubrick"
+	},
   "version": "0.3.0",
   "license": "MIT",
   "type": "module",
