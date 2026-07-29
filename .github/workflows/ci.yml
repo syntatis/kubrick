@@ -73,7 +73,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci --workspaces --no-audit --ignore-scripts
+          npm install --workspaces --no-audit --ignore-scripts
           composer install
           npm run build
 
