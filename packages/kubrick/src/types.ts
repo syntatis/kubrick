@@ -8,7 +8,8 @@ export interface Affixable extends Prefixable, Suffixable {}
  * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
  */
 export interface GlobalProps
-	extends Pick<HTMLAttributes<HTMLElement>, 'id' | 'role'>,
+	extends
+		Pick<HTMLAttributes<HTMLElement>, 'id' | 'role'>,
 		Styleable,
 		Testable {}
 

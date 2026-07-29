@@ -1,9 +1,9 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
 import { Decorator, Preview } from '@storybook/react-vite';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './preview.scss';
 
-const DEFAULT_THEME = 'modern';
+const DEFAULT_THEME = 'default';
 const ThemeDecorator: Decorator = (Story, context) => {
 	const id = context.id;
 	const viewMode = context?.viewMode;

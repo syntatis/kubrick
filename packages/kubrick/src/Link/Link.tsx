@@ -6,7 +6,8 @@ import { useProps } from '../useProps';
 import classes from './Link.module.scss';
 
 export interface LinkProps
-	extends Affixable,
+	extends
+		Affixable,
 		GlobalProps,
 		Omit<HoverProps, 'isDisabled'>,
 		Omit<
