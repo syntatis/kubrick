@@ -116,7 +116,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci --workspaces --no-audit --ignore-scripts
+          npm install --workspaces --no-audit --ignore-scripts
           composer install
 
       - name: Run build
@@ -156,7 +156,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci --workspaces --no-audit --ignore-scripts
+          npm install --workspaces --no-audit --ignore-scripts
           composer install --prefer-dist
 
       - name: Run build
