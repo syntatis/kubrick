@@ -1,7 +1,7 @@
 {
   "name": "@syntatis/kubrick",
   "description": "Classic Admin UI for WordPress® built with React.js",
-  "version": "0.3.0",
+  "version": "0.2.1",
   "license": "MIT",
   "type": "module",
   "keywords": [
