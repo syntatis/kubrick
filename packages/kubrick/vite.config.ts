@@ -6,7 +6,6 @@ import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import vitePluginExternal from 'vite-plugin-external';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
-import tsConfigPaths from 'vite-tsconfig-paths';
 import pkg from './package.json';
 
 export default defineConfig({
@@ -54,7 +53,6 @@ export default defineConfig({
 	},
 	plugins: [
 		libInjectCss(),
-		tsConfigPaths(),
 		vitePluginExternal({
 			externalizeDeps: [
 				...Object.keys({
@@ -71,4 +69,7 @@ export default defineConfig({
 		react(),
 		dts({ include: ['src/**/!(*.spec|*.stories|*.test|*.d).{ts,tsx}'] }),
 	],
+	resolve: {
+		tsconfigPaths: true,
+	},
 });

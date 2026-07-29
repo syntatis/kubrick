@@ -29,7 +29,7 @@ export const Radio = forwardRef<HTMLLabelElement, RadioProps>(
 		const ref = useObjectRef(forwardedRef);
 		const inputRef = useRef<HTMLInputElement>(null);
 		const state = useContext(RadioContext);
-		// eslint-disable-next-line react-hooks/rules-of-hooks
+		// eslint-disable-next-line @eslint-react/rules-of-hooks
 		const radioProps = state ? useRadio(restProps, state, inputRef) : null;
 
 		if (!radioProps) {

@@ -267,7 +267,7 @@ it('should be marked as required', () => {
 	expect(
 		screen.getByRole('radiogroup', {
 			// Has the asterisk.
-			name: 'For each post in a feed, include *',
+			name: 'For each post in a feed, include*',
 		})
 	).toHaveAttribute('aria-required', 'true');
 });
